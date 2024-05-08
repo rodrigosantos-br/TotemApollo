@@ -1,4 +1,5 @@
-﻿using TotemApollo.Modelos;
+﻿using System.Windows.Forms;
+using TotemApollo.Modelos;
 
 namespace TotemApollo.Controles
 {
@@ -51,6 +52,30 @@ namespace TotemApollo.Controles
         public void IncrementarContadorInteracoes()
         {
             questionario.IncrementarContadorInteracoes();
+        }
+
+        // Método para desativar outros CheckBoxes
+        public void DesativarOutrosCheckBoxes(CheckBox checkBox)
+        {
+            foreach (Control control in Application.OpenForms[0].Controls) // Aqui você pode especificar qual formulário está em foco
+            {
+                if (control is CheckBox chk && chk != checkBox)
+                {
+                    chk.Enabled = false;
+                }
+            }
+        }
+
+        // Método para habilitar todos os CheckBoxes
+        public void HabilitarCheckBoxes()
+        {
+            foreach (Control control in Application.OpenForms[0].Controls) // Aqui você pode especificar qual formulário está em foco
+            {
+                if (control is CheckBox chk)
+                {
+                    chk.Enabled = true;
+                }
+            }
         }
 
         // Método para obter o número total de interações

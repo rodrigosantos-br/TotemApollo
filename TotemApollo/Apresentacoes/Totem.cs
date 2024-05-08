@@ -94,7 +94,7 @@ namespace TotemApollo
                 return;
             }
         }
-        
+
         private void btnAvancarObra_Click(object sender, EventArgs e)
         {
             _obras.AvancarParaProximaObra();
@@ -112,6 +112,12 @@ namespace TotemApollo
             pnlObraDescricao.Visible = false;
             pnlQuestionario.Show();
             _questionario.IncrementarContadorInteracoes();
+            // Defina a imagem de fundo de cada CheckBox como a imagem cinza correspondente
+            chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+            chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
+            chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
+            chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
+            chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
         }
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
@@ -120,10 +126,119 @@ namespace TotemApollo
             pnlObraDescricao.Show();
         }
 
-        // Evento de clique do botão para salvar as respostas e exibir o relatório cumulativo
-        private void BotaoSalvar_Click(object sender, EventArgs e)
+        private void chkPessimo_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (chkPessimo.Checked)
+            {
+                _questionario.DesativarOutrosCheckBoxes(chkPessimo);
+                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimo;
+                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
+                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
+                chkRuim.Checked = false;
+                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
+                chkRegular.Checked = false;
+                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
+                chkBom.Checked = false;
+                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
+                chkOtimo.Checked = false;
+            }
+            else
+            {
+                _questionario.HabilitarCheckBoxes();
+                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+            }
+        }
+
+        private void chkRuim_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRuim.Checked)
+            {
+                _questionario.DesativarOutrosCheckBoxes(chkRuim);
+                chkRuim.BackgroundImage = Properties.Resources.estrelaRuim;
+                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
+                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+                chkPessimo.Checked = false;
+                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
+                chkRegular.Checked = false;
+                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
+                chkBom.Checked = false;
+                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
+                chkOtimo.Checked = false;
+            }
+            else
+            {
+                _questionario.HabilitarCheckBoxes();
+                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
+            }
+        }
+
+        private void chkRegular_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRegular.Checked)
+            {
+                _questionario.DesativarOutrosCheckBoxes(chkRegular);
+                chkRegular.BackgroundImage = Properties.Resources.estrelaRegular;
+                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
+                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+                chkPessimo.Checked = false;
+                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
+                chkRuim.Checked = false;
+                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
+                chkBom.Checked = false;
+                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
+                chkOtimo.Checked = false;
+            }
+            else
+            {
+                _questionario.HabilitarCheckBoxes();
+                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
+            }
+        }
+
+        private void chkBom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkBom.Checked)
+            {
+                _questionario.DesativarOutrosCheckBoxes(chkBom);
+                chkBom.BackgroundImage = Properties.Resources.estrelaBom;
+                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
+                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+                chkPessimo.Checked = false;
+                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
+                chkRuim.Checked = false;
+                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
+                chkRegular.Checked = false;
+                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
+                chkOtimo.Checked = false;
+            }
+            else
+            {
+                _questionario.HabilitarCheckBoxes();
+                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
+            }
+        }
+
+        private void chkOtimo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkOtimo.Checked)
+            {
+                _questionario.DesativarOutrosCheckBoxes(chkOtimo);
+                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimo;
+                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
+                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+                chkPessimo.Checked = false;
+                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
+                chkRuim.Checked = false;
+                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
+                chkRegular.Checked = false;
+                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
+                chkBom.Checked = false;
+            }
+            else
+            {
+                _questionario.HabilitarCheckBoxes();
+                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
+            }
         }
     }
 }

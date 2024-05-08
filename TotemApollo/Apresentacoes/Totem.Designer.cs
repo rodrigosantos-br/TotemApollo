@@ -47,17 +47,17 @@
             btnVoltar = new Button();
             btnQuestionario = new Button();
             pnlQuestionario = new Panel();
-            checkBox5 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
+            btnProximaPergunta = new Button();
+            chkPessimo = new CheckBox();
+            chkRuim = new CheckBox();
+            chkRegular = new CheckBox();
+            chkBom = new CheckBox();
+            chkOtimo = new CheckBox();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
             lblPergunta = new Label();
-            btnSalvar = new Button();
+            btnFinalizar = new Button();
             btnVoltarQ = new Button();
-            btnProximaPergunta = new Button();
             pnlCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -305,15 +305,15 @@
             // 
             pnlQuestionario.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlQuestionario.Controls.Add(btnProximaPergunta);
-            pnlQuestionario.Controls.Add(checkBox5);
-            pnlQuestionario.Controls.Add(checkBox4);
-            pnlQuestionario.Controls.Add(checkBox3);
-            pnlQuestionario.Controls.Add(checkBox2);
-            pnlQuestionario.Controls.Add(checkBox1);
+            pnlQuestionario.Controls.Add(chkPessimo);
+            pnlQuestionario.Controls.Add(chkRuim);
+            pnlQuestionario.Controls.Add(chkRegular);
+            pnlQuestionario.Controls.Add(chkBom);
+            pnlQuestionario.Controls.Add(chkOtimo);
             pnlQuestionario.Controls.Add(pictureBox6);
             pnlQuestionario.Controls.Add(pictureBox5);
             pnlQuestionario.Controls.Add(lblPergunta);
-            pnlQuestionario.Controls.Add(btnSalvar);
+            pnlQuestionario.Controls.Add(btnFinalizar);
             pnlQuestionario.Controls.Add(btnVoltarQ);
             pnlQuestionario.Dock = DockStyle.Fill;
             pnlQuestionario.Location = new Point(0, 0);
@@ -322,95 +322,108 @@
             pnlQuestionario.TabIndex = 12;
             pnlQuestionario.Visible = false;
             // 
-            // checkBox5
+            // btnProximaPergunta
             // 
-            checkBox5.Anchor = AnchorStyles.None;
-            checkBox5.Appearance = Appearance.Button;
-            checkBox5.BackgroundImageLayout = ImageLayout.Center;
-            checkBox5.CheckAlign = ContentAlignment.MiddleCenter;
-            checkBox5.FlatAppearance.BorderColor = SystemColors.Control;
-            checkBox5.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            checkBox5.FlatAppearance.MouseDownBackColor = SystemColors.Control;
-            checkBox5.FlatAppearance.MouseOverBackColor = SystemColors.Control;
-            checkBox5.FlatStyle = FlatStyle.Flat;
-            checkBox5.Image = Properties.Resources.estrelaPessimo;
-            checkBox5.Location = new Point(287, 363);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(90, 85);
-            checkBox5.TabIndex = 23;
-            checkBox5.UseVisualStyleBackColor = true;
+            btnProximaPergunta.Anchor = AnchorStyles.None;
+            btnProximaPergunta.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnProximaPergunta.Location = new Point(1084, 507);
+            btnProximaPergunta.Margin = new Padding(3, 2, 3, 2);
+            btnProximaPergunta.Name = "btnProximaPergunta";
+            btnProximaPergunta.Size = new Size(88, 36);
+            btnProximaPergunta.TabIndex = 24;
+            btnProximaPergunta.TabStop = false;
+            btnProximaPergunta.Text = "Próxima";
+            btnProximaPergunta.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkPessimo
             // 
-            checkBox4.Anchor = AnchorStyles.None;
-            checkBox4.Appearance = Appearance.Button;
-            checkBox4.BackgroundImageLayout = ImageLayout.Center;
-            checkBox4.CheckAlign = ContentAlignment.MiddleCenter;
-            checkBox4.FlatAppearance.BorderColor = SystemColors.Control;
-            checkBox4.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            checkBox4.FlatAppearance.MouseDownBackColor = SystemColors.Control;
-            checkBox4.FlatAppearance.MouseOverBackColor = SystemColors.Control;
-            checkBox4.FlatStyle = FlatStyle.Flat;
-            checkBox4.Image = Properties.Resources.estrelaRuim;
-            checkBox4.Location = new Point(417, 363);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(90, 85);
-            checkBox4.TabIndex = 22;
-            checkBox4.UseVisualStyleBackColor = true;
+            chkPessimo.Anchor = AnchorStyles.None;
+            chkPessimo.Appearance = Appearance.Button;
+            chkPessimo.BackgroundImageLayout = ImageLayout.Center;
+            chkPessimo.CheckAlign = ContentAlignment.MiddleCenter;
+            chkPessimo.FlatAppearance.BorderColor = SystemColors.Control;
+            chkPessimo.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            chkPessimo.FlatAppearance.MouseDownBackColor = SystemColors.Control;
+            chkPessimo.FlatAppearance.MouseOverBackColor = SystemColors.Control;
+            chkPessimo.FlatStyle = FlatStyle.Flat;
+            chkPessimo.Location = new Point(287, 363);
+            chkPessimo.Name = "chkPessimo";
+            chkPessimo.Size = new Size(90, 85);
+            chkPessimo.TabIndex = 23;
+            chkPessimo.UseVisualStyleBackColor = true;
+            chkPessimo.CheckedChanged += chkPessimo_CheckedChanged;
             // 
-            // checkBox3
+            // chkRuim
             // 
-            checkBox3.Anchor = AnchorStyles.None;
-            checkBox3.Appearance = Appearance.Button;
-            checkBox3.BackgroundImageLayout = ImageLayout.Center;
-            checkBox3.CheckAlign = ContentAlignment.MiddleCenter;
-            checkBox3.FlatAppearance.BorderColor = SystemColors.Control;
-            checkBox3.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            checkBox3.FlatAppearance.MouseDownBackColor = SystemColors.Control;
-            checkBox3.FlatAppearance.MouseOverBackColor = SystemColors.Control;
-            checkBox3.FlatStyle = FlatStyle.Flat;
-            checkBox3.Image = Properties.Resources.estrelaRegular;
-            checkBox3.Location = new Point(547, 363);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(90, 85);
-            checkBox3.TabIndex = 21;
-            checkBox3.UseVisualStyleBackColor = true;
+            chkRuim.Anchor = AnchorStyles.None;
+            chkRuim.Appearance = Appearance.Button;
+            chkRuim.BackgroundImageLayout = ImageLayout.Center;
+            chkRuim.CheckAlign = ContentAlignment.MiddleCenter;
+            chkRuim.FlatAppearance.BorderColor = SystemColors.Control;
+            chkRuim.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            chkRuim.FlatAppearance.MouseDownBackColor = SystemColors.Control;
+            chkRuim.FlatAppearance.MouseOverBackColor = SystemColors.Control;
+            chkRuim.FlatStyle = FlatStyle.Flat;
+            chkRuim.Location = new Point(417, 363);
+            chkRuim.Name = "chkRuim";
+            chkRuim.Size = new Size(90, 85);
+            chkRuim.TabIndex = 22;
+            chkRuim.UseVisualStyleBackColor = true;
+            chkRuim.CheckedChanged += chkRuim_CheckedChanged;
             // 
-            // checkBox2
+            // chkRegular
             // 
-            checkBox2.Anchor = AnchorStyles.None;
-            checkBox2.Appearance = Appearance.Button;
-            checkBox2.BackgroundImageLayout = ImageLayout.Center;
-            checkBox2.CheckAlign = ContentAlignment.MiddleCenter;
-            checkBox2.FlatAppearance.BorderColor = SystemColors.Control;
-            checkBox2.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            checkBox2.FlatAppearance.MouseDownBackColor = SystemColors.Control;
-            checkBox2.FlatAppearance.MouseOverBackColor = SystemColors.Control;
-            checkBox2.FlatStyle = FlatStyle.Flat;
-            checkBox2.Image = Properties.Resources.estrelaBom;
-            checkBox2.Location = new Point(677, 363);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(90, 85);
-            checkBox2.TabIndex = 20;
-            checkBox2.UseVisualStyleBackColor = true;
+            chkRegular.Anchor = AnchorStyles.None;
+            chkRegular.Appearance = Appearance.Button;
+            chkRegular.BackgroundImageLayout = ImageLayout.Center;
+            chkRegular.CheckAlign = ContentAlignment.MiddleCenter;
+            chkRegular.FlatAppearance.BorderColor = SystemColors.Control;
+            chkRegular.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            chkRegular.FlatAppearance.MouseDownBackColor = SystemColors.Control;
+            chkRegular.FlatAppearance.MouseOverBackColor = SystemColors.Control;
+            chkRegular.FlatStyle = FlatStyle.Flat;
+            chkRegular.Location = new Point(547, 363);
+            chkRegular.Name = "chkRegular";
+            chkRegular.Size = new Size(90, 85);
+            chkRegular.TabIndex = 21;
+            chkRegular.UseVisualStyleBackColor = true;
+            chkRegular.CheckedChanged += chkRegular_CheckedChanged;
             // 
-            // checkBox1
+            // chkBom
             // 
-            checkBox1.Anchor = AnchorStyles.None;
-            checkBox1.Appearance = Appearance.Button;
-            checkBox1.BackgroundImageLayout = ImageLayout.Center;
-            checkBox1.CheckAlign = ContentAlignment.MiddleCenter;
-            checkBox1.FlatAppearance.BorderColor = SystemColors.Control;
-            checkBox1.FlatAppearance.CheckedBackColor = SystemColors.Control;
-            checkBox1.FlatAppearance.MouseDownBackColor = SystemColors.Control;
-            checkBox1.FlatAppearance.MouseOverBackColor = SystemColors.Control;
-            checkBox1.FlatStyle = FlatStyle.Flat;
-            checkBox1.Image = Properties.Resources.estrelaOtimo;
-            checkBox1.Location = new Point(807, 363);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(90, 85);
-            checkBox1.TabIndex = 19;
-            checkBox1.UseVisualStyleBackColor = true;
+            chkBom.Anchor = AnchorStyles.None;
+            chkBom.Appearance = Appearance.Button;
+            chkBom.BackgroundImageLayout = ImageLayout.Center;
+            chkBom.CheckAlign = ContentAlignment.MiddleCenter;
+            chkBom.FlatAppearance.BorderColor = SystemColors.Control;
+            chkBom.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            chkBom.FlatAppearance.MouseDownBackColor = SystemColors.Control;
+            chkBom.FlatAppearance.MouseOverBackColor = SystemColors.Control;
+            chkBom.FlatStyle = FlatStyle.Flat;
+            chkBom.Location = new Point(677, 363);
+            chkBom.Name = "chkBom";
+            chkBom.Size = new Size(90, 85);
+            chkBom.TabIndex = 20;
+            chkBom.UseVisualStyleBackColor = true;
+            chkBom.CheckedChanged += chkBom_CheckedChanged;
+            // 
+            // chkOtimo
+            // 
+            chkOtimo.Anchor = AnchorStyles.None;
+            chkOtimo.Appearance = Appearance.Button;
+            chkOtimo.BackgroundImageLayout = ImageLayout.Center;
+            chkOtimo.CheckAlign = ContentAlignment.MiddleCenter;
+            chkOtimo.FlatAppearance.BorderColor = SystemColors.Control;
+            chkOtimo.FlatAppearance.CheckedBackColor = SystemColors.Control;
+            chkOtimo.FlatAppearance.MouseDownBackColor = SystemColors.Control;
+            chkOtimo.FlatAppearance.MouseOverBackColor = SystemColors.Control;
+            chkOtimo.FlatStyle = FlatStyle.Flat;
+            chkOtimo.Location = new Point(807, 363);
+            chkOtimo.Name = "chkOtimo";
+            chkOtimo.Size = new Size(90, 85);
+            chkOtimo.TabIndex = 19;
+            chkOtimo.UseVisualStyleBackColor = true;
+            chkOtimo.CheckedChanged += chkOtimo_CheckedChanged;
             // 
             // pictureBox6
             // 
@@ -447,19 +460,19 @@
             lblPergunta.TabIndex = 16;
             lblPergunta.Text = "Perguntas aqui...";
             // 
-            // btnSalvar
+            // btnFinalizar
             // 
-            btnSalvar.Anchor = AnchorStyles.None;
-            btnSalvar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnSalvar.Location = new Point(1086, 502);
-            btnSalvar.Margin = new Padding(3, 2, 3, 2);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(88, 36);
-            btnSalvar.TabIndex = 10;
-            btnSalvar.TabStop = false;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Click += BotaoSalvar_Click;
+            btnFinalizar.Anchor = AnchorStyles.None;
+            btnFinalizar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
+            btnFinalizar.Location = new Point(1084, 507);
+            btnFinalizar.Margin = new Padding(3, 2, 3, 2);
+            btnFinalizar.Name = "btnFinalizar";
+            btnFinalizar.Size = new Size(88, 36);
+            btnFinalizar.TabIndex = 10;
+            btnFinalizar.TabStop = false;
+            btnFinalizar.Text = "Finalizar";
+            btnFinalizar.UseVisualStyleBackColor = true;
+            btnFinalizar.Visible = false;
             // 
             // btnVoltarQ
             // 
@@ -474,19 +487,6 @@
             btnVoltarQ.Text = "Voltar";
             btnVoltarQ.UseVisualStyleBackColor = true;
             btnVoltarQ.Click += BotaoVoltarObras_Click;
-            // 
-            // btnProximaPergunta
-            // 
-            btnProximaPergunta.Anchor = AnchorStyles.None;
-            btnProximaPergunta.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnProximaPergunta.Location = new Point(952, 412);
-            btnProximaPergunta.Margin = new Padding(3, 2, 3, 2);
-            btnProximaPergunta.Name = "btnProximaPergunta";
-            btnProximaPergunta.Size = new Size(88, 36);
-            btnProximaPergunta.TabIndex = 24;
-            btnProximaPergunta.TabStop = false;
-            btnProximaPergunta.Text = "Próxima";
-            btnProximaPergunta.UseVisualStyleBackColor = true;
             // 
             // Totem
             // 
@@ -534,7 +534,7 @@
         private Button btnVoltar;
         private Button btnQuestionario;
         private Panel pnlQuestionario;
-        private Button btnSalvar;
+        private Button btnFinalizar;
         private Button btnVoltarQ;
         private Button btnAvancarObra;
         private Button btnRetrocederObra;
@@ -545,11 +545,11 @@
         private PictureBox pictureBox6;
         private PictureBox pictureBox5;
         private Label lblPergunta;
-        private CheckBox checkBox1;
-        private CheckBox checkBox5;
-        private CheckBox checkBox4;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
+        private CheckBox chkOtimo;
+        private CheckBox chkPessimo;
+        private CheckBox chkRuim;
+        private CheckBox chkRegular;
+        private CheckBox chkBom;
         private Button btnProximaPergunta;
     }
 }

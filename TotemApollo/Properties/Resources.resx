@@ -118,40 +118,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgObra4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\imgObra4.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgObra1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\imgObra1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgRodape" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\imgRodape.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgObra3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\imgObra3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="estrelaRuim" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\estrelaRuim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="estrelaBom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\estrelaBom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="estrelaRegular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\estrelaRegular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="estrelaOtimo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\estrelaOtimo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgCabecalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\imgCabecalho.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgCabecalho1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\imgCabecalho1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imgRodape" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\imgRodape.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaRegularCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaRegularCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaRegular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaRegular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaRuim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaRuim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgObra4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\imgObra4.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgObra2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\imgObra2.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="estrelaBomCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaBomCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="estrelaPessimo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\estrelaPessimo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgCabecalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\imgCabecalho.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaRuimCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaRuimCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgObra3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\imgObra3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imgObra1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\imgObra1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaPessimoCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaPessimoCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaOtimoCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaOtimoCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estrelaOtimo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaOtimo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

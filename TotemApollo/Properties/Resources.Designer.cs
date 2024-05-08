@@ -73,9 +73,29 @@ namespace TotemApollo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap estrelaBomCinza {
+            get {
+                object obj = ResourceManager.GetObject("estrelaBomCinza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estrelaOtimo {
             get {
                 object obj = ResourceManager.GetObject("estrelaOtimo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estrelaOtimoCinza {
+            get {
+                object obj = ResourceManager.GetObject("estrelaOtimoCinza", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +113,16 @@ namespace TotemApollo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap estrelaPessimoCinza {
+            get {
+                object obj = ResourceManager.GetObject("estrelaPessimoCinza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estrelaRegular {
             get {
                 object obj = ResourceManager.GetObject("estrelaRegular", resourceCulture);
@@ -103,9 +133,29 @@ namespace TotemApollo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap estrelaRegularCinza {
+            get {
+                object obj = ResourceManager.GetObject("estrelaRegularCinza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estrelaRuim {
             get {
                 object obj = ResourceManager.GetObject("estrelaRuim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estrelaRuimCinza {
+            get {
+                object obj = ResourceManager.GetObject("estrelaRuimCinza", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
