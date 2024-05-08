@@ -117,6 +117,7 @@ namespace TotemApollo
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
         {
             pnlQuestionario.Visible = false;
+            pnlObraDescricao.Show();
         }
 
         // Evento de clique do botão para salvar as respostas e exibir o relatório cumulativo
