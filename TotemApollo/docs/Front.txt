@@ -1,0 +1,17 @@
+TelaCadastro
+	Elementos do front-end:
+
+	GroupBox: Para organiza��o de layout.
+		lblNome //Indicador do que se refere a caixa de texto para usu�rio.
+			Propriedades:
+				MaxLength definido para at� 20 caracteres.
+		lblDataNascimento // Indicador do que se refere a caixa de texto para usu�rio.
+
+		txbNome //Caixa de texto para inserir o nome.
+			Eventos:
+				txbNome_Enter //Evento para adicionar cor na caixa de texto selecionada.
+		txbDataNascimento //Caixa de texto para inserir idade.
+
+		btnIniciar //Bot�o para inciar a descri��o.
+
+	Propriedades
