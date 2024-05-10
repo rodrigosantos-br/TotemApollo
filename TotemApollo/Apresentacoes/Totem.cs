@@ -9,7 +9,7 @@ namespace TotemApollo
         private ObrasControle _obras;
         private readonly QuestionarioControle _questionario;
         private readonly FormularioControle _formulario;
-        private readonly List<CheckBox[]> opcoesResposta;
+        private readonly List<CheckBox> _checkboxes;
         
         public Totem()
         {
@@ -18,10 +18,8 @@ namespace TotemApollo
             _questionario = new QuestionarioControle();
             _teclado = new TecladoControle();
             _teclado.TeclaProcessada += Teclado_TeclaProcessada;
-            opcoesResposta =
-            [
-                [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo],
-            ];
+            _checkboxes = [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo];
+            _questionario.AssociarCheckBoxes(_checkboxes);
         }
 
         private void Teclado_TeclaProcessada(object sender, string teclaProcessada)
@@ -118,7 +116,7 @@ namespace TotemApollo
             pnlObraDescricao.Visible = false;
             pnlQuestionario.Show();
             _questionario.IncrementarContadorInteracoes();
-            MostrarProximaPergunta();
+            _questionario.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
         }
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
@@ -155,11 +153,12 @@ namespace TotemApollo
 
         private void BtnProximaPergunta_Click(object sender, EventArgs e)
         {
-            // Verificar se todas as perguntas foram respondidas antes de avançar
+            // Obter todas as respostas do formulário
             List<int> respostas = _questionario.ObterRespostasDoFormulario(
-                new CheckBox[] { chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo }
+                [[chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]]
             );
 
+            // Verificar se todas as perguntas foram respondidas
             if (!_questionario.ValidarRespostas(respostas))
             {
                 MessageBox.Show("Por favor, responda todas as perguntas.");
@@ -167,42 +166,21 @@ namespace TotemApollo
             }
 
             // Adicionar as respostas ao questionário
-            for (int i = 0; i < respostas.Count; i++)
-            {
-                _questionario.AdicionarRespostas(_questionario.IndicePerguntaAtual, respostas[i]);
-            }
+            _questionario.AdicionarRespostasDoFormulario(respostas);
 
-            // Avançar para a próxima pergunta
-            _questionario.IndicePerguntaAtual++;
 
             // Verificar se é a última pergunta
-            if (_questionario.IndicePerguntaAtual == _questionario.ObterPerguntas().Count)
+            if (_questionario.IndicePerguntaAtual >= _questionario.ObterPerguntas().Count)
             {
+                // Se for a última pergunta, ocultar o botão "Próxima Pergunta" e exibir o botão "Finalizar"
                 btnProximaPergunta.Visible = false;
-                btnFinalizar.Visible = true;
+                ButtonFinalizar_Click(sender, e);
             }
             else
             {
                 // Mostrar a próxima pergunta e redefinir as checkboxes
-                MostrarProximaPergunta();
+                _questionario.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
             }
-        }
-
-        private void MostrarProximaPergunta()
-        {
-            // Obter a próxima pergunta
-            string proximaPergunta = _questionario.ObterPerguntas()[_questionario.IndicePerguntaAtual];
-
-            // Atualizar o texto da pergunta no formulário
-            lblPergunta.Text = proximaPergunta;
-
-            // Redefinir todas as checkboxes para desmarcadas
-            chkPessimo.Checked = false;
-            chkRuim.Checked = false;
-            chkRegular.Checked = false;
-            chkBom.Checked = false;
-            chkOtimo.Checked = false;
-
         }
 
         private void ButtonFinalizar_Click(object sender, EventArgs e)

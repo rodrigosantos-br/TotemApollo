@@ -4,7 +4,7 @@ namespace TotemApollo.Apresentacoes
 {
     public partial class AreaSecreta : Form
     {
-        private QuestionarioControle _questionario;
+        private readonly QuestionarioControle _questionario;
 
         public AreaSecreta()
         {

@@ -9,7 +9,7 @@ namespace TotemApollo.Modelos
     {
         private readonly List<string> perguntas;
         public static readonly List<List<int>> respostas = [];
-        public static int contadorInteracoes;
+        private static int contadorInteracoes;
 
         public Questionario()
         {

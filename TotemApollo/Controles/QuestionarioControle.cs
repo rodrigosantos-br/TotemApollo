@@ -7,12 +7,13 @@ namespace TotemApollo.Controles
         private readonly Questionario questionario;
         private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
-
+        private List<CheckBox> checkboxes;
 
         public QuestionarioControle()
         {
             questionario = new Questionario();
             validacao = new QuestionarioValidacao();
+            indicePerguntaAtual = 0;
         }
 
         public List<double> ObterPorcentagens()
@@ -35,7 +36,34 @@ namespace TotemApollo.Controles
             return validacao.ValidarRespostas(respostas);
         }
 
-        public List<int> ObterRespostasDoFormulario(params CheckBox[][] opcoes)
+        public void AdicionarRespostasDoFormulario(List<int> respostas)
+        {
+            // Verificar se o índice da pergunta está dentro dos limites
+            if (indicePerguntaAtual < 0 || indicePerguntaAtual >= questionario.ObterPerguntas().Count)
+            {
+                throw new IndexOutOfRangeException("O índice da pergunta está fora dos limites.");
+            }
+
+            // Adicionar as respostas ao questionário
+            for (int i = 0; i < respostas.Count; i++)
+            {
+                // Verificar se o índice da pergunta + i está dentro dos limites
+                int indice = indicePerguntaAtual + i;
+                if (indice >= 0 && indice < questionario.ObterPerguntas().Count)
+                {
+                    questionario.AdicionarResposta(indice, respostas[i]);
+                }
+                else
+                {
+                    throw new IndexOutOfRangeException("O índice da pergunta está fora dos limites.");
+                }
+            }
+
+            // Avançar para a próxima pergunta
+            indicePerguntaAtual += respostas.Count;
+        }
+
+        public List<int> ObterRespostasDoFormulario(List<CheckBox[]> opcoes)
         {
             List<int> respostas = [];
 
@@ -81,14 +109,54 @@ namespace TotemApollo.Controles
             return questionario.ObterRelatorioCumulativo();
         }
 
-        public void DesmarcarOutrosCheckBoxes(CheckBox checkBox)
+        public void MostrarProximaPergunta(Label labelPergunta, CheckBox[] checkboxes)
         {
-            foreach (Control control in Application.OpenForms[0].Controls)
+            // Verificar se há perguntas disponíveis
+            if (ObterPerguntas().Count == 0)
             {
-                if (control is CheckBox chk && chk != checkBox)
+                // Se não houver perguntas, não há nada para mostrar
+                return;
+            }
+
+            // Verificar se o índice da próxima pergunta está dentro do intervalo válido
+            if (IndicePerguntaAtual >= 0 && IndicePerguntaAtual < ObterPerguntas().Count)
+            {
+                // Obter a próxima pergunta
+                string proximaPergunta = ObterPerguntas()[IndicePerguntaAtual];
+
+                // Atualizar o texto da pergunta no formulário
+                labelPergunta.Text = proximaPergunta;
+
+                // Redefinir todas as checkboxes para desmarcadas
+                foreach (var checkbox in checkboxes)
                 {
-                    chk.Checked = false; // Define o estado de seleção como falso
+                    checkbox.Checked = false;
                 }
+            }
+            else
+            {
+                // Se o índice da próxima pergunta estiver fora dos limites, não há nada para mostrar
+                return;
+            }
+        }
+
+        private void DesmarcarOutrosCheckBoxes(CheckBox checkBox)
+        {
+            foreach (var otherCheckBox in checkboxes)
+            {
+                if (otherCheckBox != checkBox)
+                {
+                    otherCheckBox.Checked = false;
+                }
+            }
+        }
+
+        public void AssociarCheckBoxes(List<CheckBox> checkboxes)
+        {
+            this.checkboxes = checkboxes;
+            foreach (var checkBox in checkboxes)
+            {
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
             }
         }
 
@@ -99,7 +167,6 @@ namespace TotemApollo.Controles
 
             if (checkBox.Checked)
             {
-
                 // Lógica para manipular a imagem do CheckBox
                 switch (checkBox.Name)
                 {
