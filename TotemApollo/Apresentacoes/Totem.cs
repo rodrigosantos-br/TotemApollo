@@ -172,8 +172,7 @@ namespace TotemApollo
             // Verificar se é a última pergunta
             if (_questionario.IndicePerguntaAtual >= _questionario.ObterPerguntas().Count)
             {
-                // Se for a última pergunta, ocultar o botão "Próxima Pergunta" e exibir o botão "Finalizar"
-                btnProximaPergunta.Visible = false;
+                // Se for a última pergunta clica no botão "Finalizar"
                 ButtonFinalizar_Click(sender, e);
             }
             else

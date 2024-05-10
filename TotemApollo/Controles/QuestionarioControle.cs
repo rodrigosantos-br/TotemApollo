@@ -111,13 +111,6 @@ namespace TotemApollo.Controles
 
         public void MostrarProximaPergunta(Label labelPergunta, CheckBox[] checkboxes)
         {
-            // Verificar se há perguntas disponíveis
-            if (ObterPerguntas().Count == 0)
-            {
-                // Se não houver perguntas, não há nada para mostrar
-                return;
-            }
-
             // Verificar se o índice da próxima pergunta está dentro do intervalo válido
             if (IndicePerguntaAtual >= 0 && IndicePerguntaAtual < ObterPerguntas().Count)
             {
@@ -132,11 +125,6 @@ namespace TotemApollo.Controles
                 {
                     checkbox.Checked = false;
                 }
-            }
-            else
-            {
-                // Se o índice da próxima pergunta estiver fora dos limites, não há nada para mostrar
-                return;
             }
         }
 

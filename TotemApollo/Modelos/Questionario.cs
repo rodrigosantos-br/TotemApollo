@@ -8,8 +8,6 @@ namespace TotemApollo.Modelos
     public class Questionario
     {
         private readonly List<string> perguntas;
-        public static readonly List<List<int>> respostas = [];
-        private static int contadorInteracoes;
 
         public Questionario()
         {
@@ -24,7 +22,7 @@ namespace TotemApollo.Modelos
 
             for (int i = 0; i < perguntas.Count; i++)
             {
-                respostas.Add([]);
+                QuestionarioEstaticos.respostas.Add([]);
             }
         }
 
@@ -32,7 +30,7 @@ namespace TotemApollo.Modelos
         {
             if (indicePergunta >= 0 && indicePergunta < perguntas.Count)
             {
-                respostas[indicePergunta].Add(resposta);
+                QuestionarioEstaticos.respostas[indicePergunta].Add(resposta);
             }
             else
             {
@@ -51,7 +49,7 @@ namespace TotemApollo.Modelos
             int[] totalPorOpcao = new int[5];
 
             // Acessando a lista de respostas da instância atual
-            foreach (var resposta in respostas)
+            foreach (var resposta in QuestionarioEstaticos.respostas)
             {
                 foreach (var opcao in resposta)
                 {
@@ -59,7 +57,7 @@ namespace TotemApollo.Modelos
                 }
             }
 
-            double totalRespostas = respostas.Sum(r => r.Count);
+            double totalRespostas = QuestionarioEstaticos.respostas.Sum(r => r.Count);
 
             foreach (int totalOpcao in totalPorOpcao)
             {
@@ -75,7 +73,7 @@ namespace TotemApollo.Modelos
         {
             List<string> relatorio =
             [
-                $"Número Total de Interações: {contadorInteracoes}"
+                $"Número Total de Interações: {QuestionarioEstaticos.contadorInteracoes}"
             ];
 
             string[] opcoes = ["Péssimo", "Ruim", "Regular", "Bom", "Ótimo"];
@@ -85,10 +83,10 @@ namespace TotemApollo.Modelos
                 StringBuilder respostaFormatada = new();
                 respostaFormatada.Append('\n').Append(perguntas[i]).Append(" \n");
 
-                if (i < respostas.Count)
+                if (i < QuestionarioEstaticos.respostas.Count)
                 {
                     int[] contador = new int[5];
-                    foreach (var resposta in respostas[i])
+                    foreach (var resposta in QuestionarioEstaticos.respostas[i])
                     {
                         if (resposta >= 1 && resposta <= 5)
                         {
@@ -109,14 +107,14 @@ namespace TotemApollo.Modelos
 
         public void IncrementarContadorInteracoes()
         {
-            contadorInteracoes++;
+            QuestionarioEstaticos.contadorInteracoes++;
         }
 
         public void DecrementarContadorInteracoes()
         {
-            contadorInteracoes--;
+            QuestionarioEstaticos.contadorInteracoes--;
         }
 
-        public int ContadorInteracoes => contadorInteracoes;
+        public int ContadorInteracoes => QuestionarioEstaticos.contadorInteracoes;
     }
 }
