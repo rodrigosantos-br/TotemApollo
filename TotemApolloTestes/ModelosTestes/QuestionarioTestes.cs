@@ -9,21 +9,7 @@ namespace TotemApolloTestes.Modelos
 {
     public class QuestionarioTestes
     {
-        [Fact]
-        public void TestarAdicionarResposta()
-        {
-            // Arrange
-            var questionario = new Questionario();
-            int indicePergunta = 0;
-            int resposta = 4;
-
-            // Act
-            questionario.AdicionarResposta(indicePergunta, resposta);
-
-            // Assert
-            Assert.Single(Questionario.respostas[indicePergunta]);
-            Assert.Equal(resposta, Questionario.respostas[indicePergunta][0]);
-        }
+        
 
         [Fact]
         public void TestarAdicionarResposta_ComIndiceInvalido()

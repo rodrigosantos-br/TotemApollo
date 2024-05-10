@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-
-using TotemApollo.Controles;
+﻿using TotemApollo.Controles;
 
 namespace TotemApollo.Apresentacoes
 {
@@ -16,16 +12,20 @@ namespace TotemApollo.Apresentacoes
             _questionario = new QuestionarioControle();
         }
 
-        private void btnMostrarRelatorio_Click(object sender, EventArgs e)
+        private void BtnFecharPrograma_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnVoltarCadastro_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void AreaSecreta_Load(object sender, EventArgs e)
         {
             // Obter as porcentagens totais para cada categoria de resposta
             List<double> porcentagens = _questionario.ObterPorcentagens();
-
-            // Limpar as células do DataGridView
-            dgvRelatorio.Rows.Clear();
-
-            // Adicionar uma nova linha ao DataGridView
-            dgvRelatorio.Rows.Add();
 
             // Definir os valores das células na única linha do DataGridView
             dgvRelatorio.Rows[0].Cells[0].Value = _questionario.ObterContadorInteracoes(); // Total de Interações
@@ -34,11 +34,6 @@ namespace TotemApollo.Apresentacoes
             dgvRelatorio.Rows[0].Cells[3].Value = $"{porcentagens[2]:0.00}%"; // Regular
             dgvRelatorio.Rows[0].Cells[4].Value = $"{porcentagens[1]:0.00}%"; // Insatisfeito
             dgvRelatorio.Rows[0].Cells[5].Value = $"{porcentagens[0]:0.00}%"; // Muito Insatisfeito
-        }
-
-        private void btnFecharPrograma_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

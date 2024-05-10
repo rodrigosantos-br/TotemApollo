@@ -89,7 +89,6 @@ C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Apresen
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Totem.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.TecladoControle.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Properties.Resources.resources
-C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Propriedades.Resources.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.csproj.GenerateResource.cache
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.AssemblyInfoInputs.cache

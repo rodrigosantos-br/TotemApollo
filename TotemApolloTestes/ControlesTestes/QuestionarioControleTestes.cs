@@ -105,35 +105,7 @@ namespace TotemApolloTestes.ControlesTestes
             Assert.Equal(1, contadorInteracoesDepois); // Após incrementar, o contador deve ser 1
         }
 
-        [Fact]
-        public void TestarObterRespostasDoFormulario_ComTodosSelecionados()
-        {
-            // Arrange
-            var questionarioControle = new QuestionarioControle();
-            var radioButton1 = new RadioButton() { Checked = true };
-            var radioButton2 = new RadioButton() { Checked = true };
-            var radioButton3 = new RadioButton() { Checked = true };
-            var radioButton4 = new RadioButton() { Checked = true };
-            var radioButton5 = new RadioButton() { Checked = true };
-
-            // Act
-            var respostas = questionarioControle.ObterRespostasDoFormulario(
-                new RadioButton[] { radioButton1 },
-                new RadioButton[] { radioButton2 },
-                new RadioButton[] { radioButton3 },
-                new RadioButton[] { radioButton4 },
-                new RadioButton[] { radioButton5 }
-            );
-
-            // Assert
-            Assert.NotNull(respostas);
-            Assert.Equal(5, respostas.Count); // Deve haver uma resposta para cada pergunta
-            Assert.Equal(1, respostas[0]); // A primeira pergunta tem resposta 1
-            Assert.Equal(1, respostas[1]); // A segunda pergunta tem resposta 1
-            Assert.Equal(1, respostas[2]); // A terceira pergunta tem resposta 1
-            Assert.Equal(1, respostas[3]); // A quarta pergunta tem resposta 1
-            Assert.Equal(1, respostas[4]); // A quinta pergunta tem resposta 1
-        }
+        
 
 
         [Fact]

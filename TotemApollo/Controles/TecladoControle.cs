@@ -1,4 +1,5 @@
 ﻿using TotemApollo.Apresentacoes;
+using TotemApollo.Controles;
 
 namespace TotemApollo
 {
@@ -19,7 +20,7 @@ namespace TotemApollo
         {
             if (chkCtrl.Checked && chkAlt.Checked)
             {
-                AreaSecreta areaSecreta = new AreaSecreta();
+                AreaSecreta areaSecreta = new();
                 areaSecreta.Show();
                 chkAlt.Checked = false;
                 chkCtrl.Checked = false;

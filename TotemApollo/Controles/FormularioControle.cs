@@ -25,9 +25,9 @@ namespace TotemApollo.Controles
                 {
                     ((CheckBox)controle).Checked = false;
                 }
-                else if (controle is RadioButton)
+                else if (controle is CheckBox)
                 {
-                    ((RadioButton)controle).Checked = false;
+                    ((CheckBox)controle).Checked = false;
                 }
 
                 // Recursivamente limpar os controles filhos, se houver

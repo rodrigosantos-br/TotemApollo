@@ -1,6 +1,4 @@
-﻿using TotemApollo.Apresentacoes;
-using TotemApollo.Controles;
-using TotemApollo.Modelos;
+﻿using TotemApollo.Controles;
 
 namespace TotemApollo
 {
@@ -11,7 +9,8 @@ namespace TotemApollo
         private ObrasControle _obras;
         private readonly QuestionarioControle _questionario;
         private readonly FormularioControle _formulario;
-
+        private readonly List<CheckBox[]> opcoesResposta;
+        
         public Totem()
         {
             InitializeComponent();
@@ -19,36 +18,36 @@ namespace TotemApollo
             _questionario = new QuestionarioControle();
             _teclado = new TecladoControle();
             _teclado.TeclaProcessada += Teclado_TeclaProcessada;
+            opcoesResposta =
+            [
+                [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo],
+            ];
         }
 
         private void Teclado_TeclaProcessada(object sender, string teclaProcessada)
         {
             if (teclaProcessada == "Enter")
-            {
-                // Clicar no botão "Iniciar"
+            // Clicar no botão "Iniciar"
                 btnIniciar.PerformClick();
-            }
+
             else if (teclaProcessada == "K")
-            {
+            // Caps e Shift devem estar selecionados
                 _teclado.AbrirAreaSecreta();
-            }
+            
             else if (teclaProcessada == "Backspace")
-            {
                 _teclado.RemoveUltimoCaractere(txbNome);
-            }
+            
             else
-            {
                 // Adicionar a tecla processada ao texto
                 txbNome.Text += teclaProcessada;
-            }
         }
 
-        private void TextBoxNome_Enter(object sender, EventArgs e)
+        private void TxbNome_Enter(object sender, EventArgs e)
         {
             _teclado.AdicionarTeclado(pnlCadastro);
         }
 
-        private void TextBoxNome_Leave(object sender, EventArgs e)
+        private void TxbNome_Leave(object sender, EventArgs e)
         {
             // Verifica se o controle que recebeu o foco não é o teclado virtual
             if (this.ActiveControl != _teclado)
@@ -62,19 +61,19 @@ namespace TotemApollo
             mtcCalendario.Visible = false;
         }
 
-        private void TextBoxDataNascimento_Enter(object sender, EventArgs e)
+        private void TxbDataNascimento_Enter(object sender, EventArgs e)
         {
             mtcCalendario.Visible = true;
             _teclado.RemoverTeclado(pnlCadastro);
         }
 
-        private void TextBoxDataNascimento_Leave(object sender, EventArgs e)
+        private void TxbDataNascimento_Leave(object sender, EventArgs e)
         {
             if (ActiveControl != mtcCalendario)
                 mtcCalendario.Visible = false;
         }
 
-        private void BotaoIniciar_Click(object sender, EventArgs e)
+        private void BtnIniciar_Click(object sender, EventArgs e)
         {
             _cadastro = new CadastroControle(txbNome.Text, txbDataNascimento.Text);
 
@@ -94,14 +93,21 @@ namespace TotemApollo
                 return;
             }
         }
+        private void BtnVoltar_Click(object sender, EventArgs e)
+        {
+            pnlObraDescricao.Visible = false;
+            _cadastro.RemoverUltimoVisitante();
+            _formulario.LimparControles(Controls);
+            pnlCadastro.Show();
+        }
 
-        private void btnAvancarObra_Click(object sender, EventArgs e)
+        private void BtnAvancarObra_Click(object sender, EventArgs e)
         {
             _obras.AvancarParaProximaObra();
             _obras.ExibirObraAtual(pbxImagemObra, lblDescricao); // Atualiza a exibição com a próxima obra
         }
 
-        private void btnRetrocederObra_Click(object sender, EventArgs e)
+        private void BtnRetrocederObra_Click(object sender, EventArgs e)
         {
             _obras.RetrocederParaObraAnterior();
             _obras.ExibirObraAtual(pbxImagemObra, lblDescricao); // Atualiza a exibição com a obra anterior
@@ -112,133 +118,109 @@ namespace TotemApollo
             pnlObraDescricao.Visible = false;
             pnlQuestionario.Show();
             _questionario.IncrementarContadorInteracoes();
-            // Defina a imagem de fundo de cada CheckBox como a imagem cinza correspondente
-            chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
-            chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
-            chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
-            chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
-            chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
+            MostrarProximaPergunta();
         }
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
         {
             pnlQuestionario.Visible = false;
             pnlObraDescricao.Show();
+            _questionario.DecrementarContadorInteracoes();
         }
 
-        private void chkPessimo_CheckedChanged(object sender, EventArgs e)
+        private void ChkPessimo_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkPessimo.Checked)
+            _questionario.CheckBox_CheckedChanged(sender, e);
+        }
+
+        private void ChkRuim_CheckedChanged(object sender, EventArgs e)
+        {
+            _questionario.CheckBox_CheckedChanged(sender, e);
+        }
+
+        private void ChkRegular_CheckedChanged(object sender, EventArgs e)
+        {
+            _questionario.CheckBox_CheckedChanged(sender, e);
+        }
+
+        private void ChkBom_CheckedChanged(object sender, EventArgs e)
+        {
+            _questionario.CheckBox_CheckedChanged(sender, e);
+        }
+
+        private void ChkOtimo_CheckedChanged(object sender, EventArgs e)
+        {
+            _questionario.CheckBox_CheckedChanged(sender, e);
+        }
+
+        private void BtnProximaPergunta_Click(object sender, EventArgs e)
+        {
+            // Verificar se todas as perguntas foram respondidas antes de avançar
+            List<int> respostas = _questionario.ObterRespostasDoFormulario(
+                new CheckBox[] { chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo }
+            );
+
+            if (!_questionario.ValidarRespostas(respostas))
             {
-                _questionario.DesativarOutrosCheckBoxes(chkPessimo);
-                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimo;
-                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
-                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
-                chkRuim.Checked = false;
-                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
-                chkRegular.Checked = false;
-                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
-                chkBom.Checked = false;
-                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
-                chkOtimo.Checked = false;
+                MessageBox.Show("Por favor, responda todas as perguntas.");
+                return;
+            }
+
+            // Adicionar as respostas ao questionário
+            for (int i = 0; i < respostas.Count; i++)
+            {
+                _questionario.AdicionarRespostas(_questionario.IndicePerguntaAtual, respostas[i]);
+            }
+
+            // Avançar para a próxima pergunta
+            _questionario.IndicePerguntaAtual++;
+
+            // Verificar se é a última pergunta
+            if (_questionario.IndicePerguntaAtual == _questionario.ObterPerguntas().Count)
+            {
+                btnProximaPergunta.Visible = false;
+                btnFinalizar.Visible = true;
             }
             else
             {
-                _questionario.HabilitarCheckBoxes();
-                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
+                // Mostrar a próxima pergunta e redefinir as checkboxes
+                MostrarProximaPergunta();
             }
         }
 
-        private void chkRuim_CheckedChanged(object sender, EventArgs e)
+        private void MostrarProximaPergunta()
         {
-            if (chkRuim.Checked)
-            {
-                _questionario.DesativarOutrosCheckBoxes(chkRuim);
-                chkRuim.BackgroundImage = Properties.Resources.estrelaRuim;
-                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
-                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
-                chkPessimo.Checked = false;
-                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
-                chkRegular.Checked = false;
-                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
-                chkBom.Checked = false;
-                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
-                chkOtimo.Checked = false;
-            }
-            else
-            {
-                _questionario.HabilitarCheckBoxes();
-                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
-            }
+            // Obter a próxima pergunta
+            string proximaPergunta = _questionario.ObterPerguntas()[_questionario.IndicePerguntaAtual];
+
+            // Atualizar o texto da pergunta no formulário
+            lblPergunta.Text = proximaPergunta;
+
+            // Redefinir todas as checkboxes para desmarcadas
+            chkPessimo.Checked = false;
+            chkRuim.Checked = false;
+            chkRegular.Checked = false;
+            chkBom.Checked = false;
+            chkOtimo.Checked = false;
+
         }
 
-        private void chkRegular_CheckedChanged(object sender, EventArgs e)
+        private void ButtonFinalizar_Click(object sender, EventArgs e)
         {
-            if (chkRegular.Checked)
-            {
-                _questionario.DesativarOutrosCheckBoxes(chkRegular);
-                chkRegular.BackgroundImage = Properties.Resources.estrelaRegular;
-                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
-                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
-                chkPessimo.Checked = false;
-                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
-                chkRuim.Checked = false;
-                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
-                chkBom.Checked = false;
-                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
-                chkOtimo.Checked = false;
-            }
-            else
-            {
-                _questionario.HabilitarCheckBoxes();
-                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
-            }
+            // Obter o relatório cumulativo
+            List<string> relatorio = _questionario.ObterRelatorioCumulativo();
+
+            // Exibir o relatório
+            MessageBox.Show(string.Join("\n", relatorio), "Relatório Total de Cada Resposta nas Interações");
+
+            // Voltar para a tela inicial
+            pnlQuestionario.Visible = false;
+            pnlCadastro.Show();
+            _questionario.IndicePerguntaAtual= 0;
+            _formulario.LimparControles(Controls);
+            btnProximaPergunta.Visible = true;
+            btnFinalizar.Visible = false;
         }
 
-        private void chkBom_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkBom.Checked)
-            {
-                _questionario.DesativarOutrosCheckBoxes(chkBom);
-                chkBom.BackgroundImage = Properties.Resources.estrelaBom;
-                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
-                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
-                chkPessimo.Checked = false;
-                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
-                chkRuim.Checked = false;
-                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
-                chkRegular.Checked = false;
-                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
-                chkOtimo.Checked = false;
-            }
-            else
-            {
-                _questionario.HabilitarCheckBoxes();
-                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
-            }
-        }
-
-        private void chkOtimo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkOtimo.Checked)
-            {
-                _questionario.DesativarOutrosCheckBoxes(chkOtimo);
-                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimo;
-                // Redefine as imagens dos outros CheckBoxes para cinza e desmarca-los
-                chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
-                chkPessimo.Checked = false;
-                chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
-                chkRuim.Checked = false;
-                chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
-                chkRegular.Checked = false;
-                chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
-                chkBom.Checked = false;
-            }
-            else
-            {
-                _questionario.HabilitarCheckBoxes();
-                chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
-            }
-        }
     }
 }

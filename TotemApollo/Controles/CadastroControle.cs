@@ -31,6 +31,7 @@ namespace TotemApollo.Controles
             }
         }
 
+
         public void RemoverUltimoVisitante()
         {
             museu.RemoverUltimoVisitante();

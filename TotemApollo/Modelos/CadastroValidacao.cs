@@ -9,7 +9,7 @@ namespace TotemApollo.Modelos
     public class CadastroValidacao
     {
         private string nome;
-        private string dataNascimento;
+        private readonly string dataNascimento;
         private string mensagemNome;
         private string mensagemDataNascimento;
 
@@ -27,14 +27,14 @@ namespace TotemApollo.Modelos
             // Verificar se o nome não está vazio
             if (string.IsNullOrWhiteSpace(nome))
             {
-                mensagemNome = " Nome não pode ser vazio. ";
+                mensagemNome = "\nNome não pode ser vazio.";
                 return;
             }
 
             // Verificar o comprimento do nome
             if (nome.Length < 3 || nome.Length > 20)
             {
-                mensagemNome = " Nome deve ter entre 3 e 20 caracteres. ";
+                mensagemNome = "\nNome deve ter entre 3 e 20 caracteres.";
                 return;
             }
 
@@ -48,11 +48,9 @@ namespace TotemApollo.Modelos
             // Verificar se a data de nascimento não está vazia
             if (string.IsNullOrWhiteSpace(dataNascimento))
             {
-                mensagemDataNascimento = "Data de nascimento não pode ser vazia.";
+                mensagemDataNascimento = "\nData de nascimento não pode ser vazia.";
                 return;
             }
-
-            // Outras verificações de validade da data de nascimento podem ser adicionadas aqui
         }
 
         public string MensagemNome { get => mensagemNome; }

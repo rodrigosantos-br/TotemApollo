@@ -35,39 +35,44 @@
             btnIniciar = new Button();
             mtcCalendario = new MonthCalendar();
             pnlCadastro = new Panel();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            pcbRodapeCadastro = new PictureBox();
+            pcbCabecalhoCadastro = new PictureBox();
             pnlObraDescricao = new Panel();
             lblDescricao = new Label();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pcbRodapeObraDescricao = new PictureBox();
+            pcbCabecalhoObraDescricao = new PictureBox();
             btnAvancarObra = new Button();
             btnRetrocederObra = new Button();
             pbxImagemObra = new PictureBox();
             btnVoltar = new Button();
             btnQuestionario = new Button();
             pnlQuestionario = new Panel();
+            lblOtimo = new Label();
+            lblBom = new Label();
+            lblRegular = new Label();
+            lblRuim = new Label();
+            lblPessimo = new Label();
             btnProximaPergunta = new Button();
             chkPessimo = new CheckBox();
             chkRuim = new CheckBox();
             chkRegular = new CheckBox();
             chkBom = new CheckBox();
             chkOtimo = new CheckBox();
-            pictureBox6 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            pcbRodapeQuestionario = new PictureBox();
+            pcbCabecalhoQuestionario = new PictureBox();
             lblPergunta = new Label();
             btnFinalizar = new Button();
             btnVoltarQ = new Button();
             pnlCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbRodapeCadastro).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbCabecalhoCadastro).BeginInit();
             pnlObraDescricao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbRodapeObraDescricao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).BeginInit();
             pnlQuestionario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbRodapeQuestionario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbCabecalhoQuestionario).BeginInit();
             SuspendLayout();
             // 
             // lblNome
@@ -94,8 +99,9 @@
             txbNome.PlaceholderText = "Digite seu primeiro nome.";
             txbNome.Size = new Size(277, 32);
             txbNome.TabIndex = 1;
-            txbNome.Enter += TextBoxNome_Enter;
-            txbNome.Leave += TextBoxNome_Leave;
+            txbNome.TabStop = false;
+            txbNome.Enter += TxbNome_Enter;
+            txbNome.Leave += TxbNome_Leave;
             // 
             // lblDataNascimento
             // 
@@ -119,8 +125,9 @@
             txbDataNascimento.PlaceholderText = "Digite sua data de nascimento.";
             txbDataNascimento.Size = new Size(277, 32);
             txbDataNascimento.TabIndex = 2;
-            txbDataNascimento.Enter += TextBoxDataNascimento_Enter;
-            txbDataNascimento.Leave += TextBoxDataNascimento_Leave;
+            txbDataNascimento.TabStop = false;
+            txbDataNascimento.Enter += TxbDataNascimento_Enter;
+            txbDataNascimento.Leave += TxbDataNascimento_Leave;
             // 
             // btnIniciar
             // 
@@ -131,9 +138,10 @@
             btnIniciar.Name = "btnIniciar";
             btnIniciar.Size = new Size(120, 36);
             btnIniciar.TabIndex = 4;
+            btnIniciar.TabStop = false;
             btnIniciar.Text = "Iniciar";
             btnIniciar.UseVisualStyleBackColor = true;
-            btnIniciar.Click += BotaoIniciar_Click;
+            btnIniciar.Click += BtnIniciar_Click;
             // 
             // mtcCalendario
             // 
@@ -149,8 +157,8 @@
             // 
             // pnlCadastro
             // 
-            pnlCadastro.Controls.Add(pictureBox4);
-            pnlCadastro.Controls.Add(pictureBox3);
+            pnlCadastro.Controls.Add(pcbRodapeCadastro);
+            pnlCadastro.Controls.Add(pcbCabecalhoCadastro);
             pnlCadastro.Controls.Add(mtcCalendario);
             pnlCadastro.Controls.Add(txbDataNascimento);
             pnlCadastro.Controls.Add(btnIniciar);
@@ -163,37 +171,37 @@
             pnlCadastro.Size = new Size(1184, 667);
             pnlCadastro.TabIndex = 2;
             // 
-            // pictureBox4
+            // pcbRodapeCadastro
             // 
-            pictureBox4.Dock = DockStyle.Bottom;
-            pictureBox4.Image = Properties.Resources.imgRodape;
-            pictureBox4.Location = new Point(0, 547);
-            pictureBox4.Margin = new Padding(2);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(1184, 120);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 8;
-            pictureBox4.TabStop = false;
+            pcbRodapeCadastro.Dock = DockStyle.Bottom;
+            pcbRodapeCadastro.Image = Properties.Resources.imgRodape;
+            pcbRodapeCadastro.Location = new Point(0, 547);
+            pcbRodapeCadastro.Margin = new Padding(2);
+            pcbRodapeCadastro.Name = "pcbRodapeCadastro";
+            pcbRodapeCadastro.Size = new Size(1184, 120);
+            pcbRodapeCadastro.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbRodapeCadastro.TabIndex = 8;
+            pcbRodapeCadastro.TabStop = false;
             // 
-            // pictureBox3
+            // pcbCabecalhoCadastro
             // 
-            pictureBox3.Dock = DockStyle.Top;
-            pictureBox3.Image = Properties.Resources.imgCabecalho1;
-            pictureBox3.Location = new Point(0, 0);
-            pictureBox3.Margin = new Padding(2);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1184, 120);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 7;
-            pictureBox3.TabStop = false;
+            pcbCabecalhoCadastro.Dock = DockStyle.Top;
+            pcbCabecalhoCadastro.Image = Properties.Resources.imgCabecalho1;
+            pcbCabecalhoCadastro.Location = new Point(0, 0);
+            pcbCabecalhoCadastro.Margin = new Padding(2);
+            pcbCabecalhoCadastro.Name = "pcbCabecalhoCadastro";
+            pcbCabecalhoCadastro.Size = new Size(1184, 120);
+            pcbCabecalhoCadastro.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbCabecalhoCadastro.TabIndex = 7;
+            pcbCabecalhoCadastro.TabStop = false;
             // 
             // pnlObraDescricao
             // 
             pnlObraDescricao.AccessibleRole = AccessibleRole.ScrollBar;
             pnlObraDescricao.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlObraDescricao.Controls.Add(lblDescricao);
-            pnlObraDescricao.Controls.Add(pictureBox2);
-            pnlObraDescricao.Controls.Add(pictureBox1);
+            pnlObraDescricao.Controls.Add(pcbRodapeObraDescricao);
+            pnlObraDescricao.Controls.Add(pcbCabecalhoObraDescricao);
             pnlObraDescricao.Controls.Add(btnAvancarObra);
             pnlObraDescricao.Controls.Add(btnRetrocederObra);
             pnlObraDescricao.Controls.Add(pbxImagemObra);
@@ -212,36 +220,36 @@
             lblDescricao.Anchor = AnchorStyles.None;
             lblDescricao.AutoEllipsis = true;
             lblDescricao.FlatStyle = FlatStyle.Flat;
-            lblDescricao.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescricao.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDescricao.Location = new Point(585, 159);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(483, 329);
+            lblDescricao.Size = new Size(541, 329);
             lblDescricao.TabIndex = 1;
             lblDescricao.Text = "Descrição da obra aqui.";
             // 
-            // pictureBox2
+            // pcbRodapeObraDescricao
             // 
-            pictureBox2.Dock = DockStyle.Bottom;
-            pictureBox2.Image = Properties.Resources.imgRodape;
-            pictureBox2.Location = new Point(0, 547);
-            pictureBox2.Margin = new Padding(2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1184, 120);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 9;
-            pictureBox2.TabStop = false;
+            pcbRodapeObraDescricao.Dock = DockStyle.Bottom;
+            pcbRodapeObraDescricao.Image = Properties.Resources.imgRodape;
+            pcbRodapeObraDescricao.Location = new Point(0, 547);
+            pcbRodapeObraDescricao.Margin = new Padding(2);
+            pcbRodapeObraDescricao.Name = "pcbRodapeObraDescricao";
+            pcbRodapeObraDescricao.Size = new Size(1184, 120);
+            pcbRodapeObraDescricao.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbRodapeObraDescricao.TabIndex = 9;
+            pcbRodapeObraDescricao.TabStop = false;
             // 
-            // pictureBox1
+            // pcbCabecalhoObraDescricao
             // 
-            pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = Properties.Resources.imgCabecalho1;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1184, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
+            pcbCabecalhoObraDescricao.Dock = DockStyle.Top;
+            pcbCabecalhoObraDescricao.Image = Properties.Resources.imgCabecalho1;
+            pcbCabecalhoObraDescricao.Location = new Point(0, 0);
+            pcbCabecalhoObraDescricao.Margin = new Padding(2);
+            pcbCabecalhoObraDescricao.Name = "pcbCabecalhoObraDescricao";
+            pcbCabecalhoObraDescricao.Size = new Size(1184, 120);
+            pcbCabecalhoObraDescricao.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbCabecalhoObraDescricao.TabIndex = 8;
+            pcbCabecalhoObraDescricao.TabStop = false;
             // 
             // btnAvancarObra
             // 
@@ -253,7 +261,7 @@
             btnAvancarObra.TabIndex = 5;
             btnAvancarObra.Text = ">";
             btnAvancarObra.UseVisualStyleBackColor = true;
-            btnAvancarObra.Click += btnAvancarObra_Click;
+            btnAvancarObra.Click += BtnAvancarObra_Click;
             // 
             // btnRetrocederObra
             // 
@@ -265,7 +273,7 @@
             btnRetrocederObra.TabIndex = 4;
             btnRetrocederObra.Text = "<";
             btnRetrocederObra.UseVisualStyleBackColor = true;
-            btnRetrocederObra.Click += btnRetrocederObra_Click;
+            btnRetrocederObra.Click += BtnRetrocederObra_Click;
             // 
             // pbxImagemObra
             // 
@@ -288,6 +296,7 @@
             btnVoltar.TabIndex = 2;
             btnVoltar.Text = "< Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
+            btnVoltar.Click += BtnVoltar_Click;
             // 
             // btnQuestionario
             // 
@@ -304,14 +313,19 @@
             // pnlQuestionario
             // 
             pnlQuestionario.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnlQuestionario.Controls.Add(lblOtimo);
+            pnlQuestionario.Controls.Add(lblBom);
+            pnlQuestionario.Controls.Add(lblRegular);
+            pnlQuestionario.Controls.Add(lblRuim);
+            pnlQuestionario.Controls.Add(lblPessimo);
             pnlQuestionario.Controls.Add(btnProximaPergunta);
             pnlQuestionario.Controls.Add(chkPessimo);
             pnlQuestionario.Controls.Add(chkRuim);
             pnlQuestionario.Controls.Add(chkRegular);
             pnlQuestionario.Controls.Add(chkBom);
             pnlQuestionario.Controls.Add(chkOtimo);
-            pnlQuestionario.Controls.Add(pictureBox6);
-            pnlQuestionario.Controls.Add(pictureBox5);
+            pnlQuestionario.Controls.Add(pcbRodapeQuestionario);
+            pnlQuestionario.Controls.Add(pcbCabecalhoQuestionario);
             pnlQuestionario.Controls.Add(lblPergunta);
             pnlQuestionario.Controls.Add(btnFinalizar);
             pnlQuestionario.Controls.Add(btnVoltarQ);
@@ -321,6 +335,66 @@
             pnlQuestionario.Size = new Size(1184, 667);
             pnlQuestionario.TabIndex = 12;
             pnlQuestionario.Visible = false;
+            // 
+            // lblOtimo
+            // 
+            lblOtimo.Anchor = AnchorStyles.None;
+            lblOtimo.AutoSize = true;
+            lblOtimo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblOtimo.Location = new Point(824, 449);
+            lblOtimo.Margin = new Padding(2, 0, 2, 0);
+            lblOtimo.Name = "lblOtimo";
+            lblOtimo.Size = new Size(56, 21);
+            lblOtimo.TabIndex = 29;
+            lblOtimo.Text = "Ótimo";
+            // 
+            // lblBom
+            // 
+            lblBom.Anchor = AnchorStyles.None;
+            lblBom.AutoSize = true;
+            lblBom.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblBom.Location = new Point(700, 449);
+            lblBom.Margin = new Padding(2, 0, 2, 0);
+            lblBom.Name = "lblBom";
+            lblBom.Size = new Size(44, 21);
+            lblBom.TabIndex = 28;
+            lblBom.Text = "Bom";
+            // 
+            // lblRegular
+            // 
+            lblRegular.Anchor = AnchorStyles.None;
+            lblRegular.AutoSize = true;
+            lblRegular.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblRegular.Location = new Point(562, 449);
+            lblRegular.Margin = new Padding(2, 0, 2, 0);
+            lblRegular.Name = "lblRegular";
+            lblRegular.Size = new Size(66, 21);
+            lblRegular.TabIndex = 27;
+            lblRegular.Text = "Regular";
+            // 
+            // lblRuim
+            // 
+            lblRuim.Anchor = AnchorStyles.None;
+            lblRuim.AutoSize = true;
+            lblRuim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblRuim.Location = new Point(438, 449);
+            lblRuim.Margin = new Padding(2, 0, 2, 0);
+            lblRuim.Name = "lblRuim";
+            lblRuim.Size = new Size(47, 21);
+            lblRuim.TabIndex = 26;
+            lblRuim.Text = "Ruim";
+            // 
+            // lblPessimo
+            // 
+            lblPessimo.Anchor = AnchorStyles.None;
+            lblPessimo.AutoSize = true;
+            lblPessimo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            lblPessimo.Location = new Point(298, 449);
+            lblPessimo.Margin = new Padding(2, 0, 2, 0);
+            lblPessimo.Name = "lblPessimo";
+            lblPessimo.Size = new Size(69, 21);
+            lblPessimo.TabIndex = 25;
+            lblPessimo.Text = "Péssimo";
             // 
             // btnProximaPergunta
             // 
@@ -334,11 +408,13 @@
             btnProximaPergunta.TabStop = false;
             btnProximaPergunta.Text = "Próxima";
             btnProximaPergunta.UseVisualStyleBackColor = true;
+            btnProximaPergunta.Click += BtnProximaPergunta_Click;
             // 
             // chkPessimo
             // 
             chkPessimo.Anchor = AnchorStyles.None;
             chkPessimo.Appearance = Appearance.Button;
+            chkPessimo.BackgroundImage = Properties.Resources.estrelaPessimoCinza;
             chkPessimo.BackgroundImageLayout = ImageLayout.Center;
             chkPessimo.CheckAlign = ContentAlignment.MiddleCenter;
             chkPessimo.FlatAppearance.BorderColor = SystemColors.Control;
@@ -350,13 +426,15 @@
             chkPessimo.Name = "chkPessimo";
             chkPessimo.Size = new Size(90, 85);
             chkPessimo.TabIndex = 23;
+            chkPessimo.Tag = "estrelaPessimo";
             chkPessimo.UseVisualStyleBackColor = true;
-            chkPessimo.CheckedChanged += chkPessimo_CheckedChanged;
+            chkPessimo.CheckedChanged += ChkPessimo_CheckedChanged;
             // 
             // chkRuim
             // 
             chkRuim.Anchor = AnchorStyles.None;
             chkRuim.Appearance = Appearance.Button;
+            chkRuim.BackgroundImage = Properties.Resources.estrelaRuimCinza;
             chkRuim.BackgroundImageLayout = ImageLayout.Center;
             chkRuim.CheckAlign = ContentAlignment.MiddleCenter;
             chkRuim.FlatAppearance.BorderColor = SystemColors.Control;
@@ -368,13 +446,15 @@
             chkRuim.Name = "chkRuim";
             chkRuim.Size = new Size(90, 85);
             chkRuim.TabIndex = 22;
+            chkRuim.Tag = "estrelaRuim";
             chkRuim.UseVisualStyleBackColor = true;
-            chkRuim.CheckedChanged += chkRuim_CheckedChanged;
+            chkRuim.CheckedChanged += ChkRuim_CheckedChanged;
             // 
             // chkRegular
             // 
             chkRegular.Anchor = AnchorStyles.None;
             chkRegular.Appearance = Appearance.Button;
+            chkRegular.BackgroundImage = Properties.Resources.estrelaRegularCinza;
             chkRegular.BackgroundImageLayout = ImageLayout.Center;
             chkRegular.CheckAlign = ContentAlignment.MiddleCenter;
             chkRegular.FlatAppearance.BorderColor = SystemColors.Control;
@@ -386,13 +466,15 @@
             chkRegular.Name = "chkRegular";
             chkRegular.Size = new Size(90, 85);
             chkRegular.TabIndex = 21;
+            chkRegular.Tag = "estrelaRegular";
             chkRegular.UseVisualStyleBackColor = true;
-            chkRegular.CheckedChanged += chkRegular_CheckedChanged;
+            chkRegular.CheckedChanged += ChkRegular_CheckedChanged;
             // 
             // chkBom
             // 
             chkBom.Anchor = AnchorStyles.None;
             chkBom.Appearance = Appearance.Button;
+            chkBom.BackgroundImage = Properties.Resources.estrelaBomCinza;
             chkBom.BackgroundImageLayout = ImageLayout.Center;
             chkBom.CheckAlign = ContentAlignment.MiddleCenter;
             chkBom.FlatAppearance.BorderColor = SystemColors.Control;
@@ -404,13 +486,15 @@
             chkBom.Name = "chkBom";
             chkBom.Size = new Size(90, 85);
             chkBom.TabIndex = 20;
+            chkBom.Tag = "estrelaBom";
             chkBom.UseVisualStyleBackColor = true;
-            chkBom.CheckedChanged += chkBom_CheckedChanged;
+            chkBom.CheckedChanged += ChkBom_CheckedChanged;
             // 
             // chkOtimo
             // 
             chkOtimo.Anchor = AnchorStyles.None;
             chkOtimo.Appearance = Appearance.Button;
+            chkOtimo.BackgroundImage = Properties.Resources.estrelaOtimoCinza;
             chkOtimo.BackgroundImageLayout = ImageLayout.Center;
             chkOtimo.CheckAlign = ContentAlignment.MiddleCenter;
             chkOtimo.FlatAppearance.BorderColor = SystemColors.Control;
@@ -422,37 +506,38 @@
             chkOtimo.Name = "chkOtimo";
             chkOtimo.Size = new Size(90, 85);
             chkOtimo.TabIndex = 19;
+            chkOtimo.Tag = "estrelaOtimo";
             chkOtimo.UseVisualStyleBackColor = true;
-            chkOtimo.CheckedChanged += chkOtimo_CheckedChanged;
+            chkOtimo.CheckedChanged += ChkOtimo_CheckedChanged;
             // 
-            // pictureBox6
+            // pcbRodapeQuestionario
             // 
-            pictureBox6.Dock = DockStyle.Bottom;
-            pictureBox6.Image = Properties.Resources.imgRodape;
-            pictureBox6.Location = new Point(0, 547);
-            pictureBox6.Margin = new Padding(2);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(1184, 120);
-            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox6.TabIndex = 18;
-            pictureBox6.TabStop = false;
+            pcbRodapeQuestionario.Dock = DockStyle.Bottom;
+            pcbRodapeQuestionario.Image = Properties.Resources.imgRodape;
+            pcbRodapeQuestionario.Location = new Point(0, 547);
+            pcbRodapeQuestionario.Margin = new Padding(2);
+            pcbRodapeQuestionario.Name = "pcbRodapeQuestionario";
+            pcbRodapeQuestionario.Size = new Size(1184, 120);
+            pcbRodapeQuestionario.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbRodapeQuestionario.TabIndex = 18;
+            pcbRodapeQuestionario.TabStop = false;
             // 
-            // pictureBox5
+            // pcbCabecalhoQuestionario
             // 
-            pictureBox5.Dock = DockStyle.Top;
-            pictureBox5.Image = Properties.Resources.imgCabecalho1;
-            pictureBox5.Location = new Point(0, 0);
-            pictureBox5.Margin = new Padding(2);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(1184, 120);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 17;
-            pictureBox5.TabStop = false;
+            pcbCabecalhoQuestionario.Dock = DockStyle.Top;
+            pcbCabecalhoQuestionario.Image = Properties.Resources.imgCabecalho1;
+            pcbCabecalhoQuestionario.Location = new Point(0, 0);
+            pcbCabecalhoQuestionario.Margin = new Padding(2);
+            pcbCabecalhoQuestionario.Name = "pcbCabecalhoQuestionario";
+            pcbCabecalhoQuestionario.Size = new Size(1184, 120);
+            pcbCabecalhoQuestionario.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbCabecalhoQuestionario.TabIndex = 17;
+            pcbCabecalhoQuestionario.TabStop = false;
             // 
             // lblPergunta
             // 
             lblPergunta.Anchor = AnchorStyles.None;
-            lblPergunta.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPergunta.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPergunta.Location = new Point(302, 159);
             lblPergunta.Margin = new Padding(2, 0, 2, 0);
             lblPergunta.Name = "lblPergunta";
@@ -473,6 +558,7 @@
             btnFinalizar.Text = "Finalizar";
             btnFinalizar.UseVisualStyleBackColor = true;
             btnFinalizar.Visible = false;
+            btnFinalizar.Click += ButtonFinalizar_Click;
             // 
             // btnVoltarQ
             // 
@@ -495,9 +581,9 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1184, 667);
             ControlBox = false;
-            Controls.Add(pnlQuestionario);
-            Controls.Add(pnlCadastro);
             Controls.Add(pnlObraDescricao);
+            Controls.Add(pnlCadastro);
+            Controls.Add(pnlQuestionario);
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
@@ -507,15 +593,16 @@
             WindowState = FormWindowState.Maximized;
             pnlCadastro.ResumeLayout(false);
             pnlCadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbRodapeCadastro).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbCabecalhoCadastro).EndInit();
             pnlObraDescricao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbRodapeObraDescricao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).EndInit();
             pnlQuestionario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            pnlQuestionario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pcbRodapeQuestionario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbCabecalhoQuestionario).EndInit();
             ResumeLayout(false);
         }
 
@@ -538,12 +625,12 @@
         private Button btnVoltarQ;
         private Button btnAvancarObra;
         private Button btnRetrocederObra;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
+        private PictureBox pcbCabecalhoObraDescricao;
+        private PictureBox pcbRodapeObraDescricao;
+        private PictureBox pcbRodapeCadastro;
+        private PictureBox pcbCabecalhoCadastro;
+        private PictureBox pcbRodapeQuestionario;
+        private PictureBox pcbCabecalhoQuestionario;
         private Label lblPergunta;
         private CheckBox chkOtimo;
         private CheckBox chkPessimo;
@@ -551,5 +638,10 @@
         private CheckBox chkRegular;
         private CheckBox chkBom;
         private Button btnProximaPergunta;
+        private Label lblOtimo;
+        private Label lblBom;
+        private Label lblRegular;
+        private Label lblRuim;
+        private Label lblPessimo;
     }
 }

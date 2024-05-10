@@ -6,19 +6,11 @@ using System.Threading.Tasks;
 
 namespace TotemApollo.Modelos
 {
-    public class Obra
+    public class Obra(int id, string titulo, string historico, Image imagem)
     {
-        public int Id { get; set; }
-        public string Titulo { get; set; }
-        public string Historico { get; set; }
-        public Image Imagem { get; set; }
-
-        public Obra(int id, string titulo, string historico, Image imagem)
-        {
-            this.Id = id;
-            this.Titulo = titulo;
-            this.Historico = historico;
-            this.Imagem = imagem;
-        }
+        public int Id { get; set; } = id;
+        public string Titulo { get; set; } = titulo;
+        public string Historico { get; set; } = historico;
+        public Image Imagem { get; set; } = imagem;
     }
 }
