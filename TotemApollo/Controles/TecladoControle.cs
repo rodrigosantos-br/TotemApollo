@@ -85,7 +85,7 @@ namespace TotemApollo
 
             // Calcula a posição para centralizar horizontalmente e colocar na parte inferior da tela
             int x = (areaDeTrabalho.Width - this.Width) / 2;
-            int y = areaDeTrabalho.Height - this.Height - 120; // Ajuste a quantidade de pixels conforme necessário
+            int y = areaDeTrabalho.Height - this.Height - 150; // Ajuste da quantidade de pixels conforme necessário
 
             // Define a posição do controle
             this.Location = new Point(x, y);

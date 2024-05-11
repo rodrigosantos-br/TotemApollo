@@ -198,6 +198,5 @@ namespace TotemApollo
             btnProximaPergunta.Visible = true;
             btnFinalizar.Visible = false;
         }
-
     }
 }
