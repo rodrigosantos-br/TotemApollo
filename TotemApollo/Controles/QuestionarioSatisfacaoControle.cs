@@ -2,16 +2,16 @@
 
 namespace TotemApollo.Controles
 {
-    public class QuestionarioControle
+    public class QuestionarioSatisfacaoControle
     {
-        private readonly Questionario questionario;
+        private readonly QuestionarioSatisfacao questionario;
         private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
         private List<CheckBox> checkboxes;
 
-        public QuestionarioControle()
+        public QuestionarioSatisfacaoControle()
         {
-            questionario = new Questionario();
+            questionario = new QuestionarioSatisfacao();
             validacao = new QuestionarioValidacao();
             indicePerguntaAtual = 0;
         }

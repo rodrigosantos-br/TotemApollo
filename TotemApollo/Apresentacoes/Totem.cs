@@ -7,7 +7,7 @@ namespace TotemApollo
         private readonly TecladoControle _teclado;
         private CadastroControle _cadastro;
         private ObrasControle _obras;
-        private readonly QuestionarioControle _questionario;
+        private readonly QuestionarioSatisfacaoControle _questionario;
         private readonly FormularioControle _formulario;
         private readonly List<CheckBox> _checkboxes;
 
@@ -15,7 +15,7 @@ namespace TotemApollo
         {
             InitializeComponent();
             _formulario = new FormularioControle();
-            _questionario = new QuestionarioControle();
+            _questionario = new QuestionarioSatisfacaoControle();
             _teclado = new TecladoControle();
             _teclado.TeclaProcessada += Teclado_TeclaProcessada;
             _checkboxes = [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo];

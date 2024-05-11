@@ -4,12 +4,12 @@ namespace TotemApollo.Apresentacoes
 {
     public partial class AreaSecreta : Form
     {
-        private readonly QuestionarioControle _questionario;
+        private readonly QuestionarioSatisfacaoControle _questionario;
 
         public AreaSecreta()
         {
             InitializeComponent();
-            _questionario = new QuestionarioControle();
+            _questionario = new QuestionarioSatisfacaoControle();
         }
 
         private void BtnFecharPrograma_Click(object sender, EventArgs e)

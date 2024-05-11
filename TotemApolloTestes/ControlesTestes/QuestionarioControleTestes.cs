@@ -8,7 +8,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarObterPorcentagens()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
 
             // Act
             var porcentagens = questionarioControle.ObterPorcentagens();
@@ -22,7 +22,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarObterPerguntas()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
 
             // Act
             var perguntas = questionarioControle.ObterPerguntas();
@@ -36,7 +36,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarAdicionarRespostas_ComTodasPerguntasRespondidas()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
 
             // Act
             questionarioControle.AdicionarRespostas(0, 3);
@@ -59,7 +59,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarValidarRespostas_ComRespostasValidas()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
             var respostas = new List<int> { 3, 4, 5, 2, 1 }; // Todas as respostas são válidas (de 1 a 5)
 
             // Act
@@ -73,7 +73,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarValidarRespostas_ComPerguntaNaoRespondida()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
             var respostas = new List<int> { 3, 4, -1, 2, 1 }; // Uma pergunta não foi respondida (valor -1)
 
             // Act
@@ -87,7 +87,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarObterContadorInteracoes()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
 
             // Act
             var contadorInteracoesInicial = questionarioControle.ObterContadorInteracoes();
@@ -106,7 +106,7 @@ namespace TotemApolloTestes.ControlesTestes
         public void TestarObterRelatorioCumulativo()
         {
             // Arrange
-            var questionarioControle = new QuestionarioControle();
+            var questionarioControle = new QuestionarioSatisfacaoControle();
 
             // Act
             var relatorio = questionarioControle.ObterRelatorioCumulativo();
