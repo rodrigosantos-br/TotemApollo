@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TotemApollo.Modelos
+﻿namespace TotemApollo.Modelos
 {
     public class Pergunta(string texto, List<string> opcoesResposta)
     {

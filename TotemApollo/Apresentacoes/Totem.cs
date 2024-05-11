@@ -10,7 +10,7 @@ namespace TotemApollo
         private readonly QuestionarioControle _questionario;
         private readonly FormularioControle _formulario;
         private readonly List<CheckBox> _checkboxes;
-        
+
         public Totem()
         {
             InitializeComponent();
@@ -25,16 +25,16 @@ namespace TotemApollo
         private void Teclado_TeclaProcessada(object sender, string teclaProcessada)
         {
             if (teclaProcessada == "Enter")
-            // Clicar no botão "Iniciar"
+                // Clicar no botão "Iniciar"
                 btnIniciar.PerformClick();
 
             else if (teclaProcessada == "K")
-            // Caps e Shift devem estar selecionados
+                // Caps e Shift devem estar selecionados
                 _teclado.AbrirAreaSecreta();
-            
+
             else if (teclaProcessada == "Backspace")
                 _teclado.RemoveUltimoCaractere(txbNome);
-            
+
             else
                 // Adicionar a tecla processada ao texto
                 txbNome.Text += teclaProcessada;
@@ -193,7 +193,7 @@ namespace TotemApollo
             // Voltar para a tela inicial
             pnlQuestionario.Visible = false;
             pnlCadastro.Show();
-            _questionario.IndicePerguntaAtual= 0;
+            _questionario.IndicePerguntaAtual = 0;
             _formulario.LimparControles(Controls);
             btnProximaPergunta.Visible = true;
             btnFinalizar.Visible = false;

@@ -133,7 +133,7 @@
             // 
             btnIniciar.Anchor = AnchorStyles.None;
             btnIniciar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnIniciar.Location = new Point(491, 336);
+            btnIniciar.Location = new Point(491, 291);
             btnIniciar.Margin = new Padding(3, 2, 3, 2);
             btnIniciar.Name = "btnIniciar";
             btnIniciar.Size = new Size(120, 45);
@@ -587,13 +587,10 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1098, 712);
-            ControlBox = false;
+            Controls.Add(pnlCadastro);
             Controls.Add(pnlQuestionario);
             Controls.Add(pnlObraDescricao);
-            Controls.Add(pnlCadastro);
-            MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
-            MinimizeBox = false;
             Name = "Totem";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Totem";

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TotemApollo.Modelos
+﻿namespace TotemApollo.Modelos
 {
     public class CadastroValidacao
     {
@@ -15,8 +9,8 @@ namespace TotemApollo.Modelos
 
         public CadastroValidacao(string nome, string dataNascimento)
         {
-            this.nome = nome; 
-            this.dataNascimento = dataNascimento; 
+            this.nome = nome;
+            this.dataNascimento = dataNascimento;
             this.ValidarNome();
             this.ValidarDataNascimento();
         }

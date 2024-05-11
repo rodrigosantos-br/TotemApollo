@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TotemApollo.Controles;
+﻿using TotemApollo.Controles;
 
 namespace TotemApolloTestes.ControlesTestes
 {
@@ -105,7 +99,7 @@ namespace TotemApolloTestes.ControlesTestes
             Assert.Equal(1, contadorInteracoesDepois); // Após incrementar, o contador deve ser 1
         }
 
-        
+
 
 
         [Fact]

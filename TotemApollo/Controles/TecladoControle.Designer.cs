@@ -42,7 +42,6 @@
             btnI = new Button();
             btnO = new Button();
             btnP = new Button();
-            btnEnterEsquerdo = new Button();
             btnA = new Button();
             btnS = new Button();
             btnD = new Button();
@@ -62,6 +61,7 @@
             btnEspaco = new Button();
             chkCtrl = new CheckBox();
             chkAlt = new CheckBox();
+            btnEnterEsquerdo = new Button();
             SuspendLayout();
             // 
             // chkCaps
@@ -219,18 +219,6 @@
             btnP.Text = "P";
             btnP.UseVisualStyleBackColor = true;
             btnP.Click += Tecla_Click;
-            // 
-            // btnEnterEsquerdo
-            // 
-            btnEnterEsquerdo.Font = new Font("Arial", 9.75F, FontStyle.Bold);
-            btnEnterEsquerdo.Location = new Point(712, 59);
-            btnEnterEsquerdo.Name = "btnEnterEsquerdo";
-            btnEnterEsquerdo.Size = new Size(91, 107);
-            btnEnterEsquerdo.TabIndex = 30;
-            btnEnterEsquerdo.TabStop = false;
-            btnEnterEsquerdo.Text = "Enter";
-            btnEnterEsquerdo.UseVisualStyleBackColor = true;
-            btnEnterEsquerdo.Click += BtnEnter_Click;
             // 
             // btnA
             // 
@@ -466,6 +454,18 @@
             chkAlt.TextAlign = ContentAlignment.MiddleCenter;
             chkAlt.UseVisualStyleBackColor = true;
             // 
+            // btnEnterEsquerdo
+            // 
+            btnEnterEsquerdo.Font = new Font("Arial", 9.75F, FontStyle.Bold);
+            btnEnterEsquerdo.Location = new Point(712, 59);
+            btnEnterEsquerdo.Name = "btnEnterEsquerdo";
+            btnEnterEsquerdo.Size = new Size(91, 107);
+            btnEnterEsquerdo.TabIndex = 30;
+            btnEnterEsquerdo.TabStop = false;
+            btnEnterEsquerdo.Text = "Enter";
+            btnEnterEsquerdo.UseVisualStyleBackColor = true;
+            btnEnterEsquerdo.Click += BtnEnter_Click;
+            // 
             // TecladoControle
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -528,7 +528,6 @@
         private Button btnI;
         private Button btnO;
         private Button btnP;
-        private Button btnEnterEsquerdo;
         private Button btnA;
         private Button btnS;
         private Button btnD;
@@ -548,5 +547,6 @@
         private Button btnEspaco;
         private CheckBox chkCtrl;
         private CheckBox chkAlt;
+        private Button btnEnterEsquerdo;
     }
 }

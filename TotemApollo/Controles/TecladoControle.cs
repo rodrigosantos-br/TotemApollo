@@ -1,5 +1,4 @@
 ﻿using TotemApollo.Apresentacoes;
-using TotemApollo.Controles;
 
 namespace TotemApollo
 {
@@ -80,25 +79,52 @@ namespace TotemApollo
 
         public void AdicionarTeclado(Panel painel)
         {
-            // Obtém a área de trabalho da tela principal
-            Rectangle areaDeTrabalho = Screen.PrimaryScreen.WorkingArea;
-
-            // Calcula a posição para centralizar horizontalmente e colocar na parte inferior da tela
-            int x = (areaDeTrabalho.Width - this.Width) / 2;
-            int y = areaDeTrabalho.Height - this.Height - 150; // Ajuste da quantidade de pixels conforme necessário
-
-            // Define a posição do controle
-            this.Location = new Point(x, y);
-
             // Adiciona o ControleTeclado ao formulário
             painel.Controls.Add(this);
+
+            // Subscreve o evento LocationChanged do formulário principal
+            if (this.ParentForm != null)
+            {
+                this.ParentForm.LocationChanged += Form_LocationChanged;
+            }
+
+            // Chama o método para posicionar o teclado virtual pela primeira vez
+            ReposicionarTeclado();
+        }
+
+        private void Form_LocationChanged(object sender, EventArgs e)
+        {
+            // Quando a posição do formulário principal mudar, reposiciona o teclado virtual
+            ReposicionarTeclado();
+        }
+
+        private void ReposicionarTeclado()
+        {
+            if (this.ParentForm != null)
+            {
+                // Obtém a área de trabalho do monitor em que o formulário principal está
+                Rectangle areaDeTrabalho = Screen.FromControl(this.ParentForm).WorkingArea;
+
+                // Calcula a posição para centralizar horizontalmente e colocar na parte inferior da tela
+                int x = (areaDeTrabalho.Width - this.Width) / 2;
+                int y = areaDeTrabalho.Height - this.Height - 150; // Ajuste da quantidade de pixels conforme necessário
+
+                // Define a posição do controle
+                this.Location = new Point(x, y);
+            }
         }
 
         public void RemoverTeclado(Panel painel)
         {
+            // Remove o ControleTeclado do formulário
             painel.Controls.Remove(this);
-        }
 
+            // Remove o manipulador de eventos LocationChanged
+            if (this.ParentForm != null)
+            {
+                this.ParentForm.LocationChanged -= Form_LocationChanged;
+            }
+        }
     }
 }
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TotemApollo.Modelos
+﻿namespace TotemApollo.Modelos
 {
     public class Museu
     {
@@ -25,12 +19,12 @@ namespace TotemApollo.Modelos
                 Image imagem3 = Image.FromFile("Imagens\\imgObra3.jpeg");
                 Image imagem4 = Image.FromFile("Imagens\\imgObra4.jpeg");
 
-                obras.Add(new Obra(1, "A Grande Jornada Lunar", 
+                obras.Add(new Obra(1, "A Grande Jornada Lunar",
                                       "Testemunhe a corajosa façanha da humanidade enquanto adentra" +
                                       " o espaço desconhecido. Esta exibição celebra a primeira viagem" +
                                       " tripulada à Lua, destacando os heróis que a tornaram possível" +
                                       " e os avanços tecnológicos que a viabilizaram.\r\n", imagem1));
-                obras.Add(new Obra(2, "A Pioneira Apollo 11", 
+                obras.Add(new Obra(2, "A Pioneira Apollo 11",
                                       "Descubra os segredos da missão Apollo 11, onde Neil Armstrong, Buzz" +
                                       " Aldrin e Michael Collins escreveram seus nomes na história. " +
                                       "Explore os trajes espaciais, artefatos e a emocionante jornada que" +
@@ -40,7 +34,7 @@ namespace TotemApollo.Modelos
                                       "passo na Lua. Esta exibição imersiva transporta os visitantes para a " +
                                       "superfície lunar, capturando a emoção e a grandiosidade do momento " +
                                       "icônico que mudou para sempre nossa compreensão do cosmos.", imagem3));
-                obras.Add(new Obra(4, "Legado Lunar", 
+                obras.Add(new Obra(4, "Legado Lunar",
                                       "Explore o impacto duradouro da primeira viagem do homem à Lua e sua " +
                                       "influência na exploração espacial moderna. Dos primeiros passos na " +
                                       "superfície lunar até as futuras expedições interplanetárias, esta exposição " +

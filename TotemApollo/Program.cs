@@ -1,5 +1,3 @@
-using TotemApollo.Modelos;
-
 namespace TotemApollo
 {
     internal static class Program
