@@ -52,7 +52,7 @@ O sistema proposto deve possuir capacidade de adaptação dinâmica a resoluçõ
 
 **[RNF002]** Responsividade e Desempenho (Priorização: Essencial)
 
-O sistema deve ter uma resposta rápida, com um tempo de resposta inferior a 0,5 segundos, sem atrasos perceptíveis durante o carregamento ou transições de tela. Deve ser capaz de lidar com uma carga de trabalho típica sem degradação significativa do desempenho, mesmo em sistemas com recursos limitados. A validação desse requisito pode é feita através de testes de desempenho e usabilidade, e a verificação através de medições de tempo de resposta e análise de desempenho do sistema.
+O sistema deve ter uma resposta rápida, com um tempo de resposta inferior a 0,5 segundos, sem atrasos perceptíveis durante o carregamento ou transições de tela. Deve ser capaz de lidar com uma carga de trabalho típica sem degradação significativa do desempenho, mesmo em sistemas com recursos limitados. A validação desse requisito pode e é feita através de testes de desempenho e usabilidade, e a verificação através de medições de tempo de resposta e análise de desempenho do sistema.
 
 **[RNF003]** Facilidade de Instalação e Uso (Priorização: Essencial)
 
@@ -62,10 +62,6 @@ O processo de instalação e utilização do software deve ser simples e intuiti
 
 O sistema deve apresentar uma interface de usuário consistente em todos os seus componentes, seguindo diretrizes de design. A interação com os elementos da interface do usuário deve ser uniforme e previsível, aderindo aos padrões de acessibilidade e usabilidade. A consistência visual e de interatividade é crucial para proporcionar uma experiência de usuário intuitiva e fácil de usar.
 
-**[RNF005]** Tolerância a Falhas (Priorização: Essencial)
-
-O sistema deve ser capaz de lidar com falhas de forma resiliente, minimizando o impacto nos usuários e garantindo a disponibilidade contínua do serviço. Deve ser implementado um mecanismo de backup automático para proteger os dados do usuário em caso de falha catastrófica do sistema. O tempo de recuperação do sistema após uma falha não planejada deve ser minimizado para que os usuários possam retomar suas atividades rapidamente.
-
-**[RNF006]** Escalabilidade e Extensibilidade (Priorização: Importante)
+**[RNF005]** Escalabilidade e Extensibilidade (Priorização: Importante)
 
 O sistema deve ser capaz de escalar vertical e horizontalmente para lidar com um aumento na carga de trabalho e suportar a adição de novas funcionalidades. Deve ser projetado com uma arquitetura modular e escalável, permitindo a adição de novos componentes e serviços conforme necessários. O software deve suportar um aumento gradual no número de usuários e transações sem degradação significativa do desempenho.
