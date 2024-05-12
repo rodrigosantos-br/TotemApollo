@@ -49,6 +49,7 @@
             btnVoltar = new Button();
             btnQuestionario = new Button();
             pnlQuestionario = new Panel();
+            pcbBalaoInformacao = new PictureBox();
             pcbLogotipoQuestionario = new PictureBox();
             btnProximaPerguntaInteracao = new Button();
             pnlOpcoesRespostaInteracoes = new Panel();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).BeginInit();
             pnlQuestionario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pcbBalaoInformacao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbLogotipoQuestionario).BeginInit();
             pnlOpcoesRespostaInteracoes.SuspendLayout();
             pnlEstrelasSatisfacao.SuspendLayout();
@@ -361,6 +363,7 @@
             // pnlQuestionario
             // 
             pnlQuestionario.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            pnlQuestionario.Controls.Add(pcbBalaoInformacao);
             pnlQuestionario.Controls.Add(pcbLogotipoQuestionario);
             pnlQuestionario.Controls.Add(btnProximaPerguntaInteracao);
             pnlQuestionario.Controls.Add(pnlOpcoesRespostaInteracoes);
@@ -378,13 +381,24 @@
             pnlQuestionario.TabIndex = 12;
             pnlQuestionario.Visible = false;
             // 
+            // pcbBalaoInformacao
+            // 
+            pcbBalaoInformacao.Anchor = AnchorStyles.None;
+            pcbBalaoInformacao.BackColor = Color.Transparent;
+            pcbBalaoInformacao.Location = new Point(258, 58);
+            pcbBalaoInformacao.Name = "pcbBalaoInformacao";
+            pcbBalaoInformacao.Size = new Size(355, 245);
+            pcbBalaoInformacao.SizeMode = PictureBoxSizeMode.AutoSize;
+            pcbBalaoInformacao.TabIndex = 34;
+            pcbBalaoInformacao.TabStop = false;
+            // 
             // pcbLogotipoQuestionario
             // 
             pcbLogotipoQuestionario.BackColor = Color.Transparent;
             pcbLogotipoQuestionario.Image = Properties.Resources.Logotipo;
             pcbLogotipoQuestionario.Location = new Point(175, 200);
             pcbLogotipoQuestionario.Name = "pcbLogotipoQuestionario";
-            pcbLogotipoQuestionario.Size = new Size(120, 120);
+            pcbLogotipoQuestionario.Size = new Size(150, 150);
             pcbLogotipoQuestionario.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogotipoQuestionario.TabIndex = 33;
             pcbLogotipoQuestionario.TabStop = false;
@@ -735,8 +749,8 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1792, 807);
-            Controls.Add(pnlCadastro);
             Controls.Add(pnlQuestionario);
+            Controls.Add(pnlCadastro);
             Controls.Add(pnlObraDescricao);
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "Totem";
@@ -754,6 +768,8 @@
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).EndInit();
             pnlQuestionario.ResumeLayout(false);
+            pnlQuestionario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pcbBalaoInformacao).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbLogotipoQuestionario).EndInit();
             pnlOpcoesRespostaInteracoes.ResumeLayout(false);
             pnlEstrelasSatisfacao.ResumeLayout(false);
@@ -811,5 +827,6 @@
         private PictureBox pcbLogotipoCadastro;
         private PictureBox pcbLogotipoDescricaoObra;
         private PictureBox pcbLogotipoQuestionario;
+        private PictureBox pcbBalaoInformacao;
     }
 }

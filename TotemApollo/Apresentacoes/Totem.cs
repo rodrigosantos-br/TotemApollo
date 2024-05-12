@@ -134,7 +134,18 @@ namespace TotemApollo
             pnlOpcoesRespostaInteracoes.Show();
             btnProximaPerguntaInteracao.Visible = true;
             btnProximaPerguntaSatisfacao.Visible = false;
-            
+            pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoQuiz;
+            pcbBalaoInformacao.Visible = true;
+            // Define um Timer para ocultar a imagem após 3,8 segundos
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = 3800; // 3,8 segundos
+            timer.Tick += (sender, e) =>
+            {
+                pcbBalaoInformacao.Visible = false; // Oculta a imagem
+                timer.Stop(); // Para o Timer
+                timer.Dispose(); // Libera os recursos do Timer
+            };
+            timer.Start(); // Inicia o Timer
         }
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
@@ -208,6 +219,19 @@ namespace TotemApollo
 
                 // Mostrar a próxima pergunta no questionário de satisfação
                 _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
+
+                // Define um Timer para ocultar a imagem após 3,8 segundos
+                pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao;
+                pcbBalaoInformacao.Visible = true;
+                System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+                timer.Interval = 3800; // 3,8 segundos
+                timer.Tick += (sender, e) =>
+                {
+                    pcbBalaoInformacao.Visible = false; // Oculta a imagem
+                    timer.Stop(); // Para o Timer
+                    timer.Dispose(); // Libera os recursos do Timer
+                };
+                timer.Start(); // Inicia o Timer
 
                 // Limpar os botões de resposta
                 foreach (Button botao in _buttons)

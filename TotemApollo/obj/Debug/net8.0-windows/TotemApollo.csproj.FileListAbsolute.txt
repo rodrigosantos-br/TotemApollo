@@ -101,3 +101,5 @@ C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\refint\TotemApollo.
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.pdb
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.genruntimeconfig.cache
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\ref\TotemApollo.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\imgBalaoQuiz.png
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\imgBalaoSatisfacao.png

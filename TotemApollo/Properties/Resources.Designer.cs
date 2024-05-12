@@ -163,6 +163,26 @@ namespace TotemApollo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgBalaoQuiz {
+            get {
+                object obj = ResourceManager.GetObject("imgBalaoQuiz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgBalaoSatisfacao {
+            get {
+                object obj = ResourceManager.GetObject("imgBalaoSatisfacao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgCabecalho {
             get {
                 object obj = ResourceManager.GetObject("imgCabecalho", resourceCulture);

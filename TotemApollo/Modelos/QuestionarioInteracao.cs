@@ -106,16 +106,5 @@ namespace TotemApollo.Modelos
                 return false;
             }
         }
-
-
-        public string ObterRespostaCorreta(int indicePergunta)
-        {
-            if (indicePergunta < 0 || indicePergunta >= perguntas.Count)
-            {
-                throw new IndexOutOfRangeException("O índice da pergunta está fora dos limites.");
-            }
-
-            return respostasCorretas[indicePergunta];
-        }
     }
 }
