@@ -48,7 +48,7 @@ Privacidade dos Dados: Os visitantes precisam ter a garantia de que suas informa
 
 **[RNF001]** Compatibilidade com diferentes resoluções de tela (Priorização: Essencial)
 
-O sistema proposto deve possuir capacidade de adaptação dinâmica a resoluções de tela comuns (1920x1080, 1366x768, 1280x800), com todos os elementos da interface do usuário sendo redimensionáveis e ajustáveis. A validação deste requisito é realizada por meio de testes de interface do usuário em diversas resoluções de tela.
+O sistema proposto deve possuir capacidade de adaptação dinâmica a resoluções de tela comuns (1920x1080, 1680x1050, 1600x900, 1440x900), com todos os elementos da interface do usuário sendo redimensionáveis e ajustáveis. A validação deste requisito é realizada por meio de testes de interface do usuário em diversas resoluções de tela.
 
 **[RNF002]** Responsividade e Desempenho (Priorização: Essencial)
 
