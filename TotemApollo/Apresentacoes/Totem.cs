@@ -7,19 +7,32 @@ namespace TotemApollo
         private readonly TecladoControle _teclado;
         private CadastroControle _cadastro;
         private ObrasControle _obras;
-        private readonly QuestionarioSatisfacaoControle _questionario;
+        private readonly QuestionarioInteracaoControle _questionarioInteracao;
+        private readonly QuestionarioSatisfacaoControle _questionarioSatisfacao;
         private readonly FormularioControle _formulario;
         private readonly List<CheckBox> _checkboxes;
+        private readonly List<Button> _buttons;
 
         public Totem()
         {
             InitializeComponent();
+
+            // Inicializa a lista de botões antes de passá-la para o controle QuestionarioInteracaoControle
+            _buttons = new List<Button> { btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE };
+
+            // Atribui o evento Click aos botões de resposta
+            foreach (Button button in _buttons)
+            {
+                button.Click += BtnRespostaInteracao_Click;
+            }
+
             _formulario = new FormularioControle();
-            _questionario = new QuestionarioSatisfacaoControle();
+            _questionarioInteracao = new QuestionarioInteracaoControle(_buttons); // Passa a lista de botões aqui
+            _questionarioSatisfacao = new QuestionarioSatisfacaoControle();
             _teclado = new TecladoControle();
             _teclado.TeclaProcessada += Teclado_TeclaProcessada;
-            _checkboxes = [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo];
-            _questionario.AssociarCheckBoxes(_checkboxes);
+            _checkboxes = new List<CheckBox> { chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo };
+            _questionarioSatisfacao.AssociarCheckBoxes(_checkboxes);
         }
 
         private void Teclado_TeclaProcessada(object sender, string teclaProcessada)
@@ -115,62 +128,126 @@ namespace TotemApollo
         {
             pnlObraDescricao.Visible = false;
             pnlQuestionario.Show();
-            _questionario.IncrementarContadorInteracoes();
-            _questionario.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
+            _questionarioSatisfacao.IncrementarContadorInteracoes();
+            _questionarioInteracao.ExibirProximaPergunta(lblPergunta);
+            pnlEstrelasSatisfacao.Visible = false;
+            pnlOpcoesRespostaInteracoes.Show();
+            btnProximaPerguntaInteracao.Visible = true;
+            btnProximaPerguntaSatisfacao.Visible = false;
+            
         }
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
         {
             pnlQuestionario.Visible = false;
             pnlObraDescricao.Show();
-            _questionario.DecrementarContadorInteracoes();
+            _questionarioSatisfacao.DecrementarContadorInteracoes();
         }
 
         private void ChkPessimo_CheckedChanged(object sender, EventArgs e)
         {
-            _questionario.CheckBox_CheckedChanged(sender, e);
+            _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e);
         }
 
         private void ChkRuim_CheckedChanged(object sender, EventArgs e)
         {
-            _questionario.CheckBox_CheckedChanged(sender, e);
+            _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e);
         }
 
         private void ChkRegular_CheckedChanged(object sender, EventArgs e)
         {
-            _questionario.CheckBox_CheckedChanged(sender, e);
+            _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e);
         }
 
         private void ChkBom_CheckedChanged(object sender, EventArgs e)
         {
-            _questionario.CheckBox_CheckedChanged(sender, e);
+            _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e);
         }
 
         private void ChkOtimo_CheckedChanged(object sender, EventArgs e)
         {
-            _questionario.CheckBox_CheckedChanged(sender, e);
+            _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e);
         }
 
-        private void BtnProximaPergunta_Click(object sender, EventArgs e)
+        private void BtnRespostaInteracao_Click(object sender, EventArgs e)
         {
+            // Captura o botão clicado
+            Button botaoResposta = (Button)sender;
+            string respostaUsuario = botaoResposta.Text;
+
+            // Verifica a resposta do usuário e atualiza a cor dos botões
+            _questionarioInteracao.VerificarResposta(respostaUsuario, botaoResposta);
+
+            // Desativa todos os botões de resposta
+            foreach (Button botao in _buttons)
+            {
+                botao.Enabled = false;
+            }
+        }
+
+        private void btnProximaPerguntaInteracao_Click(object sender, EventArgs e)
+        {
+            // Exibir a próxima pergunta
+            _questionarioInteracao.ExibirProximaPergunta(lblPergunta);
+
+
+            // Verificar se não há mais perguntas disponíveis
+            if (_questionarioInteracao.IndicePerguntaAtual == _questionarioInteracao.ObterNumeroPerguntas())
+            {
+                // Ocultar o painel de resposta de interações
+                pnlOpcoesRespostaInteracoes.Visible = false;
+
+                // Exibir o painel de estrelas de satisfação
+                pnlEstrelasSatisfacao.Visible = true;
+
+                // Desativar o botão de próxima pergunta de interações
+                btnProximaPerguntaInteracao.Visible = false;
+
+                // Ocultar o botão de próxima pergunta de satisfação
+                btnProximaPerguntaSatisfacao.Visible = true;
+
+                // Mostrar a próxima pergunta no questionário de satisfação
+                _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
+
+                // Limpar os botões de resposta
+                foreach (Button botao in _buttons)
+                {
+                    botao.Enabled = true;
+                }
+            }
+            else
+            {
+                // Ativar todos os botões de resposta para a próxima pergunta
+                foreach (Button botao in _buttons)
+                {
+                    botao.Enabled = true;
+                }
+            }
+        }
+
+
+
+        private void BtnProximaPerguntaSatisfacao_Click(object sender, EventArgs e)
+        {
+            
             // Obter todas as respostas do formulário
-            List<int> respostas = _questionario.ObterRespostasDoFormulario(
+            List<int> respostas = _questionarioSatisfacao.ObterRespostasDoFormulario(
                 [[chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]]
             );
 
             // Verificar se todas as perguntas foram respondidas
-            if (!_questionario.ValidarRespostas(respostas))
+            if (!_questionarioSatisfacao.ValidarRespostas(respostas))
             {
                 MessageBox.Show("Por favor, responda todas as perguntas.");
                 return;
             }
 
             // Adicionar as respostas ao questionário
-            _questionario.AdicionarRespostasDoFormulario(respostas);
+            _questionarioSatisfacao.AdicionarRespostasDoFormulario(respostas);
 
 
             // Verificar se é a última pergunta
-            if (_questionario.IndicePerguntaAtual >= _questionario.ObterPerguntas().Count)
+            if (_questionarioSatisfacao.IndicePerguntaAtual >= _questionarioSatisfacao.ObterPerguntas().Count)
             {
                 // Se for a última pergunta clica no botão "Finalizar"
                 ButtonFinalizar_Click(sender, e);
@@ -178,14 +255,14 @@ namespace TotemApollo
             else
             {
                 // Mostrar a próxima pergunta e redefinir as checkboxes
-                _questionario.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
+                _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
             }
         }
 
         private void ButtonFinalizar_Click(object sender, EventArgs e)
         {
             // Obter o relatório cumulativo
-            List<string> relatorio = _questionario.ObterRelatorioCumulativo();
+            List<string> relatorio = _questionarioSatisfacao.ObterRelatorioCumulativo();
 
             // Exibir o relatório
             MessageBox.Show(string.Join("\n", relatorio), "Relatório Total de Cada Resposta nas Interações");
@@ -193,10 +270,11 @@ namespace TotemApollo
             // Voltar para a tela inicial
             pnlQuestionario.Visible = false;
             pnlCadastro.Show();
-            _questionario.IndicePerguntaAtual = 0;
+            _questionarioSatisfacao.IndicePerguntaAtual = 0;
             _formulario.LimparControles(Controls);
-            btnProximaPergunta.Visible = true;
+            btnProximaPerguntaSatisfacao.Visible = true;
             btnFinalizar.Visible = false;
         }
+
     }
 }

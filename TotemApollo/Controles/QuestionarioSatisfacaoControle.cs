@@ -4,31 +4,31 @@ namespace TotemApollo.Controles
 {
     public class QuestionarioSatisfacaoControle
     {
-        private readonly QuestionarioSatisfacao questionario;
+        private readonly QuestionarioSatisfacao questionarioSatisfacao;
         private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
         private List<CheckBox> checkboxes;
-
+        
         public QuestionarioSatisfacaoControle()
         {
-            questionario = new QuestionarioSatisfacao();
+            questionarioSatisfacao = new QuestionarioSatisfacao();
             validacao = new QuestionarioValidacao();
             indicePerguntaAtual = 0;
         }
 
         public List<double> ObterPorcentagens()
         {
-            return questionario.CalcularPorcentagens();
+            return questionarioSatisfacao.CalcularPorcentagens();
         }
 
         public List<string> ObterPerguntas()
         {
-            return questionario.ObterPerguntas();
+            return questionarioSatisfacao.ObterPerguntas();
         }
 
         public void AdicionarRespostas(int indicePergunta, int resposta)
         {
-            questionario.AdicionarResposta(indicePergunta, resposta);
+            questionarioSatisfacao.AdicionarResposta(indicePergunta, resposta);
         }
 
         public bool ValidarRespostas(List<int> respostas)
@@ -39,7 +39,7 @@ namespace TotemApollo.Controles
         public void AdicionarRespostasDoFormulario(List<int> respostas)
         {
             // Verificar se o índice da pergunta está dentro dos limites
-            if (indicePerguntaAtual < 0 || indicePerguntaAtual >= questionario.ObterPerguntas().Count)
+            if (indicePerguntaAtual < 0 || indicePerguntaAtual >= questionarioSatisfacao.ObterPerguntas().Count)
             {
                 throw new IndexOutOfRangeException("O índice da pergunta está fora dos limites.");
             }
@@ -49,9 +49,9 @@ namespace TotemApollo.Controles
             {
                 // Verificar se o índice da pergunta + i está dentro dos limites
                 int indice = indicePerguntaAtual + i;
-                if (indice >= 0 && indice < questionario.ObterPerguntas().Count)
+                if (indice >= 0 && indice < questionarioSatisfacao.ObterPerguntas().Count)
                 {
-                    questionario.AdicionarResposta(indice, respostas[i]);
+                    questionarioSatisfacao.AdicionarResposta(indice, respostas[i]);
                 }
                 else
                 {
@@ -90,23 +90,23 @@ namespace TotemApollo.Controles
 
         public void IncrementarContadorInteracoes()
         {
-            questionario.IncrementarContadorInteracoes();
+            questionarioSatisfacao.IncrementarContadorInteracoes();
         }
 
         public void DecrementarContadorInteracoes()
         {
-            questionario.DecrementarContadorInteracoes();
+            questionarioSatisfacao.DecrementarContadorInteracoes();
         }
 
 
         public int ObterContadorInteracoes()
         {
-            return questionario.ContadorInteracoes;
+            return questionarioSatisfacao.ContadorInteracoes;
         }
 
         public List<string> ObterRelatorioCumulativo()
         {
-            return questionario.ObterRelatorioCumulativo();
+            return questionarioSatisfacao.ObterRelatorioCumulativo();
         }
 
         public void MostrarProximaPergunta(Label labelPergunta, CheckBox[] checkboxes)

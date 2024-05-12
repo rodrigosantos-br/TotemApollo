@@ -70,6 +70,12 @@
     <None Update="Imagens\imgObra4.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Imagens\Logotipo.jpeg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Imagens\Logotipo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

@@ -124,6 +124,9 @@
   <data name="imgCabecalho1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\imgCabecalho1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Readme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Readme.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="imgRodape" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\imgRodape.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,8 +136,8 @@
   <data name="imgObra3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\imgObra3.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="estrelaOtimoCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\estrelaOtimoCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="estrelaPessimo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaPessimo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="estrelaBom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\estrelaBom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +151,8 @@
   <data name="estrelaBomCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\estrelaBomCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="estrelaPessimo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\estrelaPessimo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="estrelaOtimoCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\estrelaOtimoCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imgCabecalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\imgCabecalho.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,7 +172,7 @@
   <data name="estrelaPessimoCinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\estrelaPessimoCinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Readme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\Readme.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logotipo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Logotipo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

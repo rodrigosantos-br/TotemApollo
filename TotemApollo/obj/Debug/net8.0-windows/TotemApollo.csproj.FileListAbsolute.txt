@@ -80,6 +80,7 @@ C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\imgObra1.jp
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\imgObra2.jpeg
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\imgObra3.jpeg
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\imgObra4.jpeg
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\Logotipo.png
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.deps.json
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.runtimeconfig.json
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.dll
