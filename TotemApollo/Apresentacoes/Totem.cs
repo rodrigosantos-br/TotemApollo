@@ -135,6 +135,7 @@ namespace TotemApollo
             btnProximaPerguntaInteracao.Visible = true;
             btnProximaPerguntaSatisfacao.Visible = false;
             pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoQuiz;
+            pcbBalaoInformacao.BackgroundImageLayout = ImageLayout.Stretch;
             pcbBalaoInformacao.Visible = true;
             // Define um Timer para ocultar a imagem após 3,8 segundos
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
