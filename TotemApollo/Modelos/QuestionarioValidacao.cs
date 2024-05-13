@@ -18,5 +18,16 @@ namespace TotemApollo.Modelos
             }
             return true;
         }
+
+        // Método para validar se pelo menos uma resposta foi selecionada
+        public bool ValidarRespostas(List<Button> botoesResposta)
+        {
+            foreach (Button botao in botoesResposta)
+            {
+                if (botao.BackColor != SystemColors.Control) // Se a cor de fundo do botão não for a padrão, significa que foi selecionado
+                    return true;
+            }
+            return false; // Retorna false se nenhum botão foi selecionado
+        }
     }
 }

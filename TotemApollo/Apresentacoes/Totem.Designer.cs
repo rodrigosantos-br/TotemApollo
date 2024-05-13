@@ -787,9 +787,9 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1792, 807);
+            Controls.Add(pnlCadastro);
             Controls.Add(pnlQuestionario);
             Controls.Add(pnlObraDescricao);
-            Controls.Add(pnlCadastro);
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "Totem";
             StartPosition = FormStartPosition.CenterScreen;

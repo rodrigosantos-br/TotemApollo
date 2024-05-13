@@ -1,4 +1,5 @@
 ﻿using TotemApollo.Controles;
+using TotemApollo.Modelos;
 
 namespace TotemApollo
 {
@@ -199,6 +200,13 @@ namespace TotemApollo
 
         private void btnProximaPerguntaInteracao_Click(object sender, EventArgs e)
         {
+            // Verificar se todas as perguntas foram respondidas
+            if (!_questionarioInteracao.ValidarRespostas())
+            {
+                MessageBox.Show("Por favor, responda todas as perguntas.");
+                return;
+            }
+
             // Exibir a próxima pergunta
             _questionarioInteracao.ExibirProximaPergunta(lblPergunta);
 

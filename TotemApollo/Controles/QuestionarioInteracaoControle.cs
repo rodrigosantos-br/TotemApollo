@@ -10,12 +10,14 @@ namespace TotemApollo.Controles
     internal class QuestionarioInteracaoControle
     {
         private readonly QuestionarioInteracao questionarioInteracao;
+        private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
         private List<Button> botoesResposta;
 
         public QuestionarioInteracaoControle(List<Button> botoesResposta)
         {
             questionarioInteracao = new QuestionarioInteracao();
+            validacao = new QuestionarioValidacao();
             IndicePerguntaAtual = 0;
             this.botoesResposta = botoesResposta;
         }
@@ -24,6 +26,11 @@ namespace TotemApollo.Controles
         public int ObterNumeroPerguntas()
         {
             return questionarioInteracao.ObterNumeroPerguntas();
+        }
+
+        public bool ValidarRespostas()
+        {
+            return validacao.ValidarRespostas(botoesResposta);
         }
 
         public void ExibirProximaPergunta(Label lblPergunta)
@@ -38,7 +45,6 @@ namespace TotemApollo.Controles
                     botoesResposta[i].Text = questionarioInteracao.ObterRespostaPorIndice(IndicePerguntaAtual, i);
                     botoesResposta[i].BackColor = SystemColors.Control; // Reseta a cor de fundo para a cor padrão
                 }
-
                 IndicePerguntaAtual++;
             }
             else
