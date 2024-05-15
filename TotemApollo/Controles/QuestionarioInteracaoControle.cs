@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TotemApollo.Modelos;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TotemApollo.Controles
 {
@@ -13,6 +14,8 @@ namespace TotemApollo.Controles
         private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
         private List<Button> botoesResposta;
+        
+        private Dictionary<string, int> acumuladoRespostas;
 
         public QuestionarioInteracaoControle(List<Button> botoesResposta)
         {
@@ -20,6 +23,8 @@ namespace TotemApollo.Controles
             validacao = new QuestionarioValidacao();
             IndicePerguntaAtual = 0;
             this.botoesResposta = botoesResposta;
+            
+            acumuladoRespostas = new Dictionary<string, int>();
         }
 
         // Método para obter o número de perguntas
@@ -31,6 +36,12 @@ namespace TotemApollo.Controles
         public bool ValidarRespostas()
         {
             return validacao.ValidarRespostas(botoesResposta);
+        }
+        public void MostrarExplicacaoResposta(Label labelExplicacao)
+        {
+            int indicePerguntaAtual = IndicePerguntaAtual - 1; // Obtém o índice da pergunta atual
+            string explicacao = questionarioInteracao.ObterExplicacaoRespostaCorreta(indicePerguntaAtual).ToString();
+            labelExplicacao.Text = explicacao;
         }
 
         public void ExibirProximaPergunta(Label lblPergunta)
@@ -51,7 +62,9 @@ namespace TotemApollo.Controles
             {
                 // Reinicia o índice da pergunta atual para exibir a primeira pergunta quando não houver mais perguntas disponíveis
                 IndicePerguntaAtual = 0;
-                ExibirProximaPergunta(lblPergunta);
+                
+                // VerificarResposta(string.Empty, null); // Isso está causando o problema
+                ExibirProximaPergunta(lblPergunta); // Chame ExibirProximaPergunta recursivamente
             }
         }
 
@@ -83,6 +96,11 @@ namespace TotemApollo.Controles
                     botoesResposta[i].BackColor = SystemColors.Control;
                 }
             }
+        }
+
+        public string ExibirGabarito()
+        { 
+            return questionarioInteracao.ExibirGabarito();
         }
 
         public int IndicePerguntaAtual { get => indicePerguntaAtual; set => indicePerguntaAtual = value; }

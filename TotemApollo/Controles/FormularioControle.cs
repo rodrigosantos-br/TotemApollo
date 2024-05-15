@@ -30,5 +30,21 @@
                 }
             }
         }
+
+        // Método para iniciar o timer
+        public void IniciarTimer(Control objetoAlvo, int intervalo)
+        {
+            System.Windows.Forms.Timer timer = new()
+            {
+                Interval = intervalo // Define o intervalo fornecido
+            };
+            timer.Tick += (sender, e) =>
+            {
+                objetoAlvo.Visible = false; // Oculta o objeto alvo
+                timer.Stop(); // Para o Timer
+                timer.Dispose(); // Libera os recursos do Timer
+            };
+            timer.Start(); // Inicia o Timer
+        }
     }
 }

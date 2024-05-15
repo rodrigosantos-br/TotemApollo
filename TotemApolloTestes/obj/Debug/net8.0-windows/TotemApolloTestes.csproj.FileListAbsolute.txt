@@ -5,3 +5,6 @@ C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTe
 C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.AssemblyInfo.cs
 C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.csproj.CoreCompileInputs.cache
 C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.sourcelink.json
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.dll
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\refint\TotemApolloTestes.dll
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.pdb

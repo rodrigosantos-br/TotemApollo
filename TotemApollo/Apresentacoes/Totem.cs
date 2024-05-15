@@ -139,15 +139,7 @@ namespace TotemApollo
             pcbBalaoInformacao.BackgroundImageLayout = ImageLayout.Stretch;
             pcbBalaoInformacao.Visible = true;
             // Define um Timer para ocultar a imagem após 3,8 segundos
-            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = 3800; // 3,8 segundos
-            timer.Tick += (sender, e) =>
-            {
-                pcbBalaoInformacao.Visible = false; // Oculta a imagem
-                timer.Stop(); // Para o Timer
-                timer.Dispose(); // Libera os recursos do Timer
-            };
-            timer.Start(); // Inicia o Timer
+            _formulario.IniciarTimer(pcbBalaoInformacao, 3800);
         }
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
@@ -190,7 +182,8 @@ namespace TotemApollo
 
             // Verifica a resposta do usuário e atualiza a cor dos botões
             _questionarioInteracao.VerificarResposta(respostaUsuario, botaoResposta);
-
+            lblExplicacaoResposta.Visible = true;
+            _questionarioInteracao.MostrarExplicacaoResposta(lblExplicacaoResposta);
             // Desativa todos os botões de resposta
             foreach (Button botao in _buttons)
             {
@@ -207,6 +200,7 @@ namespace TotemApollo
                 return;
             }
 
+            lblExplicacaoResposta.Visible = false;
             // Exibir a próxima pergunta
             _questionarioInteracao.ExibirProximaPergunta(lblPergunta);
 
@@ -232,15 +226,9 @@ namespace TotemApollo
                 // Define um Timer para ocultar a imagem após 3,8 segundos
                 pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao;
                 pcbBalaoInformacao.Visible = true;
-                System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-                timer.Interval = 3800; // 3,8 segundos
-                timer.Tick += (sender, e) =>
-                {
-                    pcbBalaoInformacao.Visible = false; // Oculta a imagem
-                    timer.Stop(); // Para o Timer
-                    timer.Dispose(); // Libera os recursos do Timer
-                };
-                timer.Start(); // Inicia o Timer
+                _formulario.IniciarTimer(pcbBalaoInformacao, 3800);
+                // Exibir as informações acumuladas em um MessageBox
+                MessageBox.Show(_questionarioInteracao.ExibirGabarito(), "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Limpar os botões de resposta
                 foreach (Button botao in _buttons)
@@ -257,8 +245,6 @@ namespace TotemApollo
                 }
             }
         }
-
-
 
         private void BtnProximaPerguntaSatisfacao_Click(object sender, EventArgs e)
         {

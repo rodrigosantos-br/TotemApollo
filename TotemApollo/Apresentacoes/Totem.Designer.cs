@@ -41,7 +41,7 @@
             pcbCabecalhoCadastro = new PictureBox();
             pnlObraDescricao = new Panel();
             label3 = new Label();
-            pictureBox1 = new PictureBox();
+            pcbLogotipoObrasDescricao = new PictureBox();
             btnVoltar = new Button();
             btnQuestionario = new Button();
             lblDescricao = new Label();
@@ -51,6 +51,7 @@
             btnRetrocederObra = new Button();
             pbxImagemObra = new PictureBox();
             pnlQuestionario = new Panel();
+            lblExplicacaoResposta = new Label();
             pcbBalaoInformacao = new PictureBox();
             pnlEstrelasSatisfacao = new Panel();
             chkPessimo = new CheckBox();
@@ -83,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)pcbLogotipoCadastro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoCadastro).BeginInit();
             pnlObraDescricao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pcbLogotipoObrasDescricao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbRodapeObraDescricao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).BeginInit();
@@ -249,7 +250,7 @@
             pnlObraDescricao.AccessibleRole = AccessibleRole.ScrollBar;
             pnlObraDescricao.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pnlObraDescricao.Controls.Add(label3);
-            pnlObraDescricao.Controls.Add(pictureBox1);
+            pnlObraDescricao.Controls.Add(pcbLogotipoObrasDescricao);
             pnlObraDescricao.Controls.Add(btnVoltar);
             pnlObraDescricao.Controls.Add(btnQuestionario);
             pnlObraDescricao.Controls.Add(lblDescricao);
@@ -276,16 +277,16 @@
             label3.TabIndex = 42;
             label3.Text = "Museu Apollo";
             // 
-            // pictureBox1
+            // pcbLogotipoObrasDescricao
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.Logotipo;
-            pictureBox1.Location = new Point(60, 150);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 150);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 41;
-            pictureBox1.TabStop = false;
+            pcbLogotipoObrasDescricao.BackColor = Color.Transparent;
+            pcbLogotipoObrasDescricao.Image = Properties.Resources.Logotipo;
+            pcbLogotipoObrasDescricao.Location = new Point(60, 150);
+            pcbLogotipoObrasDescricao.Name = "pcbLogotipoObrasDescricao";
+            pcbLogotipoObrasDescricao.Size = new Size(150, 150);
+            pcbLogotipoObrasDescricao.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbLogotipoObrasDescricao.TabIndex = 41;
+            pcbLogotipoObrasDescricao.TabStop = false;
             // 
             // btnVoltar
             // 
@@ -391,6 +392,7 @@
             // 
             // pnlQuestionario
             // 
+            pnlQuestionario.Controls.Add(lblExplicacaoResposta);
             pnlQuestionario.Controls.Add(pcbBalaoInformacao);
             pnlQuestionario.Controls.Add(pnlEstrelasSatisfacao);
             pnlQuestionario.Controls.Add(label2);
@@ -409,6 +411,16 @@
             pnlQuestionario.Size = new Size(1792, 807);
             pnlQuestionario.TabIndex = 12;
             pnlQuestionario.Visible = false;
+            // 
+            // lblExplicacaoResposta
+            // 
+            lblExplicacaoResposta.Anchor = AnchorStyles.None;
+            lblExplicacaoResposta.Font = new Font("Segoe UI", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblExplicacaoResposta.ForeColor = Color.Green;
+            lblExplicacaoResposta.Location = new Point(687, 602);
+            lblExplicacaoResposta.Name = "lblExplicacaoResposta";
+            lblExplicacaoResposta.Size = new Size(431, 75);
+            lblExplicacaoResposta.TabIndex = 42;
             // 
             // pcbBalaoInformacao
             // 
@@ -635,7 +647,7 @@
             // 
             btnProximaPerguntaInteracao.Anchor = AnchorStyles.None;
             btnProximaPerguntaInteracao.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnProximaPerguntaInteracao.Location = new Point(1145, 592);
+            btnProximaPerguntaInteracao.Location = new Point(1146, 592);
             btnProximaPerguntaInteracao.Margin = new Padding(3, 2, 3, 2);
             btnProximaPerguntaInteracao.Name = "btnProximaPerguntaInteracao";
             btnProximaPerguntaInteracao.Size = new Size(90, 45);
@@ -718,7 +730,7 @@
             // 
             btnProximaPerguntaSatisfacao.Anchor = AnchorStyles.None;
             btnProximaPerguntaSatisfacao.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnProximaPerguntaSatisfacao.Location = new Point(1146, 590);
+            btnProximaPerguntaSatisfacao.Location = new Point(1146, 592);
             btnProximaPerguntaSatisfacao.Margin = new Padding(3, 2, 3, 2);
             btnProximaPerguntaSatisfacao.Name = "btnProximaPerguntaSatisfacao";
             btnProximaPerguntaSatisfacao.Size = new Size(90, 45);
@@ -745,7 +757,7 @@
             // 
             btnFinalizar.Anchor = AnchorStyles.None;
             btnFinalizar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnFinalizar.Location = new Point(1242, 590);
+            btnFinalizar.Location = new Point(1242, 592);
             btnFinalizar.Margin = new Padding(3, 2, 3, 2);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(90, 45);
@@ -787,9 +799,9 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1792, 807);
-            Controls.Add(pnlCadastro);
             Controls.Add(pnlQuestionario);
             Controls.Add(pnlObraDescricao);
+            Controls.Add(pnlCadastro);
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "Totem";
             StartPosition = FormStartPosition.CenterScreen;
@@ -802,7 +814,7 @@
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoCadastro).EndInit();
             pnlObraDescricao.ResumeLayout(false);
             pnlObraDescricao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbLogotipoObrasDescricao).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbRodapeObraDescricao).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).EndInit();
@@ -868,7 +880,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private PictureBox pictureBox1;
+        private PictureBox pcbLogotipoObrasDescricao;
         private PictureBox pcbBalaoInformacao;
+        private Label lblExplicacaoResposta;
     }
 }

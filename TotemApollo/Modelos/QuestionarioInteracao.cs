@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Text;
 
 namespace TotemApollo.Modelos
 {
     internal class QuestionarioInteracao : Questionario
     {
         private List<string> respostasCorretas;
+        private List<string> explicaçõesRespostasCorretas;
+        private int acertos;
+        private int erros;
 
         public QuestionarioInteracao()
         {
@@ -44,6 +46,15 @@ namespace TotemApollo.Modelos
                 ""
             ];
 
+            explicaçõesRespostasCorretas = new List<string>
+            {
+                "Resposta Correta C)\nA primeira viagem à Lua ocorreu em 20 de julho de 1969.Neil Armstrong e Buzz Aldrin caminharam na Lua nessa data.",
+                "Resposta Correta C)\nO primeiro ser humano a pisar na Lua foi Neil Armstrong.",
+                "Resposta Correta D)\nA nave espacial que levou os astronautas até a Lua foi a Apollo 11.",
+                "Resposta Correta A)\nNa primeira missão à Lua participaram dois astronautas: Neil Armstrong e Buzz Aldrin.",
+                "Resposta Correta E)\nA frase famosa dita por Neil Armstrong ao pisar na Lua foi: 'Um pequeno passo para o homem, um salto gigante para a humanidade.'"
+            };
+
             respostasCorretas = new List<string>
             {
                 "C",
@@ -57,6 +68,8 @@ namespace TotemApollo.Modelos
             {
                 QuestionarioEstaticos.respostas.Add([]);
             }
+            acertos = 0;
+            erros = 0;
         }
 
         public int ObterNumeroPerguntas()
@@ -72,6 +85,18 @@ namespace TotemApollo.Modelos
             }
 
             return perguntas[indicePergunta];
+        }
+
+        public string ObterExplicacaoRespostaCorreta(int indicePergunta)
+        {
+            if (indicePergunta >= 0 && indicePergunta < explicaçõesRespostasCorretas.Count)
+            {
+                return explicaçõesRespostasCorretas[indicePergunta];
+            }
+            else
+            {
+                return "Explicação não encontrada.";
+            }
         }
 
         public string ObterRespostaPorIndice(int indicePergunta, int indiceResposta)
@@ -98,13 +123,24 @@ namespace TotemApollo.Modelos
             if (respostaUsuario.ToUpper() == respostaCorreta.ToUpper())
             {
                 // Resposta correta
+                acertos++;
                 return true;
             }
             else
             {
                 // Resposta incorreta
+                erros++;
                 return false;
             }
+        }
+        // Método para obter o total de interações e respostas acumuladas
+        public string ExibirGabarito()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Total de interações: {ContadorInteracoes}");
+            sb.AppendLine($"Total de acertos: {acertos / 2}");
+            sb.AppendLine($"Total de erros: {erros / 2}");
+            return sb.ToString();
         }
     }
 }
