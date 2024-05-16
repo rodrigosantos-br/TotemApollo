@@ -118,9 +118,10 @@ namespace TotemApollo
             _obras.ExibirObraAtual(pbxImagemObra, lblDescricao); // Atualiza a exibição com a obra anterior
         }
 
-        private void BotaoQuestionario_Click(object sender, EventArgs e)
+        private void BtnQuestionarioInteracao_Click(object sender, EventArgs e)
         {
             pnlObraDescricao.Visible = false;
+            btnVoltarQ.Visible = true;
             pnlQuestionario.Show();
             _questionarioSatisfacao.IncrementarContadorInteracoes();
             _questionarioInteracao.ExibirProximaPergunta(lblPergunta);
@@ -185,7 +186,7 @@ namespace TotemApollo
             }
         }
 
-        private void btnProximaPerguntaInteracao_Click(object sender, EventArgs e)
+        private void BtnProximaPerguntaInteracao_Click(object sender, EventArgs e)
         {
             // Verificar se todas as perguntas foram respondidas
             if (!_questionarioInteracao.ValidarRespostas())
@@ -220,13 +221,14 @@ namespace TotemApollo
             }
         }
 
-        private void btnAvancarParaQuestionarioSatisfacao_Click(object sender, EventArgs e)
+        private void BtnAvancarParaQuestionarioSatisfacao_Click(object sender, EventArgs e)
         {
             pnlRelatorioAcumuladoInteracao.Visible = false;
             pnlEstrelasSatisfacao.Visible = true;
             btnProximaPerguntaSatisfacao.Visible = true;
             pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao; 
             pcbBalaoInformacao.Visible = true;
+            btnVoltarQ.Visible = false;
             _formulario.IniciarTimer(pcbBalaoInformacao, 3800); // Define um Timer para ocultar a imagem após 3,8 segundos
             _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]); // Mostrar a próxima pergunta no questionário de satisfação
         }
@@ -253,7 +255,7 @@ namespace TotemApollo
             if (_questionarioSatisfacao.IndicePerguntaAtual >= _questionarioSatisfacao.ObterPerguntas().Count)
             {
                 pnlRelatorioAcumuladoSatisfacao.Visible = true;
-                _formulario.IniciarTimer(pnlRelatorioAcumuladoSatisfacao, 10000, () => ButtonFinalizar_Click(sender, e));
+                _formulario.IniciarTimer(pnlRelatorioAcumuladoSatisfacao, 10000, () => BtnFinalizar_Click(sender, e));
                 btnProximaPerguntaSatisfacao.Visible = false;
                 btnVoltarQ.Visible = false;
                 // Obter o relatório cumulativo
@@ -269,7 +271,7 @@ namespace TotemApollo
             }
         }
 
-        private void ButtonFinalizar_Click(object sender, EventArgs e)
+        private void BtnFinalizar_Click(object sender, EventArgs e)
         {
             // Voltar para a tela inicial
             pnlQuestionario.Visible = false;

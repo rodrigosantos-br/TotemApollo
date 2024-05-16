@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Projects\\TotemApollo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|C:\\Projects\\TotemApollo\\totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|c:\\projects\\totemapollo\\totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|C:\\Projects\\TotemApollo\\totemapollo\\controles\\questionariointeracaocontrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\controles\\questionariointeracaocontrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|C:\\Projects\\TotemApollo\\totemapollo\\modelos\\questionariointeracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\modelos\\questionariointeracao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|c:\\projects\\totemapollo\\totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|C:\\Projects\\TotemApollo\\totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|C:\\Projects\\TotemApollo\\totemapollo\\modelos\\questionariovalidacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\modelos\\questionariovalidacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,58 +30,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QuestionarioValidacao.cs",
-              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Modelos\\QuestionarioValidacao.cs",
-              "RelativeDocumentMoniker": "TotemApollo\\Modelos\\QuestionarioValidacao.cs",
-              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Modelos\\QuestionarioValidacao.cs",
-              "RelativeToolTip": "TotemApollo\\Modelos\\QuestionarioValidacao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T01:58:49.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QuestionarioInteracao.cs",
-              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Modelos\\QuestionarioInteracao.cs",
-              "RelativeDocumentMoniker": "TotemApollo\\Modelos\\QuestionarioInteracao.cs",
-              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Modelos\\QuestionarioInteracao.cs",
-              "RelativeToolTip": "TotemApollo\\Modelos\\QuestionarioInteracao.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAcwC0AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T20:02:13.581Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QuestionarioInteracaoControle.cs",
-              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Controles\\QuestionarioInteracaoControle.cs",
-              "RelativeDocumentMoniker": "TotemApollo\\Controles\\QuestionarioInteracaoControle.cs",
-              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Controles\\QuestionarioInteracaoControle.cs",
-              "RelativeToolTip": "TotemApollo\\Controles\\QuestionarioInteracaoControle.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAswC4AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T19:59:39.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Totem.cs",
               "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs",
               "RelativeDocumentMoniker": "TotemApollo\\Apresentacoes\\Totem.cs",
               "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs",
               "RelativeToolTip": "TotemApollo\\Apresentacoes\\Totem.cs",
-              "ViewState": "AQIAAG8AAAAAAAAAAAD4v44AAABHAAAA",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAIwHsAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-11T19:27:42.021Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Totem.cs [Projeto]",
               "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs",
               "RelativeDocumentMoniker": "TotemApollo\\Apresentacoes\\Totem.cs",
