@@ -55,7 +55,7 @@ namespace TotemApollo.Modelos
         {
             List<string> relatorio = new List<string>
     {
-        $"Número Total de Interações: {QuestionarioEstaticos.contadorInteracoes}"
+        $"Número Total de Visitantes: {QuestionarioEstaticos.contadorInteracoes}"
     };
 
             string[] opcoes = { "Péssimo", "Ruim", "Regular", "Bom", "Ótimo" };

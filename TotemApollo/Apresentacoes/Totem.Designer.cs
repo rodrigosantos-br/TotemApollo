@@ -108,9 +108,10 @@
             lblNome.Anchor = AnchorStyles.None;
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNome.Location = new Point(701, 237);
+            lblNome.Location = new Point(718, 296);
+            lblNome.Margin = new Padding(4, 0, 4, 0);
             lblNome.Name = "lblNome";
-            lblNome.Size = new Size(51, 20);
+            lblNome.Size = new Size(63, 25);
             lblNome.TabIndex = 0;
             lblNome.Text = "Nome";
             // 
@@ -120,12 +121,12 @@
             txbNome.Anchor = AnchorStyles.None;
             txbNome.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txbNome.ImeMode = ImeMode.On;
-            txbNome.Location = new Point(758, 229);
-            txbNome.Margin = new Padding(3, 2, 3, 2);
+            txbNome.Location = new Point(790, 286);
+            txbNome.Margin = new Padding(4, 2, 4, 2);
             txbNome.MaxLength = 20;
             txbNome.Name = "txbNome";
             txbNome.PlaceholderText = "Digite seu primeiro nome.";
-            txbNome.Size = new Size(280, 32);
+            txbNome.Size = new Size(349, 38);
             txbNome.TabIndex = 1;
             txbNome.TabStop = false;
             txbNome.Enter += TxbNome_Enter;
@@ -136,9 +137,10 @@
             lblDataNascimento.Anchor = AnchorStyles.None;
             lblDataNascimento.AutoSize = true;
             lblDataNascimento.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDataNascimento.Location = new Point(607, 278);
+            lblDataNascimento.Location = new Point(601, 348);
+            lblDataNascimento.Margin = new Padding(4, 0, 4, 0);
             lblDataNascimento.Name = "lblDataNascimento";
-            lblDataNascimento.Size = new Size(147, 20);
+            lblDataNascimento.Size = new Size(180, 25);
             lblDataNascimento.TabIndex = 2;
             lblDataNascimento.Text = "Data de Nascimento";
             // 
@@ -146,12 +148,12 @@
             // 
             txbDataNascimento.Anchor = AnchorStyles.None;
             txbDataNascimento.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txbDataNascimento.Location = new Point(758, 271);
-            txbDataNascimento.Margin = new Padding(3, 2, 3, 2);
+            txbDataNascimento.Location = new Point(790, 339);
+            txbDataNascimento.Margin = new Padding(4, 2, 4, 2);
             txbDataNascimento.MaxLength = 10;
             txbDataNascimento.Name = "txbDataNascimento";
             txbDataNascimento.PlaceholderText = "Digite sua data de nascimento.";
-            txbDataNascimento.Size = new Size(280, 32);
+            txbDataNascimento.Size = new Size(349, 38);
             txbDataNascimento.TabIndex = 2;
             txbDataNascimento.TabStop = false;
             txbDataNascimento.Enter += TxbDataNascimento_Enter;
@@ -161,10 +163,10 @@
             // 
             btnIniciar.Anchor = AnchorStyles.None;
             btnIniciar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnIniciar.Location = new Point(838, 338);
-            btnIniciar.Margin = new Padding(3, 2, 3, 2);
+            btnIniciar.Location = new Point(890, 422);
+            btnIniciar.Margin = new Padding(4, 2, 4, 2);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(120, 45);
+            btnIniciar.Size = new Size(150, 56);
             btnIniciar.TabIndex = 4;
             btnIniciar.TabStop = false;
             btnIniciar.Text = "Iniciar";
@@ -176,7 +178,8 @@
             mtcCalendario.Anchor = AnchorStyles.None;
             mtcCalendario.BackColor = SystemColors.InactiveCaption;
             mtcCalendario.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            mtcCalendario.Location = new Point(1028, 289);
+            mtcCalendario.Location = new Point(1127, 361);
+            mtcCalendario.Margin = new Padding(11);
             mtcCalendario.MaxDate = new DateTime(2014, 12, 31, 0, 0, 0, 0);
             mtcCalendario.MinDate = new DateTime(1924, 1, 1, 0, 0, 0, 0);
             mtcCalendario.Name = "mtcCalendario";
@@ -200,18 +203,19 @@
             pnlCadastro.Controls.Add(txbNome);
             pnlCadastro.Dock = DockStyle.Fill;
             pnlCadastro.Location = new Point(0, 0);
+            pnlCadastro.Margin = new Padding(4);
             pnlCadastro.Name = "pnlCadastro";
-            pnlCadastro.Size = new Size(1792, 807);
+            pnlCadastro.Size = new Size(1924, 1009);
             pnlCadastro.TabIndex = 2;
             // 
             // pcbRodapeCadastro
             // 
             pcbRodapeCadastro.Dock = DockStyle.Bottom;
             pcbRodapeCadastro.Image = Properties.Resources.imgRodape;
-            pcbRodapeCadastro.Location = new Point(0, 687);
+            pcbRodapeCadastro.Location = new Point(0, 859);
             pcbRodapeCadastro.Margin = new Padding(2);
             pcbRodapeCadastro.Name = "pcbRodapeCadastro";
-            pcbRodapeCadastro.Size = new Size(1792, 120);
+            pcbRodapeCadastro.Size = new Size(1924, 150);
             pcbRodapeCadastro.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbRodapeCadastro.TabIndex = 8;
             pcbRodapeCadastro.TabStop = false;
@@ -221,9 +225,10 @@
             pcbLogotipoCadastro.BackColor = Color.Transparent;
             pcbLogotipoCadastro.BackgroundImage = Properties.Resources.Logotipo;
             pcbLogotipoCadastro.Image = Properties.Resources.Logotipo;
-            pcbLogotipoCadastro.Location = new Point(60, 150);
+            pcbLogotipoCadastro.Location = new Point(75, 188);
+            pcbLogotipoCadastro.Margin = new Padding(4);
             pcbLogotipoCadastro.Name = "pcbLogotipoCadastro";
-            pcbLogotipoCadastro.Size = new Size(150, 150);
+            pcbLogotipoCadastro.Size = new Size(188, 188);
             pcbLogotipoCadastro.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogotipoCadastro.TabIndex = 37;
             pcbLogotipoCadastro.TabStop = false;
@@ -235,7 +240,7 @@
             pcbCabecalhoCadastro.Location = new Point(0, 0);
             pcbCabecalhoCadastro.Margin = new Padding(2);
             pcbCabecalhoCadastro.Name = "pcbCabecalhoCadastro";
-            pcbCabecalhoCadastro.Size = new Size(1792, 120);
+            pcbCabecalhoCadastro.Size = new Size(1924, 150);
             pcbCabecalhoCadastro.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbCabecalhoCadastro.TabIndex = 12;
             pcbCabecalhoCadastro.TabStop = false;
@@ -257,7 +262,7 @@
             pnlObraDescricao.Location = new Point(0, 0);
             pnlObraDescricao.Margin = new Padding(1);
             pnlObraDescricao.Name = "pnlObraDescricao";
-            pnlObraDescricao.Size = new Size(1792, 807);
+            pnlObraDescricao.Size = new Size(1924, 1009);
             pnlObraDescricao.TabIndex = 5;
             pnlObraDescricao.Visible = false;
             // 
@@ -265,9 +270,10 @@
             // 
             pcbLogotipoObrasDescricao.BackColor = Color.Transparent;
             pcbLogotipoObrasDescricao.Image = Properties.Resources.Logotipo;
-            pcbLogotipoObrasDescricao.Location = new Point(60, 150);
+            pcbLogotipoObrasDescricao.Location = new Point(75, 188);
+            pcbLogotipoObrasDescricao.Margin = new Padding(4);
             pcbLogotipoObrasDescricao.Name = "pcbLogotipoObrasDescricao";
-            pcbLogotipoObrasDescricao.Size = new Size(150, 150);
+            pcbLogotipoObrasDescricao.Size = new Size(188, 188);
             pcbLogotipoObrasDescricao.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogotipoObrasDescricao.TabIndex = 41;
             pcbLogotipoObrasDescricao.TabStop = false;
@@ -277,9 +283,10 @@
             btnVoltar.Anchor = AnchorStyles.None;
             btnVoltar.AutoSize = true;
             btnVoltar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVoltar.Location = new Point(408, 616);
+            btnVoltar.Location = new Point(333, 770);
+            btnVoltar.Margin = new Padding(4);
             btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(75, 45);
+            btnVoltar.Size = new Size(112, 56);
             btnVoltar.TabIndex = 2;
             btnVoltar.Text = "< Voltar";
             btnVoltar.UseVisualStyleBackColor = true;
@@ -290,9 +297,10 @@
             btnQuestionario.Anchor = AnchorStyles.None;
             btnQuestionario.AutoSize = true;
             btnQuestionario.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnQuestionario.Location = new Point(1183, 616);
+            btnQuestionario.Location = new Point(1321, 770);
+            btnQuestionario.Margin = new Padding(4);
             btnQuestionario.Name = "btnQuestionario";
-            btnQuestionario.Size = new Size(155, 45);
+            btnQuestionario.Size = new Size(232, 56);
             btnQuestionario.TabIndex = 3;
             btnQuestionario.Text = "Iniciar Questionário";
             btnQuestionario.UseVisualStyleBackColor = true;
@@ -304,9 +312,10 @@
             lblDescricao.AutoEllipsis = true;
             lblDescricao.FlatStyle = FlatStyle.Flat;
             lblDescricao.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDescricao.Location = new Point(1338, 150);
+            lblDescricao.Location = new Point(1514, 188);
+            lblDescricao.Margin = new Padding(4, 0, 4, 0);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(289, 397);
+            lblDescricao.Size = new Size(361, 496);
             lblDescricao.TabIndex = 1;
             lblDescricao.Text = "Descrição da obra aqui.";
             // 
@@ -314,10 +323,10 @@
             // 
             pcbRodapeObraDescricao.Dock = DockStyle.Bottom;
             pcbRodapeObraDescricao.Image = Properties.Resources.imgRodape;
-            pcbRodapeObraDescricao.Location = new Point(0, 687);
+            pcbRodapeObraDescricao.Location = new Point(0, 859);
             pcbRodapeObraDescricao.Margin = new Padding(2);
             pcbRodapeObraDescricao.Name = "pcbRodapeObraDescricao";
-            pcbRodapeObraDescricao.Size = new Size(1792, 120);
+            pcbRodapeObraDescricao.Size = new Size(1924, 150);
             pcbRodapeObraDescricao.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbRodapeObraDescricao.TabIndex = 9;
             pcbRodapeObraDescricao.TabStop = false;
@@ -329,7 +338,7 @@
             pcbCabecalhoObraDescricao.Location = new Point(0, 0);
             pcbCabecalhoObraDescricao.Margin = new Padding(2);
             pcbCabecalhoObraDescricao.Name = "pcbCabecalhoObraDescricao";
-            pcbCabecalhoObraDescricao.Size = new Size(1792, 120);
+            pcbCabecalhoObraDescricao.Size = new Size(1924, 150);
             pcbCabecalhoObraDescricao.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbCabecalhoObraDescricao.TabIndex = 8;
             pcbCabecalhoObraDescricao.TabStop = false;
@@ -340,9 +349,10 @@
             btnAvancarObra.AutoSize = true;
             btnAvancarObra.BackColor = Color.Transparent;
             btnAvancarObra.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAvancarObra.Location = new Point(1183, 363);
+            btnAvancarObra.Location = new Point(1321, 454);
+            btnAvancarObra.Margin = new Padding(4);
             btnAvancarObra.Name = "btnAvancarObra";
-            btnAvancarObra.Size = new Size(100, 100);
+            btnAvancarObra.Size = new Size(125, 125);
             btnAvancarObra.TabIndex = 5;
             btnAvancarObra.Text = "▷";
             btnAvancarObra.TextImageRelation = TextImageRelation.TextAboveImage;
@@ -355,9 +365,10 @@
             btnRetrocederObra.AutoSize = true;
             btnRetrocederObra.BackColor = Color.Transparent;
             btnRetrocederObra.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRetrocederObra.Location = new Point(383, 363);
+            btnRetrocederObra.Location = new Point(321, 454);
+            btnRetrocederObra.Margin = new Padding(4);
             btnRetrocederObra.Name = "btnRetrocederObra";
-            btnRetrocederObra.Size = new Size(100, 100);
+            btnRetrocederObra.Size = new Size(125, 125);
             btnRetrocederObra.TabIndex = 4;
             btnRetrocederObra.Text = "◁";
             btnRetrocederObra.UseVisualStyleBackColor = false;
@@ -366,10 +377,10 @@
             // pbxImagemObra
             // 
             pbxImagemObra.Anchor = AnchorStyles.None;
-            pbxImagemObra.Location = new Point(489, 139);
-            pbxImagemObra.Margin = new Padding(3, 2, 3, 2);
+            pbxImagemObra.Location = new Point(453, 174);
+            pbxImagemObra.Margin = new Padding(4, 2, 4, 2);
             pbxImagemObra.Name = "pbxImagemObra";
-            pbxImagemObra.Size = new Size(687, 528);
+            pbxImagemObra.Size = new Size(859, 660);
             pbxImagemObra.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxImagemObra.TabIndex = 0;
             pbxImagemObra.TabStop = false;
@@ -392,8 +403,9 @@
             pnlQuestionario.Controls.Add(lblPergunta);
             pnlQuestionario.Dock = DockStyle.Fill;
             pnlQuestionario.Location = new Point(0, 0);
+            pnlQuestionario.Margin = new Padding(4);
             pnlQuestionario.Name = "pnlQuestionario";
-            pnlQuestionario.Size = new Size(1792, 807);
+            pnlQuestionario.Size = new Size(1924, 1009);
             pnlQuestionario.TabIndex = 12;
             pnlQuestionario.Visible = false;
             // 
@@ -401,9 +413,10 @@
             // 
             pnlRelatorioAcumuladoSatisfacao.Controls.Add(lblAgradecimento);
             pnlRelatorioAcumuladoSatisfacao.Controls.Add(lblRelatorioAcumuladoSatisfacao);
-            pnlRelatorioAcumuladoSatisfacao.Location = new Point(279, 123);
+            pnlRelatorioAcumuladoSatisfacao.Location = new Point(343, 174);
+            pnlRelatorioAcumuladoSatisfacao.Margin = new Padding(4);
             pnlRelatorioAcumuladoSatisfacao.Name = "pnlRelatorioAcumuladoSatisfacao";
-            pnlRelatorioAcumuladoSatisfacao.Size = new Size(1433, 560);
+            pnlRelatorioAcumuladoSatisfacao.Size = new Size(1797, 664);
             pnlRelatorioAcumuladoSatisfacao.TabIndex = 44;
             pnlRelatorioAcumuladoSatisfacao.Visible = false;
             // 
@@ -411,9 +424,10 @@
             // 
             lblAgradecimento.AutoSize = true;
             lblAgradecimento.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAgradecimento.Location = new Point(191, 505);
+            lblAgradecimento.Location = new Point(91, 579);
+            lblAgradecimento.Margin = new Padding(4, 0, 4, 0);
             lblAgradecimento.Name = "lblAgradecimento";
-            lblAgradecimento.Size = new Size(748, 32);
+            lblAgradecimento.Size = new Size(917, 41);
             lblAgradecimento.TabIndex = 1;
             lblAgradecimento.Text = "Obrigado pela sua visita! Esperamos vê-lo novamente em breve.";
             // 
@@ -421,9 +435,10 @@
             // 
             lblRelatorioAcumuladoSatisfacao.AutoSize = true;
             lblRelatorioAcumuladoSatisfacao.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblRelatorioAcumuladoSatisfacao.Location = new Point(191, 80);
+            lblRelatorioAcumuladoSatisfacao.Location = new Point(91, 44);
+            lblRelatorioAcumuladoSatisfacao.Margin = new Padding(4, 0, 4, 0);
             lblRelatorioAcumuladoSatisfacao.Name = "lblRelatorioAcumuladoSatisfacao";
-            lblRelatorioAcumuladoSatisfacao.Size = new Size(149, 25);
+            lblRelatorioAcumuladoSatisfacao.Size = new Size(186, 32);
             lblRelatorioAcumuladoSatisfacao.TabIndex = 0;
             lblRelatorioAcumuladoSatisfacao.Text = "Relatorio aqui...";
             // 
@@ -433,18 +448,20 @@
             pnlRelatorioAcumuladoInteracao.Controls.Add(lblAvisoParaQuestionarioSatisfacao);
             pnlRelatorioAcumuladoInteracao.Controls.Add(lblRelatorioAcumuladoQuestionarioInteracao);
             pnlRelatorioAcumuladoInteracao.Controls.Add(btnAvancarParaQuestionarioSatisfacao);
-            pnlRelatorioAcumuladoInteracao.Location = new Point(401, 122);
+            pnlRelatorioAcumuladoInteracao.Location = new Point(343, 174);
+            pnlRelatorioAcumuladoInteracao.Margin = new Padding(4);
             pnlRelatorioAcumuladoInteracao.Name = "pnlRelatorioAcumuladoInteracao";
-            pnlRelatorioAcumuladoInteracao.Size = new Size(1130, 560);
+            pnlRelatorioAcumuladoInteracao.Size = new Size(1412, 664);
             pnlRelatorioAcumuladoInteracao.TabIndex = 43;
             pnlRelatorioAcumuladoInteracao.Visible = false;
             // 
             // lblAvisoParaQuestionarioSatisfacao
             // 
             lblAvisoParaQuestionarioSatisfacao.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblAvisoParaQuestionarioSatisfacao.Location = new Point(165, 204);
+            lblAvisoParaQuestionarioSatisfacao.Location = new Point(206, 255);
+            lblAvisoParaQuestionarioSatisfacao.Margin = new Padding(4, 0, 4, 0);
             lblAvisoParaQuestionarioSatisfacao.Name = "lblAvisoParaQuestionarioSatisfacao";
-            lblAvisoParaQuestionarioSatisfacao.Size = new Size(649, 221);
+            lblAvisoParaQuestionarioSatisfacao.Size = new Size(811, 276);
             lblAvisoParaQuestionarioSatisfacao.TabIndex = 2;
             lblAvisoParaQuestionarioSatisfacao.Text = "Estamos sempre buscando formas de melhorar a experiência dos nossos visitantes, e gostaríamos de contar com a sua ajuda. Você irá responder um breve questionário para avaliar o museu.";
             // 
@@ -452,18 +469,20 @@
             // 
             lblRelatorioAcumuladoQuestionarioInteracao.AutoSize = true;
             lblRelatorioAcumuladoQuestionarioInteracao.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblRelatorioAcumuladoQuestionarioInteracao.Location = new Point(165, 41);
+            lblRelatorioAcumuladoQuestionarioInteracao.Location = new Point(206, 51);
+            lblRelatorioAcumuladoQuestionarioInteracao.Margin = new Padding(4, 0, 4, 0);
             lblRelatorioAcumuladoQuestionarioInteracao.Name = "lblRelatorioAcumuladoQuestionarioInteracao";
-            lblRelatorioAcumuladoQuestionarioInteracao.Size = new Size(221, 40);
+            lblRelatorioAcumuladoQuestionarioInteracao.Size = new Size(287, 50);
             lblRelatorioAcumuladoQuestionarioInteracao.TabIndex = 1;
             lblRelatorioAcumuladoQuestionarioInteracao.Text = "Relatorio aqui...";
             // 
             // btnAvancarParaQuestionarioSatisfacao
             // 
             btnAvancarParaQuestionarioSatisfacao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAvancarParaQuestionarioSatisfacao.Location = new Point(744, 493);
+            btnAvancarParaQuestionarioSatisfacao.Location = new Point(911, 583);
+            btnAvancarParaQuestionarioSatisfacao.Margin = new Padding(4);
             btnAvancarParaQuestionarioSatisfacao.Name = "btnAvancarParaQuestionarioSatisfacao";
-            btnAvancarParaQuestionarioSatisfacao.Size = new Size(85, 45);
+            btnAvancarParaQuestionarioSatisfacao.Size = new Size(106, 56);
             btnAvancarParaQuestionarioSatisfacao.TabIndex = 0;
             btnAvancarParaQuestionarioSatisfacao.Text = "Avancar";
             btnAvancarParaQuestionarioSatisfacao.UseVisualStyleBackColor = true;
@@ -472,9 +491,10 @@
             // pcbBalaoInformacao
             // 
             pcbBalaoInformacao.Anchor = AnchorStyles.None;
-            pcbBalaoInformacao.Location = new Point(1242, 142);
+            pcbBalaoInformacao.Location = new Point(1394, 178);
+            pcbBalaoInformacao.Margin = new Padding(4);
             pcbBalaoInformacao.Name = "pcbBalaoInformacao";
-            pcbBalaoInformacao.Size = new Size(289, 215);
+            pcbBalaoInformacao.Size = new Size(361, 269);
             pcbBalaoInformacao.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbBalaoInformacao.TabIndex = 41;
             pcbBalaoInformacao.TabStop = false;
@@ -492,9 +512,10 @@
             pnlEstrelasSatisfacao.Controls.Add(chkRuim);
             pnlEstrelasSatisfacao.Controls.Add(lblRuim);
             pnlEstrelasSatisfacao.Controls.Add(lblPessimo);
-            pnlEstrelasSatisfacao.Location = new Point(566, 326);
+            pnlEstrelasSatisfacao.Location = new Point(550, 408);
+            pnlEstrelasSatisfacao.Margin = new Padding(4);
             pnlEstrelasSatisfacao.Name = "pnlEstrelasSatisfacao";
-            pnlEstrelasSatisfacao.Size = new Size(670, 130);
+            pnlEstrelasSatisfacao.Size = new Size(838, 162);
             pnlEstrelasSatisfacao.TabIndex = 30;
             // 
             // chkPessimo
@@ -509,9 +530,10 @@
             chkPessimo.FlatAppearance.MouseDownBackColor = SystemColors.Control;
             chkPessimo.FlatAppearance.MouseOverBackColor = SystemColors.Control;
             chkPessimo.FlatStyle = FlatStyle.Flat;
-            chkPessimo.Location = new Point(7, 3);
+            chkPessimo.Location = new Point(9, 4);
+            chkPessimo.Margin = new Padding(4);
             chkPessimo.Name = "chkPessimo";
-            chkPessimo.Size = new Size(100, 100);
+            chkPessimo.Size = new Size(125, 125);
             chkPessimo.TabIndex = 23;
             chkPessimo.Tag = "estrelaPessimo";
             chkPessimo.UseVisualStyleBackColor = true;
@@ -529,9 +551,10 @@
             chkOtimo.FlatAppearance.MouseDownBackColor = SystemColors.Control;
             chkOtimo.FlatAppearance.MouseOverBackColor = SystemColors.Control;
             chkOtimo.FlatStyle = FlatStyle.Flat;
-            chkOtimo.Location = new Point(564, 3);
+            chkOtimo.Location = new Point(705, 4);
+            chkOtimo.Margin = new Padding(4);
             chkOtimo.Name = "chkOtimo";
-            chkOtimo.Size = new Size(100, 100);
+            chkOtimo.Size = new Size(125, 125);
             chkOtimo.TabIndex = 19;
             chkOtimo.Tag = "estrelaOtimo";
             chkOtimo.UseVisualStyleBackColor = true;
@@ -542,10 +565,10 @@
             lblOtimo.Anchor = AnchorStyles.None;
             lblOtimo.AutoSize = true;
             lblOtimo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lblOtimo.Location = new Point(586, 106);
+            lblOtimo.Location = new Point(732, 132);
             lblOtimo.Margin = new Padding(2, 0, 2, 0);
             lblOtimo.Name = "lblOtimo";
-            lblOtimo.Size = new Size(56, 21);
+            lblOtimo.Size = new Size(69, 28);
             lblOtimo.TabIndex = 29;
             lblOtimo.Text = "Ótimo";
             // 
@@ -561,9 +584,10 @@
             chkBom.FlatAppearance.MouseDownBackColor = SystemColors.Control;
             chkBom.FlatAppearance.MouseOverBackColor = SystemColors.Control;
             chkBom.FlatStyle = FlatStyle.Flat;
-            chkBom.Location = new Point(431, 3);
+            chkBom.Location = new Point(539, 4);
+            chkBom.Margin = new Padding(4);
             chkBom.Name = "chkBom";
-            chkBom.Size = new Size(100, 100);
+            chkBom.Size = new Size(125, 125);
             chkBom.TabIndex = 20;
             chkBom.Tag = "estrelaBom";
             chkBom.UseVisualStyleBackColor = true;
@@ -574,10 +598,10 @@
             lblBom.Anchor = AnchorStyles.None;
             lblBom.AutoSize = true;
             lblBom.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lblBom.Location = new Point(459, 106);
+            lblBom.Location = new Point(574, 132);
             lblBom.Margin = new Padding(2, 0, 2, 0);
             lblBom.Name = "lblBom";
-            lblBom.Size = new Size(44, 21);
+            lblBom.Size = new Size(54, 28);
             lblBom.TabIndex = 28;
             lblBom.Text = "Bom";
             // 
@@ -593,9 +617,10 @@
             chkRegular.FlatAppearance.MouseDownBackColor = SystemColors.Control;
             chkRegular.FlatAppearance.MouseOverBackColor = SystemColors.Control;
             chkRegular.FlatStyle = FlatStyle.Flat;
-            chkRegular.Location = new Point(289, 3);
+            chkRegular.Location = new Point(361, 4);
+            chkRegular.Margin = new Padding(4);
             chkRegular.Name = "chkRegular";
-            chkRegular.Size = new Size(100, 100);
+            chkRegular.Size = new Size(125, 125);
             chkRegular.TabIndex = 21;
             chkRegular.Tag = "estrelaRegular";
             chkRegular.UseVisualStyleBackColor = true;
@@ -606,10 +631,10 @@
             lblRegular.Anchor = AnchorStyles.None;
             lblRegular.AutoSize = true;
             lblRegular.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lblRegular.Location = new Point(306, 106);
+            lblRegular.Location = new Point(382, 132);
             lblRegular.Margin = new Padding(2, 0, 2, 0);
             lblRegular.Name = "lblRegular";
-            lblRegular.Size = new Size(66, 21);
+            lblRegular.Size = new Size(80, 28);
             lblRegular.TabIndex = 27;
             lblRegular.Text = "Regular";
             // 
@@ -625,9 +650,10 @@
             chkRuim.FlatAppearance.MouseDownBackColor = SystemColors.Control;
             chkRuim.FlatAppearance.MouseOverBackColor = SystemColors.Control;
             chkRuim.FlatStyle = FlatStyle.Flat;
-            chkRuim.Location = new Point(146, 3);
+            chkRuim.Location = new Point(182, 4);
+            chkRuim.Margin = new Padding(4);
             chkRuim.Name = "chkRuim";
-            chkRuim.Size = new Size(100, 100);
+            chkRuim.Size = new Size(125, 125);
             chkRuim.TabIndex = 22;
             chkRuim.Tag = "estrelaRuim";
             chkRuim.UseVisualStyleBackColor = true;
@@ -638,10 +664,10 @@
             lblRuim.Anchor = AnchorStyles.None;
             lblRuim.AutoSize = true;
             lblRuim.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lblRuim.Location = new Point(173, 106);
+            lblRuim.Location = new Point(216, 132);
             lblRuim.Margin = new Padding(2, 0, 2, 0);
             lblRuim.Name = "lblRuim";
-            lblRuim.Size = new Size(47, 21);
+            lblRuim.Size = new Size(59, 28);
             lblRuim.TabIndex = 26;
             lblRuim.Text = "Ruim";
             // 
@@ -650,10 +676,10 @@
             lblPessimo.Anchor = AnchorStyles.None;
             lblPessimo.AutoSize = true;
             lblPessimo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            lblPessimo.Location = new Point(23, 106);
+            lblPessimo.Location = new Point(29, 132);
             lblPessimo.Margin = new Padding(2, 0, 2, 0);
             lblPessimo.Name = "lblPessimo";
-            lblPessimo.Size = new Size(69, 21);
+            lblPessimo.Size = new Size(87, 28);
             lblPessimo.TabIndex = 25;
             lblPessimo.Text = "Péssimo";
             // 
@@ -662,9 +688,10 @@
             lblExplicacaoResposta.Anchor = AnchorStyles.None;
             lblExplicacaoResposta.Font = new Font("Segoe UI", 11.25F, FontStyle.Italic, GraphicsUnit.Point, 0);
             lblExplicacaoResposta.ForeColor = Color.Green;
-            lblExplicacaoResposta.Location = new Point(687, 595);
+            lblExplicacaoResposta.Location = new Point(701, 744);
+            lblExplicacaoResposta.Margin = new Padding(4, 0, 4, 0);
             lblExplicacaoResposta.Name = "lblExplicacaoResposta";
-            lblExplicacaoResposta.Size = new Size(431, 75);
+            lblExplicacaoResposta.Size = new Size(539, 94);
             lblExplicacaoResposta.TabIndex = 42;
             // 
             // pcbCabecalhoQuestionario
@@ -674,7 +701,7 @@
             pcbCabecalhoQuestionario.Location = new Point(0, 0);
             pcbCabecalhoQuestionario.Margin = new Padding(2);
             pcbCabecalhoQuestionario.Name = "pcbCabecalhoQuestionario";
-            pcbCabecalhoQuestionario.Size = new Size(1792, 120);
+            pcbCabecalhoQuestionario.Size = new Size(1924, 150);
             pcbCabecalhoQuestionario.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbCabecalhoQuestionario.TabIndex = 17;
             pcbCabecalhoQuestionario.TabStop = false;
@@ -683,9 +710,10 @@
             // 
             pcbLogotipoQuestionario.BackColor = Color.Transparent;
             pcbLogotipoQuestionario.Image = Properties.Resources.Logotipo;
-            pcbLogotipoQuestionario.Location = new Point(60, 150);
+            pcbLogotipoQuestionario.Location = new Point(75, 188);
+            pcbLogotipoQuestionario.Margin = new Padding(4);
             pcbLogotipoQuestionario.Name = "pcbLogotipoQuestionario";
-            pcbLogotipoQuestionario.Size = new Size(150, 150);
+            pcbLogotipoQuestionario.Size = new Size(188, 188);
             pcbLogotipoQuestionario.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogotipoQuestionario.TabIndex = 33;
             pcbLogotipoQuestionario.TabStop = false;
@@ -694,10 +722,10 @@
             // 
             btnProximaPerguntaInteracao.Anchor = AnchorStyles.None;
             btnProximaPerguntaInteracao.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnProximaPerguntaInteracao.Location = new Point(1146, 592);
-            btnProximaPerguntaInteracao.Margin = new Padding(3, 2, 3, 2);
+            btnProximaPerguntaInteracao.Location = new Point(1274, 740);
+            btnProximaPerguntaInteracao.Margin = new Padding(4, 2, 4, 2);
             btnProximaPerguntaInteracao.Name = "btnProximaPerguntaInteracao";
-            btnProximaPerguntaInteracao.Size = new Size(90, 45);
+            btnProximaPerguntaInteracao.Size = new Size(112, 56);
             btnProximaPerguntaInteracao.TabIndex = 32;
             btnProximaPerguntaInteracao.TabStop = false;
             btnProximaPerguntaInteracao.Text = "Próxima";
@@ -712,18 +740,20 @@
             pnlOpcoesRespostaInteracoes.Controls.Add(btnRespostaC);
             pnlOpcoesRespostaInteracoes.Controls.Add(btnRespostaB);
             pnlOpcoesRespostaInteracoes.Controls.Add(btnRespostaA);
-            pnlOpcoesRespostaInteracoes.Location = new Point(566, 456);
+            pnlOpcoesRespostaInteracoes.Location = new Point(550, 570);
+            pnlOpcoesRespostaInteracoes.Margin = new Padding(4);
             pnlOpcoesRespostaInteracoes.Name = "pnlOpcoesRespostaInteracoes";
-            pnlOpcoesRespostaInteracoes.Size = new Size(670, 130);
+            pnlOpcoesRespostaInteracoes.Size = new Size(838, 162);
             pnlOpcoesRespostaInteracoes.TabIndex = 31;
             pnlOpcoesRespostaInteracoes.Visible = false;
             // 
             // btnRespostaE
             // 
             btnRespostaE.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
-            btnRespostaE.Location = new Point(550, 28);
+            btnRespostaE.Location = new Point(688, 35);
+            btnRespostaE.Margin = new Padding(4);
             btnRespostaE.Name = "btnRespostaE";
-            btnRespostaE.Size = new Size(75, 75);
+            btnRespostaE.Size = new Size(94, 94);
             btnRespostaE.TabIndex = 4;
             btnRespostaE.Text = "E";
             btnRespostaE.UseVisualStyleBackColor = true;
@@ -732,9 +762,10 @@
             // btnRespostaD
             // 
             btnRespostaD.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
-            btnRespostaD.Location = new Point(424, 28);
+            btnRespostaD.Location = new Point(530, 35);
+            btnRespostaD.Margin = new Padding(4);
             btnRespostaD.Name = "btnRespostaD";
-            btnRespostaD.Size = new Size(75, 75);
+            btnRespostaD.Size = new Size(94, 94);
             btnRespostaD.TabIndex = 3;
             btnRespostaD.Text = "D";
             btnRespostaD.UseVisualStyleBackColor = true;
@@ -743,9 +774,10 @@
             // btnRespostaC
             // 
             btnRespostaC.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
-            btnRespostaC.Location = new Point(298, 28);
+            btnRespostaC.Location = new Point(372, 35);
+            btnRespostaC.Margin = new Padding(4);
             btnRespostaC.Name = "btnRespostaC";
-            btnRespostaC.Size = new Size(75, 75);
+            btnRespostaC.Size = new Size(94, 94);
             btnRespostaC.TabIndex = 2;
             btnRespostaC.Text = "C";
             btnRespostaC.UseVisualStyleBackColor = true;
@@ -754,9 +786,10 @@
             // btnRespostaB
             // 
             btnRespostaB.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
-            btnRespostaB.Location = new Point(172, 28);
+            btnRespostaB.Location = new Point(215, 35);
+            btnRespostaB.Margin = new Padding(4);
             btnRespostaB.Name = "btnRespostaB";
-            btnRespostaB.Size = new Size(75, 75);
+            btnRespostaB.Size = new Size(94, 94);
             btnRespostaB.TabIndex = 1;
             btnRespostaB.Text = "B";
             btnRespostaB.UseVisualStyleBackColor = true;
@@ -765,9 +798,10 @@
             // btnRespostaA
             // 
             btnRespostaA.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold);
-            btnRespostaA.Location = new Point(46, 28);
+            btnRespostaA.Location = new Point(58, 35);
+            btnRespostaA.Margin = new Padding(4);
             btnRespostaA.Name = "btnRespostaA";
-            btnRespostaA.Size = new Size(75, 75);
+            btnRespostaA.Size = new Size(94, 94);
             btnRespostaA.TabIndex = 0;
             btnRespostaA.Text = "A";
             btnRespostaA.UseVisualStyleBackColor = true;
@@ -777,10 +811,10 @@
             // 
             btnProximaPerguntaSatisfacao.Anchor = AnchorStyles.None;
             btnProximaPerguntaSatisfacao.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnProximaPerguntaSatisfacao.Location = new Point(1146, 592);
-            btnProximaPerguntaSatisfacao.Margin = new Padding(3, 2, 3, 2);
+            btnProximaPerguntaSatisfacao.Location = new Point(1274, 740);
+            btnProximaPerguntaSatisfacao.Margin = new Padding(4, 2, 4, 2);
             btnProximaPerguntaSatisfacao.Name = "btnProximaPerguntaSatisfacao";
-            btnProximaPerguntaSatisfacao.Size = new Size(90, 45);
+            btnProximaPerguntaSatisfacao.Size = new Size(112, 56);
             btnProximaPerguntaSatisfacao.TabIndex = 24;
             btnProximaPerguntaSatisfacao.TabStop = false;
             btnProximaPerguntaSatisfacao.Text = "Próxima";
@@ -792,10 +826,10 @@
             // 
             pcbRodapeQuestionario.Dock = DockStyle.Bottom;
             pcbRodapeQuestionario.Image = Properties.Resources.imgRodape;
-            pcbRodapeQuestionario.Location = new Point(0, 687);
+            pcbRodapeQuestionario.Location = new Point(0, 859);
             pcbRodapeQuestionario.Margin = new Padding(2);
             pcbRodapeQuestionario.Name = "pcbRodapeQuestionario";
-            pcbRodapeQuestionario.Size = new Size(1792, 120);
+            pcbRodapeQuestionario.Size = new Size(1924, 150);
             pcbRodapeQuestionario.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbRodapeQuestionario.TabIndex = 18;
             pcbRodapeQuestionario.TabStop = false;
@@ -804,10 +838,10 @@
             // 
             btnFinalizar.Anchor = AnchorStyles.None;
             btnFinalizar.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnFinalizar.Location = new Point(1242, 592);
-            btnFinalizar.Margin = new Padding(3, 2, 3, 2);
+            btnFinalizar.Location = new Point(1394, 740);
+            btnFinalizar.Margin = new Padding(4, 2, 4, 2);
             btnFinalizar.Name = "btnFinalizar";
-            btnFinalizar.Size = new Size(90, 45);
+            btnFinalizar.Size = new Size(112, 56);
             btnFinalizar.TabIndex = 10;
             btnFinalizar.TabStop = false;
             btnFinalizar.Text = "Finalizar";
@@ -819,10 +853,10 @@
             // 
             btnVoltarQ.Anchor = AnchorStyles.None;
             btnVoltarQ.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold);
-            btnVoltarQ.Location = new Point(566, 590);
-            btnVoltarQ.Margin = new Padding(3, 2, 3, 2);
+            btnVoltarQ.Location = new Point(550, 738);
+            btnVoltarQ.Margin = new Padding(4, 2, 4, 2);
             btnVoltarQ.Name = "btnVoltarQ";
-            btnVoltarQ.Size = new Size(90, 45);
+            btnVoltarQ.Size = new Size(112, 56);
             btnVoltarQ.TabIndex = 9;
             btnVoltarQ.TabStop = false;
             btnVoltarQ.Text = "Voltar";
@@ -833,22 +867,23 @@
             // 
             lblPergunta.Anchor = AnchorStyles.None;
             lblPergunta.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblPergunta.Location = new Point(607, 169);
+            lblPergunta.Location = new Point(601, 211);
             lblPergunta.Margin = new Padding(2, 0, 2, 0);
             lblPergunta.Name = "lblPergunta";
-            lblPergunta.Size = new Size(579, 288);
+            lblPergunta.Size = new Size(724, 360);
             lblPergunta.TabIndex = 16;
             lblPergunta.Text = "Perguntas aqui...";
             // 
             // Totem
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ClientSize = new Size(1792, 807);
+            ClientSize = new Size(1924, 1009);
             Controls.Add(pnlQuestionario);
-            Controls.Add(pnlObraDescricao);
             Controls.Add(pnlCadastro);
+            Controls.Add(pnlObraDescricao);
+            Margin = new Padding(4);
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "Totem";
             StartPosition = FormStartPosition.CenterScreen;
