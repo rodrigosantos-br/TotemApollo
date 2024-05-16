@@ -194,17 +194,13 @@ namespace TotemApollo
             }
 
             lblExplicacaoResposta.Visible = false;
-            // Exibir a próxima pergunta
             _questionarioInteracao.ExibirProximaPergunta(lblPergunta);
-
 
             // Verificar se não há mais perguntas disponíveis
             if (_questionarioInteracao.IndicePerguntaAtual == _questionarioInteracao.ObterNumeroPerguntas())
             {
                 pnlOpcoesRespostaInteracoes.Visible = false;
                 btnProximaPerguntaInteracao.Visible = false;
-
-                // Exibir as informações acumuladas em um MessageBox
                 lblRelatorioAcumuladoQuestionarioInteracao.Text = _questionarioInteracao.ExibirGabarito();
                 pnlRelatorioAcumuladoInteracao.Visible = true;
                 // Limpar os botões de resposta
@@ -226,24 +222,16 @@ namespace TotemApollo
         private void btnAvancarParaQuestionarioSatisfacao_Click(object sender, EventArgs e)
         {
             pnlRelatorioAcumuladoInteracao.Visible = false;
-            // Exibir o painel de estrelas de satisfação
             pnlEstrelasSatisfacao.Visible = true;
-
-            // Ocultar o botão de próxima pergunta de satisfação
             btnProximaPerguntaSatisfacao.Visible = true;
-
-            // Define um Timer para ocultar a imagem após 3,8 segundos
-            pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao;
+            pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao; 
             pcbBalaoInformacao.Visible = true;
-            _formulario.IniciarTimer(pcbBalaoInformacao, 3800);
-
-            // Mostrar a próxima pergunta no questionário de satisfação
-            _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
+            _formulario.IniciarTimer(pcbBalaoInformacao, 3800); // Define um Timer para ocultar a imagem após 3,8 segundos
+            _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]); // Mostrar a próxima pergunta no questionário de satisfação
         }
 
         private void BtnProximaPerguntaSatisfacao_Click(object sender, EventArgs e)
         {
-
             // Obter todas as respostas do formulário
             List<int> respostas = _questionarioSatisfacao.ObterRespostasDoFormulario(
                 [[chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]]
@@ -263,8 +251,15 @@ namespace TotemApollo
             // Verificar se é a última pergunta
             if (_questionarioSatisfacao.IndicePerguntaAtual >= _questionarioSatisfacao.ObterPerguntas().Count)
             {
-                // Se for a última pergunta clica no botão "Finalizar"
-                ButtonFinalizar_Click(sender, e);
+                pnlRelatorioAcumuladoSatisfacao.Visible = true;
+                _formulario.IniciarTimer(pnlRelatorioAcumuladoSatisfacao, 10000, () => ButtonFinalizar_Click(sender, e));
+                btnProximaPerguntaSatisfacao.Visible = false;
+                btnVoltarQ.Visible = false;
+                // Obter o relatório cumulativo
+                List<string> relatorio = _questionarioSatisfacao.ObterRelatorioCumulativo();
+
+                // Exibir o relatório
+                lblRelatorioAcumuladoSatisfacao.Text = string.Join("\n", relatorio);
             }
             else
             {
@@ -275,19 +270,12 @@ namespace TotemApollo
 
         private void ButtonFinalizar_Click(object sender, EventArgs e)
         {
-            // Obter o relatório cumulativo
-            List<string> relatorio = _questionarioSatisfacao.ObterRelatorioCumulativo();
-
-            // Exibir o relatório
-            MessageBox.Show(string.Join("\n", relatorio), "Relatório Total de Cada Resposta nas Interações");
-
             // Voltar para a tela inicial
             pnlQuestionario.Visible = false;
             pnlCadastro.Show();
             _questionarioSatisfacao.IndicePerguntaAtual = 0;
             _formulario.LimparControles(Controls);
             btnProximaPerguntaSatisfacao.Visible = true;
-            btnFinalizar.Visible = false;
         }
 
     }

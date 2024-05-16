@@ -53,17 +53,17 @@ namespace TotemApollo.Modelos
 
         public List<string> ObterRelatorioCumulativo()
         {
-            List<string> relatorio =
-            [
-                $"Número Total de Interações: {QuestionarioEstaticos.contadorInteracoes}"
-            ];
+            List<string> relatorio = new List<string>
+    {
+        $"Número Total de Interações: {QuestionarioEstaticos.contadorInteracoes}"
+    };
 
-            string[] opcoes = ["Péssimo", "Ruim", "Regular", "Bom", "Ótimo"];
+            string[] opcoes = { "Péssimo", "Ruim", "Regular", "Bom", "Ótimo" };
 
             for (int i = 0; i < perguntas.Count; i++)
             {
                 StringBuilder respostaFormatada = new();
-                respostaFormatada.Append('\n').Append(perguntas[i]).Append(" \n");
+                respostaFormatada.Append('\n').Append(perguntas[i]).Append("\n");
 
                 if (i < QuestionarioEstaticos.respostas.Count)
                 {
@@ -76,11 +76,13 @@ namespace TotemApollo.Modelos
                         }
                     }
 
+                    // Adiciona as respostas lado a lado na mesma linha
                     for (int j = 0; j < contador.Length; j++)
                     {
-                        respostaFormatada.Append($"\n{opcoes[j]}: \t\t{contador[j]} |");
+                        respostaFormatada.Append($" {opcoes[j]}: {contador[j]}  |  ");
                     }
                 }
+
                 relatorio.Add(respostaFormatada.ToString());
             }
 

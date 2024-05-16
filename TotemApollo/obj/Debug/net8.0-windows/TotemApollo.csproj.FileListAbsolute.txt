@@ -90,7 +90,6 @@ C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.pdb
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.g.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Apresentacoes.AreaSecreta.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Totem.resources
-C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Controles.ControleEstrelasSatisfacao.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.TecladoControle.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Properties.Resources.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.csproj.GenerateResource.cache

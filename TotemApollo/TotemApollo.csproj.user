@@ -7,9 +7,6 @@
     <Compile Update="Apresentacoes\Totem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Controles\ControleEstrelasSatisfacao.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Controles\TecladoControle.cs">
       <SubType>UserControl</SubType>
     </Compile>

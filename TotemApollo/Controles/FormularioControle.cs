@@ -46,5 +46,19 @@
             };
             timer.Start(); // Inicia o Timer
         }
+
+        public void IniciarTimer(Control control, int intervalo, Action callback)
+        {
+            System.Windows.Forms.Timer timer = new();
+            timer.Interval = intervalo;
+            timer.Tick += (s, e) =>
+            {
+                control.Visible = false;
+                timer.Stop();
+                callback?.Invoke();
+            };
+            timer.Start();
+        }
+
     }
 }
