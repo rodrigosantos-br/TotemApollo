@@ -20,13 +20,6 @@ namespace TotemApollo
 
             // Inicializa a lista de botões antes de passá-la para o controle QuestionarioInteracaoControle
             _buttons = new List<Button> { btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE };
-
-            // Atribui o evento Click aos botões de resposta
-            foreach (Button button in _buttons)
-            {
-                button.Click += BtnRespostaInteracao_Click;
-            }
-
             _formulario = new FormularioControle();
             _questionarioInteracao = new QuestionarioInteracaoControle(_buttons); // Passa a lista de botões aqui
             _questionarioSatisfacao = new QuestionarioSatisfacaoControle();
@@ -208,28 +201,12 @@ namespace TotemApollo
             // Verificar se não há mais perguntas disponíveis
             if (_questionarioInteracao.IndicePerguntaAtual == _questionarioInteracao.ObterNumeroPerguntas())
             {
-                // Ocultar o painel de resposta de interações
                 pnlOpcoesRespostaInteracoes.Visible = false;
-
-                // Exibir o painel de estrelas de satisfação
-                pnlEstrelasSatisfacao.Visible = true;
-
-                // Desativar o botão de próxima pergunta de interações
                 btnProximaPerguntaInteracao.Visible = false;
 
-                // Ocultar o botão de próxima pergunta de satisfação
-                btnProximaPerguntaSatisfacao.Visible = true;
-
-                // Mostrar a próxima pergunta no questionário de satisfação
-                _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
-
-                // Define um Timer para ocultar a imagem após 3,8 segundos
-                pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao;
-                pcbBalaoInformacao.Visible = true;
-                _formulario.IniciarTimer(pcbBalaoInformacao, 3800);
                 // Exibir as informações acumuladas em um MessageBox
-                MessageBox.Show(_questionarioInteracao.ExibirGabarito(), "Informações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                lblRelatorioAcumuladoQuestionarioInteracao.Text = _questionarioInteracao.ExibirGabarito();
+                pnlRelatorioAcumuladoInteracao.Visible = true;
                 // Limpar os botões de resposta
                 foreach (Button botao in _buttons)
                 {
@@ -246,9 +223,27 @@ namespace TotemApollo
             }
         }
 
+        private void btnAvancarParaQuestionarioSatisfacao_Click(object sender, EventArgs e)
+        {
+            pnlRelatorioAcumuladoInteracao.Visible = false;
+            // Exibir o painel de estrelas de satisfação
+            pnlEstrelasSatisfacao.Visible = true;
+
+            // Ocultar o botão de próxima pergunta de satisfação
+            btnProximaPerguntaSatisfacao.Visible = true;
+
+            // Define um Timer para ocultar a imagem após 3,8 segundos
+            pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao;
+            pcbBalaoInformacao.Visible = true;
+            _formulario.IniciarTimer(pcbBalaoInformacao, 3800);
+
+            // Mostrar a próxima pergunta no questionário de satisfação
+            _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]);
+        }
+
         private void BtnProximaPerguntaSatisfacao_Click(object sender, EventArgs e)
         {
-            
+
             // Obter todas as respostas do formulário
             List<int> respostas = _questionarioSatisfacao.ObterRespostasDoFormulario(
                 [[chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]]

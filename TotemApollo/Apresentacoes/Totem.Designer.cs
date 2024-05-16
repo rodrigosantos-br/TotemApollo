@@ -51,6 +51,10 @@
             btnRetrocederObra = new Button();
             pbxImagemObra = new PictureBox();
             pnlQuestionario = new Panel();
+            pnlRelatorioAcumuladoInteracao = new Panel();
+            lblAvisoParaQuestionarioSatisfacao = new Label();
+            lblRelatorioAcumuladoQuestionarioInteracao = new Label();
+            btnAvancarParaQuestionarioSatisfacao = new Button();
             lblExplicacaoResposta = new Label();
             pcbBalaoInformacao = new PictureBox();
             pnlEstrelasSatisfacao = new Panel();
@@ -89,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoObraDescricao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).BeginInit();
             pnlQuestionario.SuspendLayout();
+            pnlRelatorioAcumuladoInteracao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbBalaoInformacao).BeginInit();
             pnlEstrelasSatisfacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbCabecalhoQuestionario).BeginInit();
@@ -392,6 +397,7 @@
             // 
             // pnlQuestionario
             // 
+            pnlQuestionario.Controls.Add(pnlRelatorioAcumuladoInteracao);
             pnlQuestionario.Controls.Add(lblExplicacaoResposta);
             pnlQuestionario.Controls.Add(pcbBalaoInformacao);
             pnlQuestionario.Controls.Add(pnlEstrelasSatisfacao);
@@ -411,6 +417,48 @@
             pnlQuestionario.Size = new Size(1792, 807);
             pnlQuestionario.TabIndex = 12;
             pnlQuestionario.Visible = false;
+            // 
+            // pnlRelatorioAcumuladoInteracao
+            // 
+            pnlRelatorioAcumuladoInteracao.Anchor = AnchorStyles.None;
+            pnlRelatorioAcumuladoInteracao.Controls.Add(lblAvisoParaQuestionarioSatisfacao);
+            pnlRelatorioAcumuladoInteracao.Controls.Add(lblRelatorioAcumuladoQuestionarioInteracao);
+            pnlRelatorioAcumuladoInteracao.Controls.Add(btnAvancarParaQuestionarioSatisfacao);
+            pnlRelatorioAcumuladoInteracao.Location = new Point(401, 122);
+            pnlRelatorioAcumuladoInteracao.Name = "pnlRelatorioAcumuladoInteracao";
+            pnlRelatorioAcumuladoInteracao.Size = new Size(1130, 560);
+            pnlRelatorioAcumuladoInteracao.TabIndex = 43;
+            pnlRelatorioAcumuladoInteracao.Visible = false;
+            // 
+            // lblAvisoParaQuestionarioSatisfacao
+            // 
+            lblAvisoParaQuestionarioSatisfacao.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblAvisoParaQuestionarioSatisfacao.Location = new Point(165, 204);
+            lblAvisoParaQuestionarioSatisfacao.Name = "lblAvisoParaQuestionarioSatisfacao";
+            lblAvisoParaQuestionarioSatisfacao.Size = new Size(649, 221);
+            lblAvisoParaQuestionarioSatisfacao.TabIndex = 2;
+            lblAvisoParaQuestionarioSatisfacao.Text = "Estamos sempre buscando formas de melhorar a experiência dos nossos visitantes, e gostaríamos de contar com a sua ajuda. Você irá responder um breve questionário para avaliar o museu.";
+            // 
+            // lblRelatorioAcumuladoQuestionarioInteracao
+            // 
+            lblRelatorioAcumuladoQuestionarioInteracao.AutoSize = true;
+            lblRelatorioAcumuladoQuestionarioInteracao.Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblRelatorioAcumuladoQuestionarioInteracao.Location = new Point(165, 41);
+            lblRelatorioAcumuladoQuestionarioInteracao.Name = "lblRelatorioAcumuladoQuestionarioInteracao";
+            lblRelatorioAcumuladoQuestionarioInteracao.Size = new Size(221, 40);
+            lblRelatorioAcumuladoQuestionarioInteracao.TabIndex = 1;
+            lblRelatorioAcumuladoQuestionarioInteracao.Text = "Relatorio aqui...";
+            // 
+            // btnAvancarParaQuestionarioSatisfacao
+            // 
+            btnAvancarParaQuestionarioSatisfacao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAvancarParaQuestionarioSatisfacao.Location = new Point(744, 493);
+            btnAvancarParaQuestionarioSatisfacao.Name = "btnAvancarParaQuestionarioSatisfacao";
+            btnAvancarParaQuestionarioSatisfacao.Size = new Size(85, 45);
+            btnAvancarParaQuestionarioSatisfacao.TabIndex = 0;
+            btnAvancarParaQuestionarioSatisfacao.Text = "Avancar";
+            btnAvancarParaQuestionarioSatisfacao.UseVisualStyleBackColor = true;
+            btnAvancarParaQuestionarioSatisfacao.Click += btnAvancarParaQuestionarioSatisfacao_Click;
             // 
             // lblExplicacaoResposta
             // 
@@ -820,6 +868,8 @@
             ((System.ComponentModel.ISupportInitialize)pbxImagemObra).EndInit();
             pnlQuestionario.ResumeLayout(false);
             pnlQuestionario.PerformLayout();
+            pnlRelatorioAcumuladoInteracao.ResumeLayout(false);
+            pnlRelatorioAcumuladoInteracao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcbBalaoInformacao).EndInit();
             pnlEstrelasSatisfacao.ResumeLayout(false);
             pnlEstrelasSatisfacao.PerformLayout();
@@ -883,5 +933,9 @@
         private PictureBox pcbLogotipoObrasDescricao;
         private PictureBox pcbBalaoInformacao;
         private Label lblExplicacaoResposta;
+        private Panel pnlRelatorioAcumuladoInteracao;
+        private Label lblAvisoParaQuestionarioSatisfacao;
+        private Label lblRelatorioAcumuladoQuestionarioInteracao;
+        private Button btnAvancarParaQuestionarioSatisfacao;
     }
 }

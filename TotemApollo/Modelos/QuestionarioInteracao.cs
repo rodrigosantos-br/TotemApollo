@@ -137,9 +137,8 @@ namespace TotemApollo.Modelos
         public string ExibirGabarito()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Total de interações: {ContadorInteracoes}");
-            sb.AppendLine($"Total de acertos: {acertos / 2}");
-            sb.AppendLine($"Total de erros: {erros / 2}");
+            sb.AppendLine($"          Total de Visitantes:     {ContadorInteracoes}\n");
+            sb.AppendLine($"Total de acertos: {acertos}     |     Total de erros: {erros}");
             return sb.ToString();
         }
     }
