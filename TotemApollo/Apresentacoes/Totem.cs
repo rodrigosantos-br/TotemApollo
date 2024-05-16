@@ -140,6 +140,7 @@ namespace TotemApollo
             pnlQuestionario.Visible = false;
             pnlObraDescricao.Show();
             _questionarioSatisfacao.DecrementarContadorInteracoes();
+            _questionarioInteracao.ExibirPerguntaAnterior(lblPergunta);
         }
 
         private void ChkPessimo_CheckedChanged(object sender, EventArgs e)

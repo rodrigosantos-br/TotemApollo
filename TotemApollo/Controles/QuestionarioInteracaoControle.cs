@@ -44,6 +44,31 @@ namespace TotemApollo.Controles
             labelExplicacao.Text = explicacao;
         }
 
+        public void ExibirPerguntaAnterior(Label lblPergunta)
+        {
+            // Decrementa o índice da pergunta atual
+            IndicePerguntaAtual--;
+
+            // Verifica se o índice da pergunta atual é maior ou igual a zero
+            if (IndicePerguntaAtual >= 0)
+            {
+                // Exibe a pergunta correspondente ao novo índice
+                lblPergunta.Text = questionarioInteracao.ObterPergunta(IndicePerguntaAtual);
+
+                // Atualiza os botões de resposta
+                for (int i = 0; i < botoesResposta.Count; i++)
+                {
+                    botoesResposta[i].Text = questionarioInteracao.ObterRespostaPorIndice(IndicePerguntaAtual, i);
+                    botoesResposta[i].BackColor = SystemColors.Control; // Reseta a cor de fundo para a cor padrão
+                }
+            }
+            else
+            {
+                // Se o índice da pergunta atual for menor que zero, não há pergunta anterior, então mantenha o índice atual como zero
+                IndicePerguntaAtual = 0;
+            }
+        }
+
         public void ExibirProximaPergunta(Label lblPergunta)
         {
             if (IndicePerguntaAtual < questionarioInteracao.ObterNumeroPerguntas())
