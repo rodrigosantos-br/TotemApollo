@@ -1,30 +1,21 @@
-# Classe CadastroValidacao
+### Classe `CadastroValidacao`
 
-## Descrição
+Esta classe é responsável por validar os dados de cadastro, como o nome e a data de nascimento.
 
-A classe CadastroValidacao é responsável por validar as informações de nome e data de nascimento fornecidas durante o processo de cadastro.
+#### Atributos:
 
-### Membros
+- `private string nome`: Armazena o nome a ser validado.
+- `private readonly string dataNascimento`: Armazena a data de nascimento a ser validada.
+- `private string mensagemNome`: Armazena mensagens de erro relacionadas ao nome.
+- `private string mensagemDataNascimento`: Armazena mensagens de erro relacionadas à data de nascimento.
 
-- **nome**: O nome a ser validado.
-- **dataNascimento**: A data de nascimento a ser validada.
-- **mensagemNome**: Mensagem de validação do nome.
-- **mensagemDataNascimento**: Mensagem de validação da data de nascimento.
+#### Construtor:
 
-#### Construtor
+- `public CadastroValidacao(string nome, string dataNascimento)`: Construtor da classe `CadastroValidacao`, responsável por inicializar os atributos `nome` e `dataNascimento` e chamar os métodos de validação.
 
-**CadastroValidacao(string nome, string dataNascimento)**: Inicializa uma nova instância da classe CadastroValidacao com o nome e a data de nascimento fornecidos, e realiza a validação.
+#### Métodos:
 
-#### Métodos
-
-- **ValidarNome()**: Valida o nome fornecido, verificando se não está vazio e se possui o comprimento adequado.
-- **ValidarDataNascimento()**: Valida a data de nascimento fornecida, verificando se não está vazia. Outras verificações de validade podem ser adicionadas aqui.
-
-#### Propriedades
-
-- **MensagemNome**: Obtém a mensagem de validação do nome.
-- **MensagemDataNascimento**: Obtém a mensagem de validação da data de nascimento.
-
-#### Uso
-
-Para validar um nome e uma data de nascimento, crie uma instância da classe CadastroValidacao e utilize as propriedades MensagemNome e MensagemDataNascimento para obter as mensagens de validação correspondentes.
+- `private void ValidarNome()`: Valida o nome, verificando se não está vazio, se tem um comprimento adequado e transformando a primeira letra em maiúscula.
+- `private void ValidarDataNascimento()`: Valida a data de nascimento, verificando se não está vazia.
+- `public string MensagemNome { get => mensagemNome; }`: Propriedade somente leitura que retorna a mensagem de erro relacionada ao nome.
+- `public string MensagemDataNascimento { get => mensagemDataNascimento; }`: Propriedade somente leitura que retorna a mensagem de erro relacionada à data de nascimento.

@@ -1,49 +1,139 @@
-﻿using TotemApollo.Modelos;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using Xunit;
+using TotemApollo.Modelos;
 
-namespace TotemApolloTestes.Modelos
+namespace TotemApollo.Tests
 {
-    public class MuseuTestes
+    public class MuseuTests
     {
         [Fact]
-        public void TestarCadastrarVisitante()
+        public void ObraAtual_DeveRetornarPrimeiraObra_Inicialmente()
         {
             // Arrange
             var museu = new Museu();
 
             // Act
-            museu.CadastrarVisitante("João", "01/01/1980");
+            var obraAtual = museu.ObraAtual();
 
             // Assert
-            Assert.Equal(1, museu.ObterQuantidadeDeVisitantes());
+            Assert.Equal("A Grande Jornada Lunar", obraAtual.Titulo);
         }
 
         [Fact]
-        public void TestarExibirHistoricoObra_QuandoObraExiste()
+        public void AvancarParaProximaObra_DeveAvancarParaProximaObra()
         {
             // Arrange
             var museu = new Museu();
-            int idObraExistente = 1;
 
             // Act
-            string historico = museu.ExibirHistoricoObra(idObraExistente);
+            museu.AvancarParaProximaObra();
+            var obraAtual = museu.ObraAtual();
 
             // Assert
-            Assert.Contains("Titulo1", historico);
-            Assert.Contains("Historico1", historico);
+            Assert.Equal("A Pioneira Apollo 11", obraAtual.Titulo);
         }
 
         [Fact]
-        public void TestarExibirHistoricoObra_QuandoObraNaoExiste()
+        public void AvancarParaProximaObra_DeveVoltarParaPrimeiraObra_QuandoPassarUltimaObra()
         {
             // Arrange
             var museu = new Museu();
-            int idObraInexistente = 999;
 
             // Act
-            string mensagem = museu.ExibirHistoricoObra(idObraInexistente);
+            for (int i = 0; i < 4; i++)
+            {
+                museu.AvancarParaProximaObra();
+            }
+            var obraAtual = museu.ObraAtual();
 
             // Assert
-            Assert.Equal("Obra não encontrada no museu.", mensagem);
+            Assert.Equal("A Grande Jornada Lunar", obraAtual.Titulo);
+        }
+
+        [Fact]
+        public void RetrocederParaObraAnterior_DeveRetrocederParaObraAnterior()
+        {
+            // Arrange
+            var museu = new Museu();
+            museu.AvancarParaProximaObra();
+
+            // Act
+            museu.RetrocederParaObraAnterior();
+            var obraAtual = museu.ObraAtual();
+
+            // Assert
+            Assert.Equal("A Grande Jornada Lunar", obraAtual.Titulo);
+        }
+
+        [Fact]
+        public void RetrocederParaObraAnterior_DeveIrParaUltimaObra_QuandoEstiverNaPrimeiraObra()
+        {
+            // Arrange
+            var museu = new Museu();
+
+            // Act
+            museu.RetrocederParaObraAnterior();
+            var obraAtual = museu.ObraAtual();
+
+            // Assert
+            Assert.Equal("Legado Lunar", obraAtual.Titulo);
+        }
+
+        [Fact]
+        public void CadastrarVisitante_DeveAdicionarVisitante()
+        {
+            // Arrange
+            var museu = new Museu();
+
+            // Act
+            museu.CadastrarVisitante("João", "2000-01-01");
+            var quantidadeVisitantes = museu.ObterQuantidadeDeVisitantes();
+
+            // Assert
+            Assert.Equal(1, quantidadeVisitantes);
+        }
+
+        [Fact]
+        public void RemoverUltimoVisitante_DeveRemoverVisitante()
+        {
+            // Arrange
+            var museu = new Museu();
+            museu.CadastrarVisitante("João", "2000-01-01");
+
+            // Act
+            museu.RemoverUltimoVisitante();
+            var quantidadeVisitantes = museu.ObterQuantidadeDeVisitantes();
+
+            // Assert
+            Assert.Equal(0, quantidadeVisitantes);
+        }
+
+        [Fact]
+        public void ExibirHistoricoObraAtual_DeveRetornarHistoricoCorreto()
+        {
+            // Arrange
+            var museu = new Museu();
+
+            // Act
+            var historico = museu.ExibirHistoricoObraAtual();
+
+            // Assert
+            Assert.Contains("A Grande Jornada Lunar", historico);
+        }
+
+        [Fact]
+        public void ExibirHistoricoObra_DeveRetornarMensagem_QuandoObraNaoExistir()
+        {
+            // Arrange
+            var museu = new Museu();
+
+            // Act
+            var historico = museu.ExibirHistoricoObra(999);
+
+            // Assert
+            Assert.Equal("Obra não encontrada no museu.", historico);
         }
     }
 }

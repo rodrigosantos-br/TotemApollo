@@ -1,11 +1,8 @@
-#### Algoritmo Visitante
-    tipo Visitante:
-        Nome: caractere
-        DataNascimento: caractere
+    classe Visitante
+        Visitante(texto nome, texto dataNascimento)
+            Nome := nome
+            DataNascimento := dataNascimento
 
-    procedimento Visitante(nome: caractere, dataNascimento: caractere)
-        inicio
-            this.Nome := nome
-            this.DataNascimento := dataNascimento
-        fim_procedimento
-#### Fim Algoritmo
+        propriedade Nome { obter; }
+        propriedade DataNascimento { obter; }
+    fim classe

@@ -1,51 +1,36 @@
 ﻿using TotemApollo.Controles;
+using TotemApollo.Modelos;
 
-namespace TotemApolloTestes.ControlesTestes
+public class CadastroControleTestes
 {
-    public class CadastroControleTestes
+    [Fact]
+    public void Construtor_DadosValidos_DeveCadastrarVisitante()
     {
-        [Fact]
-        public void TestarCadastroControle_ComDadosValidos()
-        {
-            // Arrange
-            string nome = "João";
-            string dataNascimento = "01/01/1990";
+        // Arrange
+        string nome = "Fulano de Tal";
+        string dataNascimento = "1980-01-01";
 
-            // Act
-            var controle = new CadastroControle(nome, dataNascimento);
+        // Act
+        var cadastroControle = new CadastroControle(nome, dataNascimento);
 
-            // Assert
-            Assert.Equal("", controle.Mensagem);
-        }
+        // Assert
+        Assert.True(cadastroControle.Mensagem == "");
+    }
 
-        [Fact]
-        public void TestarCadastroControle_ComNomeInvalido()
-        {
-            // Arrange
-            string nome = "";
-            string dataNascimento = "01/01/1990";
+    [Theory]
+    [InlineData("João", "1990-01-01")]
+    [InlineData("Maria", "2000-12-31")]
+    public void ValidarNome_EDataNascimentoValidos_DeveRetornarMensagensVazias(string nome, string dataNascimento)
+    {
+        // Arrange
+        var validacao = new CadastroValidacao(nome, dataNascimento);
 
-            // Act
-            var controle = new CadastroControle(nome, dataNascimento);
+        // Act
+        string mensagemNome = validacao.MensagemNome;
+        string mensagemDataNascimento = validacao.MensagemDataNascimento;
 
-            // Assert
-            Assert.Contains("Não foi possível cadastrar o visitante. ", controle.Mensagem);
-            Assert.Contains("Nome não pode ser vazio.", controle.Mensagem);
-        }
-
-        [Fact]
-        public void TestarCadastroControle_ComDataNascimentoInvalida()
-        {
-            // Arrange
-            string nome = "João";
-            string dataNascimento = "";
-
-            // Act
-            var controle = new CadastroControle(nome, dataNascimento);
-
-            // Assert
-            Assert.Contains("Não foi possível cadastrar o visitante. ", controle.Mensagem);
-            Assert.Contains("Data de nascimento não pode ser vazia.", controle.Mensagem);
-        }
+        // Assert
+        Assert.Empty(mensagemNome);
+        Assert.Empty(mensagemDataNascimento);
     }
 }

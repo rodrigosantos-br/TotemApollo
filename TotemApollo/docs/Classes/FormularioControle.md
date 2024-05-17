@@ -1,17 +1,9 @@
-# Classe FormularioControle
+### Classe `FormularioControle`
 
-## Descrição
+Essa classe controla a manipulação e limpeza de controles em um formulário.
 
-A classe FormularioControle fornece métodos para limpar os controles de um formulário do Windows Forms.
+#### Métodos:
 
-### Métodos
-
-**LimparControles(Control.ControlCollection control)**: Limpa os controles fornecidos, incluindo TextBox, ComboBox, CheckBox e RadioButton, e seus controles filhos, se houver.
-
-### Parâmetros
-
-control: A coleção de controles a serem limpos.
-
-### Uso
-
-Para limpar os controles de um formulário, basta chamar o método LimparControles e passar a coleção de controles do formulário como parâmetro.
+- `public void LimparControles(Control.ControlCollection control)`: Limpa os controles de um formulário, incluindo TextBoxes, ComboBoxes e CheckBoxes. Também limpa recursivamente os controles filhos, se houver.
+- `public void IniciarTimer(Control objetoAlvo, int intervalo)`: Inicia um timer para ocultar um objeto alvo após um determinado intervalo de tempo.
+- `public void IniciarTimer(Control control, int intervalo, Action callback)`: Inicia um timer para ocultar um controle após um determinado intervalo de tempo e executa um callback, se fornecido, após ocultar o controle.

@@ -1,121 +1,78 @@
-#### Algoritmo Museu
-    // Declaração de variáveis
-    Variáveis
-        obras: Lista de Obra
-        visitantes: Lista de Visitante
+    classe Museu
+        privado somente leitura obras: Lista<Obra>
+        privado somente leitura visitantes: Lista<Visitante>
+        privado obraAtualIndex: inteiro // Variável para armazenar o índice da obra atual
 
-    // Procedimento para inicializar o Museu
-    Procedimento Museu()
-        Início
-            InicializarListas()
-        Fim Procedimento
+        metodo novo()
+            visitantes := []
+            obras := []
 
-    // Procedimento para inicializar as listas de obras e visitantes
-    Procedimento InicializarListas()
-        Início
-            InicializarObras()
-            InicializarVisitantes()
-        Fim Procedimento
+            se Obras.Comprimento == 0 entao
+                Imagem imagem1 := Imagem.DoArquivo("Imagens\\imgObra1.jpeg")
+                Imagem imagem2 := Imagem.DoArquivo("Imagens\\imgObra2.jpeg")
+                Imagem imagem3 := Imagem.DoArquivo("Imagens\\imgObra3.jpeg")
+                Imagem imagem4 := Imagem.DoArquivo("Imagens\\imgObra4.jpeg")
 
-    // Procedimento para inicializar a lista de obras
-    Procedimento InicializarObras()
-        Início
-            obras := CriarListaDeObras()
-        Fim Procedimento
+                obras.Adicionar(novo Obra(1, "A Grande Jornada Lunar",
+                                            "Testemunhe a corajosa façanha da humanidade enquanto adentra" +
+                                            " o espaço desconhecido. Esta exibição celebra a primeira viagem" +
+                                            " tripulada à Lua, destacando os heróis que a tornaram possível" +
+                                            " e os avanços tecnológicos que a viabilizaram.\r\n", imagem1))
+                obras.Adicionar(novo Obra(2, "A Pioneira Apollo 11",
+                                            "Descubra os segredos da missão Apollo 11, onde Neil Armstrong, Buzz" +
+                                            " Aldrin e Michael Collins escreveram seus nomes na história. " +
+                                            "Explore os trajes espaciais, artefatos e a emocionante jornada que" +
+                                            " levou o homem à superfície lunar pela primeira vez.", imagem2))
+                obras.Adicionar(novo Obra(3, "O Desembarque na Lua",
+                                            "Reviva o momento transcendental em que a humanidade deu seu primeiro " +
+                                            "passo na Lua. Esta exibição imersiva transporta os visitantes para a " +
+                                            "superfície lunar, capturando a emoção e a grandiosidade do momento " +
+                                            "icônico que mudou para sempre nossa compreensão do cosmos.", imagem3))
+                obras.Adicionar(novo Obra(4, "Legado Lunar",
+                                            "Explore o impacto duradouro da primeira viagem do homem à Lua e sua " +
+                                            "influência na exploração espacial moderna. Dos primeiros passos na " +
+                                            "superfície lunar até as futuras expedições interplanetárias, esta exposição " +
+                                            "destaca o legado inspirador da conquista do espaço.", imagem4))
+            fim se
 
-    // Procedimento para inicializar a lista de visitantes
-    Procedimento InicializarVisitantes()
-        Início
-            visitantes := CriarListaDeVisitantes()
-        Fim Procedimento
+            obraAtualIndex:= 0 
 
-    // Procedimento para cadastrar um visitante
-    Procedimento CadastrarVisitante(nome: Caractere, dataNascimento: Caractere)
-        Início
-            AdicionarVisitante(nome, dataNascimento)
-        Fim Procedimento
+        metodo AvancarParaProximaObra()
+            obraAtualIndex++
+            se obraAtualIndex >= obras.Comprimento entao
+                obraAtualIndex := 0 
+            fim se
 
-    // Procedimento para remover o último visitante
-    Procedimento RemoverUltimoVisitante()
-        Inicio
-            Se visitantes.Contador > 0
-                visitantes.Remover(visitantes.Contador -1)
-        Fim Procedimento
+        metodo RetrocederParaObraAnterior()
+            obraAtualIndex--
+            se obraAtualIndex < 0 entao
+                obraAtualIndex := obras.Comprimento - 1 
+            fim se
 
-    // Função para obter a quantidade de visitantes
-    Função ObterQuantidadeDeVisitantes() -> Inteiro
-        Início
-            Retorne QuantidadeDeVisitantes()
-        Fim Função
+        metodo ObraAtual(): Obra
+            retornar obras[obraAtualIndex]
 
-    // Função para exibir o histórico de uma obra
-    Função ExibirHistoricoObra(id: Inteiro) -> Caractere
-        Início
-            Retorne HistoricoDaObra(id)
-        Fim Função
+        metodo CadastrarVisitante(nome: texto, dataNascimento: texto)
+            visitantes.Adicionar(novo Visitante(nome, dataNascimento))
 
-    // Função para criar a lista de obras
-    Função CriarListaDeObras() -> Lista de Obra
-        Início
-            // Inicializa a lista de obras
-            obras := CriarListaVaziaDeObras()
+        metodo RemoverUltimoVisitante()
+            se visitantes.Comprimento > 0 entao
+                visitantes.RemoverNo(visitantes.Comprimento - 1)
+            fim se
 
-            // Adiciona as obras padrão apenas se a lista estiver vazia
-            Se (Tamanho(obras) = 0) Então
-                AdicionarObrasPadrao(obras)
-            Fim Se
+        metodo ObterQuantidadeDeVisitantes(): inteiro
+            retornar visitantes.Comprimento
 
-            Retorne obras
-        Fim Função
+        metodo ExibirHistoricoObraAtual(): texto
+            retornar ExibirHistoricoObra(ObraAtual().Id)
 
-    // Procedimento para adicionar obras padrão à lista
-    Procedimento AdicionarObrasPadrao(var obras: Lista de Obra)
-        Início
-            AdicionarObra(obras, Nova Obra(1, "Título1", "Histórico1"))
-            AdicionarObra(obras, Nova Obra(2, "Título2", "Histórico2"))
-            AdicionarObra(obras, Nova Obra(3, "Título3", "Histórico3"))
-            AdicionarObra(obras, Nova Obra(4, "Título4", "Histórico4"))
-        Fim Procedimento
+        metodo ExibirHistoricoObra(id: inteiro): texto
+            para cada obra em Obras faca
+                se obra.Id == id entao
+                    retornar $"{obra.Titulo}\n\n    {obra.Historico}"
+                fim se
+            fim para
 
-    // Função para criar uma lista vazia de obras
-    Função CriarListaVaziaDeObras() -> Lista de Obra
-        Início
-            Retorne Nova Lista de Obra
-        Fim Função
+            retornar "Obra não encontrada no museu."
 
-    // Procedimento para adicionar uma obra à lista de obras
-    Procedimento AdicionarObra(var obras: Lista de Obra, obra: Obra)
-        Início
-            AdicionarElemento(obra, obras)
-        Fim Procedimento
-
-    // Função para criar uma lista vazia de visitantes
-    Função CriarListaDeVisitantes() -> Lista de Visitante
-        Início
-            Retorne Nova Lista de Visitante
-        Fim Função
-
-    // Procedimento para adicionar um visitante à lista de visitantes
-    Procedimento AdicionarVisitante(nome: Caractere, dataNascimento: Caractere)
-        Início
-            AdicionarElemento(Nova Visitante(nome, dataNascimento), visitantes)
-        Fim Procedimento
-
-    // Função para obter a quantidade de visitantes
-    Função QuantidadeDeVisitantes() -> Inteiro
-        Início
-            Retorne Tamanho(visitantes)
-        Fim Função
-
-    // Função para obter o histórico de uma obra
-    Função HistoricoDaObra(id: Inteiro) -> Caractere
-        Início
-            Para cada obra em obras Faça
-                Se (obra.Id = id) Então
-                    Retorne "Título: " + obra.Título + "\nHistórico: " + obra.Histórico
-                Fim Se
-            Fim Para
-
-            Retorne "Obra não encontrada no museu."
-        Fim Função
-#### Fim Algoritmo
+        publico somente leitura propriedade Obras: Lista<Ob

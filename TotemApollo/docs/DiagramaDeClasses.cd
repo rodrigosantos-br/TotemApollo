@@ -1,94 +1,143 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="TotemApollo.Modelos.Museu">
-    <Position X="6.75" Y="2.5" Width="2.5" />
+    <Position X="4" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAACAgAAAIAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAiA=</HashCode>
+      <HashCode>gAgCAgAAAIAAAAADAgAAEAAAAAAAAAAAACAAAAAAAiA=</HashCode>
       <FileName>Modelos\Museu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Modelos.Obra">
-    <Position X="9.75" Y="0.5" Width="2.25" />
+    <Position X="1.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABA=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABAAAAABA=</HashCode>
       <FileName>Modelos\Obra.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Modelos.Questionario">
-    <Position X="9.75" Y="2.75" Width="3" />
+    <Position X="12.25" Y="3" Width="3" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAEQACBAgAAAAEAAAAAAAAABAAAAAAAACAAAAA=</HashCode>
+      <HashCode>IAAAAAAEAAABAgAAAAAABAAAAAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Modelos\Questionario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Modelos.Visitante">
-    <Position X="7" Y="0.5" Width="2.25" />
+    <Position X="8.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>Modelos\Visitante.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Program">
-    <Position X="4" Y="9" Width="1.5" />
+    <Position X="8.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Controles.CadastroControle">
-    <Position X="3.75" Y="4.25" Width="2.25" />
+    <Position X="0.75" Y="6.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEBAAABAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEBAAABAAAAAAAAAAAQCAAAAAAAAA=</HashCode>
       <FileName>Controles\CadastroControle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Controles.ObrasControle">
-    <Position X="6.75" Y="5.5" Width="2.5" />
+    <Position X="4.25" Y="5.25" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAAACAAAAAAAAgAAEIAAAAAAAAAAUAAAAAAAAAA=</HashCode>
       <FileName>Controles\ObrasControle.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TotemApollo.Controles.QuestionarioControle">
-    <Position X="9.75" Y="6.5" Width="3" />
-    <TypeIdentifier>
-      <HashCode>AAAEAAAMQAABAoAABAIAAAAAAAAAAAAAAgAAACAAAAA=</HashCode>
-      <FileName>Controles\QuestionarioControle.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="TotemApollo.TecladoControle">
-    <Position X="0.5" Y="0.5" Width="3" />
+    <Position X="0.5" Y="10.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AACCEAAQACAAAAEAkICAAGBz8P/vDwAAAAEEAEIAAAA=</HashCode>
+      <HashCode>AACCEAAQACAAAAEAkKCAAGBz8P/vDwAAAAEEAEIAAAA=</HashCode>
       <FileName>Controles\TecladoControle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Modelos.CadastroValidacao">
-    <Position X="3.75" Y="0.5" Width="2.75" />
+    <Position X="0.75" Y="2.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAgAAAAAAEAEAgAAAAAAAAAAAABAAAAAQBA=</HashCode>
       <FileName>Modelos\CadastroValidacao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Modelos.QuestionarioValidacao">
-    <Position X="10.25" Y="10.5" Width="2" />
+    <Position X="8.25" Y="6.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Modelos\QuestionarioValidacao.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Totem">
-    <Position X="6" Y="7.5" Width="3.25" />
+    <Position X="4" Y="9.75" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>ARDYTzAlCCALQhQAAKifRnpLKAAMAxDkCwQC6AMCIEA=</HashCode>
+      <HashCode>iIESIjChCCBRgkuACGisIALiKACNA6JELExToQQEIQA=</HashCode>
       <FileName>Apresentacoes\Totem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TotemApollo.Apresentacoes.AreaSecreta">
-    <Position X="0.75" Y="12.25" Width="3.75" />
+    <Position X="10.25" Y="12" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAABCAACAACBACABAICAAgAAAAAAAIEAAABAAA=</HashCode>
+      <HashCode>AAAEAAAABCAACAACBACAhABCAAgAAAAAAEIAAAABAAA=</HashCode>
       <FileName>Apresentacoes\AreaSecreta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Modelos.Pergunta">
+    <Position X="17" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Modelos\Pergunta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QuestionarioEstaticos">
+    <Position X="11.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Modelos\QuestionarioEstaticos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Modelos.QuestionarioInteracao">
+    <Position X="8.25" Y="2.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AgAIAAAAIAAAAAAAAIAAAAAAASAAAAAAAAgAAAAEACE=</HashCode>
+      <FileName>Modelos\QuestionarioInteracao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Modelos.QuestionarioSatisfacao">
+    <Position X="16" Y="3.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelos\QuestionarioSatisfacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Modelos.Resposta">
+    <Position X="14.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Modelos\Resposta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Controles.FormularioControle">
+    <Position X="8.25" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controles\FormularioControle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Controles.QuestionarioInteracaoControle">
+    <Position X="12" Y="7.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAIAAAAAAABIJAAAAAAAAAIAAEAAAEAIAIBAE=</HashCode>
+      <FileName>Controles\QuestionarioInteracaoControle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TotemApollo.Controles.QuestionarioSatisfacaoControle">
+    <Position X="15.75" Y="6.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQEBAAsQAABAiAABAIABAABBAAAAAIEAgAAACQAAAA=</HashCode>
+      <FileName>Controles\QuestionarioSatisfacaoControle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -1,54 +1,31 @@
-#### Algoritmo FormularioControle
+    classe FormularioControle
+        metodo LimparControles(controle: vetor de Controle)
+            para cada controle em controle faca
+                se controle for TextBox entao
+                    controle.Clear()
+                senao se controle for ComboBox entao
+                    controle.SelectedIndex := -1
+                senao se controle for CheckBox entao
+                    controle.Checked := falso
 
-    // Procedimento para limpar os controles
-    Procedimento LimparControles(controle: Lista de Controle)
-        Início
-            Para cada controle em controle Faça
-                Se (TipoDoControle(controle) = "TextBox") Então
-                    LimparTextBox(controle)
-                Senão Se (TipoDoControle(controle) = "ComboBox") Então
-                    LimparComboBox(controle)
-                Senão Se (TipoDoControle(controle) = "CheckBox") Então
-                    LimparCheckBox(controle)
-                Senão Se (TipoDoControle(controle) = "RadioButton") Então
-                    LimparRadioButton(controle)
-                Fim Se
-
-                // Recursivamente limpar os controles filhos, se houver
-                Se (Tamanho(controle.Controls) > 0) Então
+                se controle.Controls.Tamanho > 0 entao
                     LimparControles(controle.Controls)
-                Fim Se
-            Fim Para
-        Fim Procedimento
 
-    // Função para obter o tipo do controle
-    Função TipoDoControle(controle: Controle) -> Caractere
-        Início
-            Retorne ObterTipo(controle)
-        Fim Função
+        metodo IniciarTimer(objetoAlvo: Controle, intervalo: inteiro)
+            temporizador := novo Timer()
+            temporizador.Intervalo := intervalo 
+            temporizador.AoClicar := (sender, e) ->
+                objetoAlvo.Visible := falso 
+                temporizador.Parar() 
+                temporizador.LiberarRecursos() 
+            temporizador.Iniciar() 
 
-    // Procedimento para limpar TextBox
-    Procedimento LimparTextBox(controle: Controle)
-        Início
-            ((controle) Como TextBox).Clear()
-        Fim Procedimento
-
-    // Procedimento para limpar ComboBox
-    Procedimento LimparComboBox(controle: Controle)
-        Início
-            ((controle) Como ComboBox).SelectedIndex := -1
-        Fim Procedimento
-
-    // Procedimento para limpar CheckBox
-    Procedimento LimparCheckBox(controle: Controle)
-        Início
-            ((controle) Como CheckBox).Checked := Falso
-        Fim Procedimento
-
-    // Procedimento para limpar RadioButton
-    Procedimento LimparRadioButton(controle: Controle)
-        Início
-            ((controle) Como RadioButton).Checked := Falso
-        Fim Procedimento
-
-#### Fim Algoritmo
+        metodo IniciarTimer(controle: Controle, intervalo: inteiro, callback: acao)
+            temporizador := novo Timer()
+            temporizador.Intervalo := intervalo
+            temporizador.AoClicar := (s, e) ->
+                controle.Visible := falso
+                temporizador.Parar()
+                callback?.Invocar()
+            temporizador.Iniciar()
+    fim classe

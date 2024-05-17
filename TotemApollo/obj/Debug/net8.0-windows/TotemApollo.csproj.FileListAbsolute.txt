@@ -65,6 +65,9 @@ C:\Projects\TotemApolloTeste\TotemApollo\obj\Debug\net8.0-windows\refint\TotemAp
 C:\Projects\TotemApolloTeste\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.pdb
 C:\Projects\TotemApolloTeste\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.genruntimeconfig.cache
 C:\Projects\TotemApolloTeste\TotemApollo\obj\Debug\net8.0-windows\ref\TotemApollo.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.runner.visualstudio.testadapter.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.runner.reporters.netcoreapp10.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.runner.utility.netcoreapp10.dll
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.exe
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Modelos\Museu.cs
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Imagens\estrelaBom.png
@@ -87,6 +90,13 @@ C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.deps.js
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.runtimeconfig.json
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.dll
 C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\TotemApollo.pdb
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Castle.Core.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\Moq.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.abstractions.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.assert.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.core.dll
+C:\Projects\TotemApollo\TotemApollo\bin\Debug\net8.0-windows\xunit.execution.dotnet.dll
+C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.csproj.AssemblyReference.cache
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.g.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Apresentacoes.AreaSecreta.resources
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Totem.resources
@@ -98,6 +108,7 @@ C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.Assembl
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.AssemblyInfo.cs
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.csproj.CoreCompileInputs.cache
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.sourcelink.json
+C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApo.C8C034D9.Up2Date
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.dll
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\refint\TotemApollo.dll
 C:\Projects\TotemApollo\TotemApollo\obj\Debug\net8.0-windows\TotemApollo.pdb

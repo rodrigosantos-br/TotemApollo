@@ -1,183 +1,189 @@
-#### Algoritmo Totem
-    usando TotemApollo.Apresentacoes
-    usando TotemApollo.Controles
-    usando TotemApollo.Modelos
+    algoritmo
+        inclua TotemApollo.Controles
+        inclua TotemApollo.Modelos
 
-    classe parcial Totem: Formulario
-        privado TecladoControle _teclado
-        privado CadastroControle _cadastro
-        privado ObrasControle _obras
-        privado QuestionarioControle _questionario
-        privado FormularioControle _formulario
+        classe Totem
+            privado _teclado: TecladoControle
+            privado _cadastro: CadastroControle
+            privado _obras: ObrasControle
+            privado _questionarioInteracao: QuestionarioInteracaoControle
+            privado _questionarioSatisfacao: QuestionarioSatisfacaoControle
+            privado _formulario: FormularioControle
+            privado _checkboxes: vetor de CheckBox
+            privado _buttons: vetor de Button
 
-        procedimento Totem()
-            inicio
-                InicializarComponente()
+            metodo novo()
+                inicializarComponentes()
+
+                // Inicializa a lista de botões antes de passá-la para o controle QuestionarioInteracaoControle
+                _buttons := [btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE]
                 _formulario := novo FormularioControle()
+                _questionarioInteracao := novo QuestionarioInteracaoControle(_buttons)
+                _questionarioSatisfacao := novo QuestionarioSatisfacaoControle()
                 _teclado := novo TecladoControle()
                 _teclado.TeclaProcessada += Teclado_TeclaProcessada
-                _questionario := novo QuestionarioControle()
-            fim_procedimento
+                _checkboxes := [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]
+                _questionarioSatisfacao.AssociarCheckBoxes(_checkboxes)
 
-        procedimento Teclado_TeclaProcessada(objeto remetente, caractere teclaProcessada)
-            inicio
-                se (teclaProcessada = "Enter") entao
-                    // Clicar no botão "Iniciar"
-                    btnIniciar.ExecutarClique()
-                senao se (teclaProcessada = "K") entao
+            metodo Teclado_TeclaProcessada(sender, teclaProcessada)
+                se teclaProcessada = "Enter" entao
+                    btnIniciar.PerformClick()
+                senao se teclaProcessada = "K" entao
                     _teclado.AbrirAreaSecreta()
-                senao se (teclaProcessada = "Backspace") entao
+                senao se teclaProcessada = "Backspace" entao
                     _teclado.RemoveUltimoCaractere(txbNome)
                 senao
-                    // Adicionar a tecla processada ao texto
-                    txbNome.Texto += teclaProcessada
-            fim_procedimento
+                    txbNome.Text := txbNome.Text + teclaProcessada
 
-        procedimento txbNome_Entrar(objeto remetente, EventArgs e)
-            inicio
+            metodo TxbNome_Entrar(sender, e)
                 _teclado.AdicionarTeclado(pnlCadastro)
-            fim_procedimento
 
-        procedimento txbNome_Sair(objeto remetente, EventArgs e)
-            inicio
-                // Verifica se o controle que recebeu o foco não é o teclado virtual
-                se (Este.ControleAtivo != _teclado) entao
-                    // Oculta o teclado virtual quando o txbNome perder o foco
+            metodo TxbNome_Sair(sender, e)
+                se this.ActiveControl != _teclado entao
                     _teclado.RemoverTeclado(pnlCadastro)
-            fim_procedimento
 
-        procedimento DataNascimento_DataSelecionada(objeto remetente, DateRangeEventArgs e)
-            inicio
-                txbDataNascimento.Texto := mtcCalendario.SelecaoInicio.ToShortDateString()
-                mtcCalendario.Visível := falso
-            fim_procedimento
+            metodo DataNascimento_DateSelected(sender, e)
+                txbDataNascimento.Text := mtcCalendario.SelectionStart.ToShortDateString()
+                mtcCalendario.Visible := falso
 
-        procedimento txbDataNascimento_Entrar(objeto remetente, EventArgs e)
-            inicio
-                mtcCalendario.Visível := verdadeiro
+            metodo TxbDataNascimento_Entrar(sender, e)
+                mtcCalendario.Visible := verdadeiro
                 _teclado.RemoverTeclado(pnlCadastro)
-            fim_procedimento
 
-        procedimento txbDataNascimento_Sair(objeto remetente, EventArgs e)
-            inicio
-                se (ControleAtivo != mtcCalendario) entao
-                    mtcCalendario.Visível := falso
-            fim_procedimento
+            metodo TxbDataNascimento_Sair(sender, e)
+                se ActiveControl != mtcCalendario entao
+                    mtcCalendario.Visible := falso
 
-        procedimento btnIniciar_Clicar(objeto remetente, EventArgs e)
-            inicio
-                _cadastro := novo CadastroControle(txbNome.Texto, txbDataNascimento.Texto)
+            metodo BtnIniciar_Clicar(sender, e)
+                _cadastro := novo CadastroControle(txbNome.Text, txbDataNascimento.Text)
 
-                // Verificar se houve erro na validação do nome ou da data de nascimento
-                se (_cadastro.Mensagem = "") entao
-                    pnlCadastro.Visível := falso
-                    pnlObras.Mostrar()
+                se _cadastro.Mensagem = "" entao
+                    _obras := novo ObrasControle()
+                    pnlCadastro.Visible := falso
+                    pnlObraDescricao.Visible := verdadeiro // Torna o painel de descrição visível
+
+                    _obras.ExibirObraAtual(pbxImagemObra, lblDescricao)
                 senao
-                    MessageBox.Mostrar(_cadastro.Mensagem)
+                    MessageBox.Show(_cadastro.Mensagem)
                     retornar
-            fim_procedimento
 
-        procedimento btnVoltarInicio_Clicar(objeto remetente, EventArgs e)
-        
-            pnlObras.Visible = false;
-            pnlCadastro.Show();
-            _formulario.LimparControles(Este.Controles);
-            _cadastro.RemoverUltimoVisitante();
-        
-        procedimento btnObra1_Clicar(objeto remetente, EventArgs e)
-            inicio
-                _obras := novo ObrasControle()
-                pnlObras.Visível := falso
-                pnlDescricao.Mostrar()
+            metodo BtnVoltar_Clicar(sender, e)
+                pnlObraDescricao.Visible := falso
+                _cadastro.RemoverUltimoVisitante()
+                _formulario.LimparControles(Controls)
+                pnlCadastro.Show()
 
-                // Exibe o histórico da primeira obra
-                lblDescricao.Texto := _obras.ExibirHistoricoObra(1)
+            metodo BtnAvancarObra_Clicar(sender, e)
+                _obras.AvancarParaProximaObra()
+                _obras.ExibirObraAtual(pbxImagemObra, lblDescricao)
 
-                pbxDescricaoObra.Imagem := Imagem.CarregarDeArquivo("Imagens\\imgObra1.jpeg")
-            fim_procedimento
+            metodo BtnRetrocederObra_Clicar(sender, e)
+                _obras.RetrocederParaObraAnterior()
+                _obras.ExibirObraAtual(pbxImagemObra, lblDescricao)
 
-        procedimento btnObra2_Clicar(objeto remetente, EventArgs e)
-            inicio
-                _obras := novo ObrasControle()
-                pnlObras.Visível := falso
-                pnlDescricao.Mostrar()
+            metodo BtnQuestionarioInteracao_Clicar(sender, e)
+                pnlObraDescricao.Visible := falso
+                btnVoltarQ.Visible := verdadeiro
+                pnlQuestionario.Show()
+                _questionarioSatisfacao.IncrementarContadorInteracoes()
+                _questionarioInteracao.ExibirProximaPergunta(lblPergunta)
+                pnlEstrelasSatisfacao.Visible := falso
+                pnlOpcoesRespostaInteracoes.Show()
+                btnProximaPerguntaInteracao.Visible := verdadeiro
+                btnProximaPerguntaSatisfacao.Visible := falso
+                pcbBalaoInformacao.BackgroundImage := Properties.Resources.imgBalaoQuiz
+                pcbBalaoInformacao.BackgroundImageLayout := ImageLayout.Stretch
+                pcbBalaoInformacao.Visible := verdadeiro
+                // Define um Timer para ocultar a imagem após 3,8 segundos
+                _formulario.IniciarTimer(pcbBalaoInformacao, 3800)
 
-                // Exibe o histórico da segunda obra
-                lblDescricao.Texto := _obras.ExibirHistoricoObra(2)
+            metodo BotaoVoltarObras_Clicar(sender, e)
+                pnlQuestionario.Visible := falso
+                pnlObraDescricao.Show()
+                _questionarioSatisfacao.DecrementarContadorInteracoes()
+                _questionarioInteracao.ExibirPerguntaAnterior(lblPergunta)
 
-                pbxDescricaoObra.Imagem := Imagem.CarregarDeArquivo("Imagens\\imgObra2.jpeg")
-            fim_procedimento
+            metodo ChkPessimo_Mudar(sender, e)
+                _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e)
 
-        procedimento btnObra3_Clicar(objeto remetente, EventArgs e)
-            inicio
-                _obras := novo ObrasControle()
-                pnlObras.Visível := falso
-                pnlDescricao.Mostrar()
+            metodo ChkRuim_Mudar(sender, e)
+                _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e)
 
-                // Exibe o histórico da terceira obra
-                lblDescricao.Texto := _obras.ExibirHistoricoObra(3)
+            metodo ChkRegular_Mudar(sender, e)
+                _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e)
 
-                pbxDescricaoObra.Imagem := Imagem.CarregarDeArquivo("Imagens\\imgObra3.jpeg")
-            fim_procedimento
+            metodo ChkBom_Mudar(sender, e)
+                _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e)
 
-        procedimento btnObra4_Clicar(objeto remetente, EventArgs e)
-            inicio
-                _obras := novo ObrasControle()
-                pnlObras.Visível := falso
-                pnlDescricao.Mostrar()
+            metodo ChkOtimo_Mudar(sender, e)
+                _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e)
 
-                // Exibe o histórico da quarta obra
-                lblDescricao.Texto := _obras.ExibirHistoricoObra(4)
+            metodo BtnRespostaInteracao_Clicar(sender, e)
+                botaoResposta : Button := Button(sender)
+                respostaUsuario : string := botaoResposta.Text
 
-                pbxDescricaoObra.Imagem := Imagem.CarregarDeArquivo("Imagens\\imgObra4.jpeg")
-            fim_procedimento
+                _questionarioInteracao.VerificarResposta(respostaUsuario, botaoResposta)
+                lblExplicacaoResposta.Visible := verdadeiro
+                _questionarioInteracao.MostrarExplicacaoResposta(lblExplicacaoResposta)
+            para cada botao em _buttons faca
+                botao.Enabled := falso
 
-        procedimento btnVoltar_Clicar(objeto remetente, EventArgs e)
-            inicio
-                pnlDescricao.Visível := falso
-                pnlObras.Mostrar()
-            fim_procedimento
+        metodo BtnProximaPerguntaInteracao_Clicar(sender, e)
+            se !_questionarioInteracao.ValidarRespostas() entao
+                MessageBox.Show("Por favor, responda todas as perguntas.")
+                retornar
 
-        procedimento btnQuestionario_Clicar(objeto remetente, EventArgs e)
-            inicio
-                pnlDescricao.Visível := falso
-                pnlQuestionario.Mostrar()
-                _questionario.IncrementarContadorInteracoes()
-            fim_procedimento
+            lblExplicacaoResposta.Visible := falso
+            _questionarioInteracao.ExibirProximaPergunta(lblPergunta)
 
-        // Evento de clique do botão para salvar as respostas e exibir o relatório cumulativo
-        procedimento btnSalvar_Clicar(objeto remetente, EventArgs e)
-            inicio
-                // Obtém as respostas do formulário
-                var respostas := _questionario.ObterRespostasDoFormulario(
-                    novo vetor de RadioButton { rdbQ1Nota1, rdbQ1Nota2, rdbQ1Nota3, rdbQ1Nota4, rdbQ1Nota5 },
-                    novo vetor de RadioButton { rdbQ2Nota1, rdbQ2Nota2, rdbQ2Nota3, rdbQ2Nota4, rdbQ2Nota5 },
-                    novo vetor de RadioButton { rdbQ3Nota1, rdbQ3Nota2, rdbQ3Nota3, rdbQ3Nota4, rdbQ3Nota5 },
-                    novo vetor de RadioButton { rdbQ4Nota1, rdbQ4Nota2, rdbQ4Nota3, rdbQ4Nota4, rdbQ4Nota5 },
-                    novo vetor de RadioButton { rdbQ5Nota1, rdbQ5Nota2, rdbQ5Nota3, rdbQ5Nota4, rdbQ5Nota5 }
-                )
+            se _questionarioInteracao.IndicePerguntaAtual = _questionarioInteracao.ObterNumeroPerguntas() entao
+                pnlOpcoesRespostaInteracoes.Visible := falso
+                btnProximaPerguntaInteracao.Visible := falso
+                lblRelatorioAcumuladoQuestionarioInteracao.Text := _questionarioInteracao.ExibirGabarito()
+                pnlRelatorioAcumuladoInteracao.Visible := verdadeiro
+                para cada botao em _buttons faca
+                    botao.Ativar := verdadeiro
+            senao
+                para cada botao em _buttons faca
+                    botao.Ativar := verdadeiro
 
-                // Verifica se todas as perguntas foram respondidas corretamente
-                se (_questionario.ValidarRespostas(respostas)) entao
-                    // Adiciona as respostas ao questionário
-                    para (inteiro i := 0; i < respostas.Tamanho; i++)
-                    inicio
-                        _questionario.AdicionarRespostas(i, respostas[i])
-                    fim_para
+        metodo BtnAvancarParaQuestionarioSatisfacao_Clicar(sender, e)
+            pnlRelatorioAcumuladoInteracao.Visible := falso
+            pnlEstrelasSatisfacao.Visible := verdadeiro
+            btnProximaPerguntaSatisfacao.Visible := verdadeiro
+            pcbBalaoInformacao.BackgroundImage := Properties.Resources.imgBalaoSatisfacao
+            pcbBalaoInformacao.Visible := verdadeiro
+            btnVoltarQ.Visible := falso
+            _formulario.IniciarTimer(pcbBalaoInformacao, 3800)
+            _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, _checkboxes)
 
-                    // Se todas as perguntas foram respondidas, obtém e exibe o relatório cumulativo
-                    var relatorio := _questionario.ObterRelatorioCumulativo()
-                    var relatorioFormatado := Texto.Juntar(Env.NewLine, relatorio)
-                    MessageBox.Mostrar(relatorioFormatado, "Relatório Cumulativo")
+        metodo BtnProximaPerguntaSatisfacao_Clicar(sender, e)
+            respostas : vetor de inteiro := _questionarioSatisfacao.ObterRespostasDoFormulario(_checkboxes)
 
-                    // Limpa os controles após o salvamento bem-sucedido
-                    _formulario.LimparControles(Este.Controles)
+            se !_questionarioSatisfacao.ValidarRespostas(respostas) entao
+                MessageBox.Show("Por favor, responda todas as perguntas.")
+                retornar
 
-                    pnlQuestionario.Visível := falso
-                    pnlCadastro.Mostrar()
-                senao
-                    // Se nem todas as perguntas foram respondidas corretamente, exibe uma mensagem de erro
-                    MessageBox.Mostrar("Por favor, responda todas as perguntas antes de salvar.", "Erro")
-            fim_procedimento
-    fim_classe
-### Fim Algoritmo
+            _questionarioSatisfacao.AdicionarRespostasDoFormulario(respostas)
+
+            se _questionarioSatisfacao.IndicePerguntaAtual >= _questionarioSatisfacao.ObterPerguntas().Count entao
+                pnlRelatorioAcumuladoSatisfacao.Visible := verdadeiro
+                _formulario.IniciarTimer(pnlRelatorioAcumuladoSatisfacao, 10000, () => BtnFinalizar_Click(sender, e))
+                btnProximaPerguntaSatisfacao.Visible := falso
+                btnVoltarQ.Visible := falso
+                relatorio : vetor de string := _questionarioSatisfacao.ObterRelatorioCumulativo()
+
+                lblRelatorioAcumuladoSatisfacao.Text := unir("\n", relatorio)
+            senao
+                _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, _checkboxes)
+
+        metodo BtnFinalizar_Click(sender, e)
+            pnlQuestionario.Visible := falso
+            pnlCadastro.Show()
+            _questionarioSatisfacao.IndicePerguntaAtual := 0
+            _formulario.LimparControles(Controls)
+            btnProximaPerguntaSatisfacao.Visible := verdadeiro
+
+    fim classe
+
+           

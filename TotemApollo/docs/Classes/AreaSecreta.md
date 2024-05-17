@@ -1,22 +1,14 @@
-# Classe AreaSecreta
+### Classe `AreaSecreta`
 
-## Descrição
+Essa classe representa a área secreta da aplicação e herda da classe `Form`.
 
-A classe AreaSecreta representa a interface para acessar a área secreta do Totem Apollo, onde são exibidos relatórios confidenciais sobre o feedback do questionário coletado dos visitantes.
+#### Atributos:
 
-### Membros
+- `private readonly QuestionarioSatisfacaoControle _questionario`: Controla o questionário de satisfação exibido na área secreta.
 
-- **_questionario**: Controle para acessar as funcionalidades relacionadas ao questionário.
+#### Métodos:
 
-#### Construtores
-
-- **AreaSecreta()**: Inicializa uma nova instância da classe AreaSecreta e configura o controle do questionário.
-
-#### Métodos
-
-- **btnMostrarRelatorio_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Mostrar Relatório" é clicado, responsável por exibir as porcentagens totais para cada categoria de resposta do questionário no DataGridView.
-- **btnFecharPrograma_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Fechar Programa" é clicado, responsável por encerrar a aplicação.
-
-#### Uso
-
-Para utilizar a classe AreaSecreta, crie uma nova instância dela e configure os controles necessários. Utilize os eventos e métodos disponíveis para controlar a interação com os usuários e executar as operações desejadas, como exibir relatórios confidenciais ou encerrar o programa.
+- `public AreaSecreta()`: Construtor da classe `AreaSecreta`.
+- `private void BtnFecharPrograma_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Fechar Programa".
+- `private void BtnVoltarCadastro_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Voltar" para fechar a área secreta.
+- `private void AreaSecreta_Load(object sender, EventArgs e)`: Manipula o evento de carregamento da área secreta, onde são exibidos os dados do questionário de satisfação.

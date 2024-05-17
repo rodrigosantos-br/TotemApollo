@@ -1,18 +1,25 @@
-#### Algoritmo QuestionarioValidacao
-    procedimento QuestionarioValidacao()
-        // Método para validar se todas as questões foram respondidas
-        funcao ValidarRespostas(respostas: lista de inteiro) -> logico
-        inicio
-            se tamanho(respostas) = 0 entao
-                retorne falso // Retorna falso se a lista estiver vazia
-            fim_se
+    classe QuestionarioValidacao
+    
+        funcao ValidarRespostas(Lista<int> respostas)
 
-            para cada resposta em respostas faca
-                se resposta = -1 entao // Se a resposta for -1, significa que não foi respondida
-                    retorne falso
-                fim_se
-            fim_para
+            se (respostas.Contar == 0)
+                retornar falso; 
 
-            retorne verdadeiro
-        fim_funcao
-#### Fim Algoritmo
+            para cada (inteiro resposta em respostas)
+            
+                se (resposta == -1)
+                    retornar falso;
+            
+            retornar verdadeiro;
+        
+
+        funcao ValidarRespostas(Lista<Botao> botoesResposta)
+        
+            para cada (Botao botao em botoesResposta)
+            
+                se (botao.CorFundo != CoresSistema.Controle) 
+                    retornar verdadeiro;
+                
+            
+            retornar falso;
+    fimclasse

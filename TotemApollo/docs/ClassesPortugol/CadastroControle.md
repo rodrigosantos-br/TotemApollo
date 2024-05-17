@@ -1,39 +1,23 @@
-#### Algoritmo CadastroControle
+    classe CadastroControle
+        privado museu: Museu
+        privado validacao: CadastroValidacao
+        privado mensagem: string
 
-    // Declaração de variáveis
-    museu: Museu
-    validacao: CadastroValidacao
-    mensagem: Caractere
+        metodo novo(nome: string, dataNascimento: string)
+            this.validacao := novo CadastroValidacao(nome, dataNascimento)
+            se validacao.MensagemNome = "" e validacao.MensagemDataNascimento = "" entao
+                this.museu := novo Museu()
+                this.museu.CadastrarVisitante(nome, dataNascimento)
+                this.mensagem := ""
+            senao
+                this.mensagem := "Não foi possível cadastrar o visitante. "
+                se validacao.MensagemNome != "" entao
+                    this.mensagem := this.mensagem + validacao.MensagemNome
+                se validacao.MensagemDataNascimento != "" entao
+                    this.mensagem := this.mensagem + validacao.MensagemDataNascimento
 
-    // Procedimento para controlar o cadastro do visitante
-    Procedimento CadastroControle(nome: Caractere, dataNascimento: Caractere)
-        Início
-            validacao := Novo CadastroValidacao(nome, dataNascimento)
-            Se (validacao.MensagemNome = "" E validacao.MensagemDataNascimento = "") Então
-                museu := Novo Museu()
-                museu.CadastrarVisitante(nome, dataNascimento)
-                mensagem := ""
-            Senão
-                mensagem := "Não foi possível cadastrar o visitante. "
-                Se (validacao.MensagemNome <> "") Então
-                    mensagem := mensagem + validacao.MensagemNome
-                Fim Se
-                Se (validacao.MensagemDataNascimento <> "") Então
-                    mensagem := mensagem + validacao.MensagemDataNascimento
-                Fim Se
-            Fim Se
-        Fim Procedimento
-
-    // Procedimento para remover o ultimo visitante caso desista de responder o questionario
-    Inicio
-        Função RemoverUltimoVisitante()
+        metodo RemoverUltimoVisitante()
             museu.RemoverUltimoVisitante()
-    Fim Função
-    
-    // Função para obter a mensagem
-    Função Mensagem() -> Caractere
-        Início
-            Retorne mensagem
-        Fim Função
 
-#### Fim Algoritmo
+        metodo Mensagem() retorna mensagem
+    fim classe

@@ -1,14 +1,8 @@
 ﻿namespace TotemApollo.Modelos
 {
-    public class Visitante
+    public class Visitante(string nome, string dataNascimento)
     {
-        public Visitante(string nome, string dataNascimento)
-        {
-            Nome = nome;
-            DataNascimento = dataNascimento;
-        }
-
-        public string Nome { get; }
-        public string DataNascimento { get; }
+        public string Nome { get; } = nome;
+        public string DataNascimento { get; } = dataNascimento;
     }
 }

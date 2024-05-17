@@ -31,9 +31,9 @@ namespace TotemApollo.Controles
             questionarioSatisfacao.AdicionarResposta(indicePergunta, resposta);
         }
 
-        public bool ValidarRespostas(List<int> respostas)
+        public static bool ValidarRespostas(List<int> respostas)
         {
-            return validacao.ValidarRespostas(respostas);
+            return QuestionarioValidacao.ValidarRespostas(respostas);
         }
 
         public void AdicionarRespostasDoFormulario(List<int> respostas)

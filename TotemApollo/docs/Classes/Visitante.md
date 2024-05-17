@@ -1,23 +1,11 @@
-# Classe Visitante
+A classe `Visitante` representa um visitante do museu.
 
-## Descrição
+#### Atributos:
 
-A classe Visitante representa um visitante que interage com o sistema Totem Apollo.
+- `public string Nome { get; }`: Armazena o nome do visitante.
+  
+- `public string DataNascimento { get; }`: Armazena a data de nascimento do visitante.
 
-### Membros
+#### Construtor:
 
-- **Nome**: Retorna o nome do visitante.
-- **DataNascimento**: Retorna a data de nascimento do visitante.
-
-#### Construtores
-
-- **Visitante(string nome, string dataNascimento)**: Inicializa uma nova instância da classe Visitante com o nome e a data de nascimento fornecidos.
-
-#### Propriedades
-
-- **Nome**: Obtém o nome do visitante.
-- **DataNascimento**: Obtém a data de nascimento do visitante.
-
-#### Uso
-
-Para utilizar a classe Visitante, crie uma nova instância passando o nome e a data de nascimento do visitante como argumentos para o construtor. Você pode então acessar as propriedades Nome e DataNascimento para obter as informações do visitante.
+- `public Visitante(string nome, string dataNascimento)`: Inicializa um novo visitante com o nome e a data de nascimento especificados.

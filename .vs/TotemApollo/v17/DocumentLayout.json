@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Projects\\TotemApollo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|C:\\Projects\\TotemApollo\\totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D0C72424-9A50-4F54-85BD-0EC16226B435}|TotemApolloTestes\\TotemApolloTestes.csproj|c:\\projects\\totemapollo\\totemapollotestes\\modelostestes\\questionariovalidacaotestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0C72424-9A50-4F54-85BD-0EC16226B435}|TotemApolloTestes\\TotemApolloTestes.csproj|solutionrelative:totemapollotestes\\modelostestes\\questionariovalidacaotestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|c:\\projects\\totemapollo\\totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\apresentacoes\\totem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|c:\\projects\\totemapollo\\totemapollo\\modelos\\questionariovalidacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{328A432B-2E27-4BCC-AB10-B187309CE0D8}|TotemApollo\\TotemApollo.csproj|solutionrelative:totemapollo\\modelos\\questionariovalidacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0C72424-9A50-4F54-85BD-0EC16226B435}|TotemApolloTestes\\TotemApolloTestes.csproj|c:\\projects\\totemapollo\\totemapollotestes\\modelostestes\\cadastrovalidacaotestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0C72424-9A50-4F54-85BD-0EC16226B435}|TotemApolloTestes\\TotemApolloTestes.csproj|solutionrelative:totemapollotestes\\modelostestes\\cadastrovalidacaotestes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +35,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Totem.cs",
-              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs",
-              "RelativeDocumentMoniker": "TotemApollo\\Apresentacoes\\Totem.cs",
-              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs",
-              "RelativeToolTip": "TotemApollo\\Apresentacoes\\Totem.cs",
-              "ViewState": "AQIAAOsAAAAAAAAAAAAywHsAAAAlAAAA",
+              "Title": "QuestionarioValidacao.cs",
+              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Modelos\\QuestionarioValidacao.cs",
+              "RelativeDocumentMoniker": "TotemApollo\\Modelos\\QuestionarioValidacao.cs",
+              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Modelos\\QuestionarioValidacao.cs",
+              "RelativeToolTip": "TotemApollo\\Modelos\\QuestionarioValidacao.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T19:27:42.021Z",
+              "WhenOpened": "2024-05-17T19:23:30.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Totem.cs [Projeto]",
-              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs",
-              "RelativeDocumentMoniker": "TotemApollo\\Apresentacoes\\Totem.cs",
-              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApollo\\Apresentacoes\\Totem.cs [Projeto]",
-              "RelativeToolTip": "TotemApollo\\Apresentacoes\\Totem.cs [Projeto]",
+              "Title": "QuestionarioValidacaoTestes.cs",
+              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApolloTestes\\ModelosTestes\\QuestionarioValidacaoTestes.cs",
+              "RelativeDocumentMoniker": "TotemApolloTestes\\ModelosTestes\\QuestionarioValidacaoTestes.cs",
+              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApolloTestes\\ModelosTestes\\QuestionarioValidacaoTestes.cs",
+              "RelativeToolTip": "TotemApolloTestes\\ModelosTestes\\QuestionarioValidacaoTestes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T20:40:48.885Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-05-17T19:22:33.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CadastroValidacaoTestes.cs",
+              "DocumentMoniker": "C:\\Projects\\TotemApollo\\TotemApolloTestes\\ModelosTestes\\CadastroValidacaoTestes.cs",
+              "RelativeDocumentMoniker": "TotemApolloTestes\\ModelosTestes\\CadastroValidacaoTestes.cs",
+              "ToolTip": "C:\\Projects\\TotemApollo\\TotemApolloTestes\\ModelosTestes\\CadastroValidacaoTestes.cs",
+              "RelativeToolTip": "TotemApolloTestes\\ModelosTestes\\CadastroValidacaoTestes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T19:22:13.39Z",
+              "EditorCaption": ""
             }
           ]
         }

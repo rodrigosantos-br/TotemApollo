@@ -20,8 +20,10 @@ namespace TotemApolloTestes.ControlesTestes
             };
 
             // Act - Simula o clique na tecla "A"
-            var teclaButton = new Button();
-            teclaButton.Text = "A";
+            var teclaButton = new Button
+            {
+                Text = "A"
+            };
             tecladoControle.Tecla_Click(teclaButton, EventArgs.Empty);
 
             // Assert

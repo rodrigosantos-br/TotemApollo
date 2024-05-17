@@ -9,7 +9,7 @@ namespace TotemApolloTestes.Modelos
             // Arrange
             string nome = "";
             string dataNascimento = "01/01/2000";
-            string mensagemEsperada = " Nome não pode ser vazio. ";
+            string mensagemEsperada = "\nNome não pode ser vazio.";
 
             // Act
             var cadastro = new CadastroValidacao(nome, dataNascimento);
@@ -25,7 +25,7 @@ namespace TotemApolloTestes.Modelos
             // Arrange
             string nome = "Jo";
             string dataNascimento = "01/01/2000";
-            string mensagemEsperada = " Nome deve ter entre 3 e 20 caracteres. ";
+            string mensagemEsperada = "\nNome deve ter entre 3 e 20 caracteres.";
 
             // Act
             var cadastro = new CadastroValidacao(nome, dataNascimento);
@@ -41,7 +41,7 @@ namespace TotemApolloTestes.Modelos
             // Arrange
             string nome = "João";
             string dataNascimento = "";
-            string expectedMensagem = "Data de nascimento não pode ser vazia.";
+            string expectedMensagem = "\nData de nascimento não pode ser vazia.";
 
             // Act
             var cadastro = new CadastroValidacao(nome, dataNascimento);

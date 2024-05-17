@@ -19,13 +19,13 @@ namespace TotemApollo
             InitializeComponent();
 
             // Inicializa a lista de botões antes de passá-la para o controle QuestionarioInteracaoControle
-            _buttons = new List<Button> { btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE };
+            _buttons = [btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE];
             _formulario = new FormularioControle();
             _questionarioInteracao = new QuestionarioInteracaoControle(_buttons); // Passa a lista de botões aqui
             _questionarioSatisfacao = new QuestionarioSatisfacaoControle();
             _teclado = new TecladoControle();
             _teclado.TeclaProcessada += Teclado_TeclaProcessada;
-            _checkboxes = new List<CheckBox> { chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo };
+            _checkboxes = [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo];
             _questionarioSatisfacao.AssociarCheckBoxes(_checkboxes);
         }
 
@@ -241,7 +241,7 @@ namespace TotemApollo
             );
 
             // Verificar se todas as perguntas foram respondidas
-            if (!_questionarioSatisfacao.ValidarRespostas(respostas))
+            if (!QuestionarioSatisfacaoControle.ValidarRespostas(respostas))
             {
                 MessageBox.Show("Por favor, responda todas as perguntas.");
                 return;

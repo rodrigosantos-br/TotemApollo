@@ -4,7 +4,7 @@ namespace TotemApollo.Modelos
     public class QuestionarioValidacao
     {
         // Método para validar se todas as questões foram respondidas
-        public bool ValidarRespostas(List<int> respostas)
+        public static bool ValidarRespostas(List<int> respostas)
         {
             if (respostas.Count == 0)
             {
@@ -20,7 +20,7 @@ namespace TotemApollo.Modelos
         }
 
         // Método para validar se pelo menos uma resposta foi selecionada
-        public bool ValidarRespostas(List<Button> botoesResposta)
+        public static bool ValidarRespostas(List<Button> botoesResposta)
         {
             foreach (Button botao in botoesResposta)
             {

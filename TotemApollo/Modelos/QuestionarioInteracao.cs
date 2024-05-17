@@ -2,7 +2,7 @@
 
 namespace TotemApollo.Modelos
 {
-    internal class QuestionarioInteracao : Questionario
+    public class QuestionarioInteracao : Questionario
     {
         private List<string> respostasCorretas;
         private List<string> explicaçõesRespostasCorretas;
@@ -46,23 +46,23 @@ namespace TotemApollo.Modelos
                 ""
             ];
 
-            explicaçõesRespostasCorretas = new List<string>
-            {
+            explicaçõesRespostasCorretas =
+            [
                 "Resposta Correta C)\nA primeira viagem à Lua ocorreu em 20 de julho de 1969.Neil Armstrong e Buzz Aldrin caminharam na Lua nessa data.",
                 "Resposta Correta C)\nO primeiro ser humano a pisar na Lua foi Neil Armstrong.",
                 "Resposta Correta D)\nA nave espacial que levou os astronautas até a Lua foi a Apollo 11.",
                 "Resposta Correta A)\nNa primeira missão à Lua participaram dois astronautas: Neil Armstrong e Buzz Aldrin.",
                 "Resposta Correta E)\nA frase famosa dita por Neil Armstrong ao pisar na Lua foi: 'Um pequeno passo para o homem, um salto gigante para a humanidade.'"
-            };
+            ];
 
-            respostasCorretas = new List<string>
-            {
+            respostasCorretas =
+            [
                 "C",
                 "C",
                 "D",
                 "A",
                 "E",
-            };
+            ];
 
             for (int i = 0; i < perguntas.Count; i++)
             {
@@ -120,7 +120,7 @@ namespace TotemApollo.Modelos
 
             string respostaCorreta = respostasCorretas[indicePergunta];
 
-            if (respostaUsuario.ToUpper() == respostaCorreta.ToUpper())
+            if (respostaUsuario.Equals(respostaCorreta, StringComparison.CurrentCultureIgnoreCase))
             {
                 // Resposta correta
                 acertos++;
@@ -136,7 +136,7 @@ namespace TotemApollo.Modelos
         // Método para obter o total de interações e respostas acumuladas
         public string ExibirGabarito()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             sb.AppendLine($"          Total de Visitantes:     {ContadorInteracoes}\n");
             sb.AppendLine($"Total de acertos: {acertos}     |     Total de erros: {erros}");
             return sb.ToString();

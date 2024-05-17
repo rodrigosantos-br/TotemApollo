@@ -1,17 +1,15 @@
-# Classe CadastroControle
+### Classe `CadastroControle`
 
-## Descrição
+Essa classe controla o processo de cadastro de visitantes.
 
-A classe CadastroControle é responsável por controlar o processo de cadastro de visitantes no Totem Apollo. Ela valida as informações de nome, data de nascimento, e fornece uma mensagem de validação.
+#### Atributos:
 
-### Construtor
+- `private Museu museu`: Representa o museu onde o visitante será cadastrado.
+- `private CadastroValidacao validacao`: Realiza a validação dos dados do visitante.
+- `private string mensagem`: Mensagem de erro ou sucesso do cadastro.
 
-**CadastroControle(string nome, string dataNascimento)**: Inicializa uma nova instância da classe CadastroControle com as informações de nome, data de nascimento.
+#### Métodos:
 
-### Métodos
-
-- **RemoverUltimoVisitante()**: Remove o último visitante.
-
-### Propriedades
-
-**Mensagem**: Mensagem de validação do cadastro.
+- `public CadastroControle(string nome, string dataNascimento)`: Construtor da classe `CadastroControle`, responsável por iniciar o processo de cadastro do visitante.
+- `public void RemoverUltimoVisitante()`: Remove o último visitante cadastrado no museu.
+- `public string Mensagem { get => mensagem; }`: Propriedade que retorna a mensagem de erro ou sucesso do cadastro.

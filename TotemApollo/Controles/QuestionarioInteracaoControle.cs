@@ -8,23 +8,19 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TotemApollo.Controles
 {
-    internal class QuestionarioInteracaoControle
+    public class QuestionarioInteracaoControle
     {
         private readonly QuestionarioInteracao questionarioInteracao;
         private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
         private List<Button> botoesResposta;
         
-        private Dictionary<string, int> acumuladoRespostas;
-
         public QuestionarioInteracaoControle(List<Button> botoesResposta)
         {
             questionarioInteracao = new QuestionarioInteracao();
             validacao = new QuestionarioValidacao();
             IndicePerguntaAtual = 0;
             this.botoesResposta = botoesResposta;
-            
-            acumuladoRespostas = new Dictionary<string, int>();
         }
 
         // Método para obter o número de perguntas
@@ -35,7 +31,7 @@ namespace TotemApollo.Controles
 
         public bool ValidarRespostas()
         {
-            return validacao.ValidarRespostas(botoesResposta);
+            return QuestionarioValidacao.ValidarRespostas(botoesResposta);
         }
         public void MostrarExplicacaoResposta(Label labelExplicacao)
         {
@@ -95,6 +91,10 @@ namespace TotemApollo.Controles
 
         public void VerificarResposta(string respostaUsuario, Button botaoResposta)
         {
+            if (botaoResposta is null)
+            {
+                throw new ArgumentNullException(nameof(botaoResposta));
+            }
             // Verifica se a resposta do usuário está correta
             bool respostaCorreta = questionarioInteracao.VerificarResposta(IndicePerguntaAtual - 1, respostaUsuario);
 
@@ -102,7 +102,7 @@ namespace TotemApollo.Controles
             for (int i = 0; i < botoesResposta.Count; i++)
             {
                 // Se for a resposta do usuário, muda a cor de acordo com a correção
-                if (botoesResposta[i].Text.ToUpper() == respostaUsuario.ToUpper())
+                if (botoesResposta[i].Text.Equals(respostaUsuario, StringComparison.CurrentCultureIgnoreCase))
                 {
                     if (respostaCorreta)
                     {

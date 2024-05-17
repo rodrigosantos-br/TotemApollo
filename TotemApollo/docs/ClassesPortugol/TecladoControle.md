@@ -1,99 +1,74 @@
-#### Algoritmo TecladoControle
-    variáveis
-        capsAtivado: lógico
-        shiftAtivado: lógico
-        teclaProcessada: caractere
+    classe TecladoControle : UserControl
+        privado capsAtivado: lógico
+        privado shiftAtivado: lógico
+        privado teclaProcessada: texto
 
-    evento TeclaProcessada(sender: referência a TecladoControle, tecla: caractere)
+        evento TeclaProcessada como EventHandler<string>
 
-    procedimento TecladoControle()
-        início
-            capsAtivado := falso
-            shiftAtivado := falso
-            teclaProcessada := ""
+        metodo novo()
+            InitializeComponent()
 
-            // Inicializa o componente
-            InicializarComponente()
-        fim_procedimento
-
-    procedimento AbrirAreaSecreta()
-        início
-            se (chkCtrl.Marcado e chkAlt.Marcado) então
-                var areaSecreta := nova AreaSecreta()
+        metodo AbrirAreaSecreta()
+            se chkCtrl.Checked e chkAlt.Checked entao
+                AreaSecreta areaSecreta := novo AreaSecreta()
                 areaSecreta.Mostrar()
-                chkAlt.Marcado := falso
-                chkCtrl.Marcado := falso
-            fim_se
-        fim_procedimento
+                chkAlt.Checked := falso
+                chkCtrl.Checked := falso
 
-    procedimento BtnEnter_Clicar(sender: objeto, e: EventArgs)
-        início
-            TeclaProcessada(this, "Enter")
-        fim_procedimento
+        metodo BtnEnter_Click(objeto sender, EventArgs e)
+            TeclaProcessada?.Invocar(this, "Enter")
 
-    procedimento BtnBackspace_Clicar(sender: objeto, e: EventArgs)
-        início
-            TeclaProcessada(this, "Backspace")
-        fim_procedimento
+        metodo BtnBackspace_Click(objeto sender, EventArgs e)
+            TeclaProcessada?.Invocar(this, "Backspace")
 
-    procedimento Tecla_Clicar(sender: objeto, e: EventArgs)
-        início
-            var tecla := (sender como Botão)
-            teclaProcessada := ProcessarTecla(chkShift.Marcado, chkCaps.Marcado, tecla.Texto)
-            chkShift.Marcado := falso
+        metodo Tecla_Click(objeto sender, EventArgs e)
+            Button tecla := sender como Button
+            teclaProcessada := ProcessarTecla(chkShift.Checked, chkCaps.Checked, tecla.Text)
+            chkShift.Checked := falso
 
-            // Dispara o evento TeclaPressionada
-            TeclaProcessada(this, teclaProcessada)
-        fim_procedimento
+            TeclaProcessada?.Invocar(this, teclaProcessada)
 
-    função ProcessarTecla(shift: lógico, caps: lógico, teclaPressionada: caractere) -> caractere
-        início
+        metodo privado ProcessarTecla(shift: lógico, caps: lógico, teclaPressionada: texto) retorna texto
             capsAtivado := caps
             shiftAtivado := shift
 
-            // Verifica se a tecla é uma letra
-            para cada letra em intervalo('A', 'Z') faça
-                se (teclaPressionada = letra) então
-                    retorne capsAtivado ou shiftAtivado ? teclaPressionada : para_minusculo(teclaPressionada)
-                fim_se
-            fim_para
+            para cada letra em 'A' até 'Z' faca
+                se teclaPressionada = letra.ToString() entao
+                    retornar capsAtivado ou shiftAtivado ? teclaPressionada : teclaPressionada.ToLower()
 
-            caso teclaPressionada de
-                'Espaço':
-                    retorne " "
-                senão:
-                    retorne nulo
-            fim_caso
-        fim_função
+            escolha teclaPressionada de
+                caso "Space":
+                    retornar " "
+                caso contrario:
+                    retornar nulo
 
-    procedimento RemoverÚltimoCaractere(caixaDeTexto: CaixaDeTexto)
-        início
-            se (tamanho(caixaDeTexto.Texto) > 0) então
-                caixaDeTexto.Texto := subcadeia(caixaDeTexto.Texto, 0, tamanho(caixaDeTexto.Texto) - 1)
-            fim_se
-        fim_procedimento
+        metodo RemoveUltimoCaractere(textBox: TextBox)
+            se textBox.Texto.Comprimento > 0 entao
+                textBox.Texto := textBox.Texto.Substring(0, textBox.Texto.Comprimento - 1)
 
-    procedimento AdicionarTeclado(painel: Painel)
-        variáveis
-            áreaDeTrabalho: Retângulo
-            x, y: inteiro
-        início
-            // Obtém a área de trabalho da tela principal
-            áreaDeTrabalho := ObterÁreaDeTrabalhoTelaPrincipal()
+        metodo AdicionarTeclado(painel: Panel)
+            painel.Adicionar(this)
 
-            // Calcula a posição para centralizar horizontalmente e colocar na parte inferior da tela
-            x := (áreaDeTrabalho.Largura - isso.Largura) / 2
-            y := áreaDeTrabalho.Altura - isso.Altura - 120 // Ajuste a quantidade de pixels conforme necessário
+            se this.ParentForm <> nulo entao
+                this.ParentForm.LocationChanged += Form_LocationChanged
 
-            // Define a posição do controle
-            isso.Posição := novo Ponto(x, y)
+            ReposicionarTeclado()
 
-            // Adiciona o ControleTeclado ao formulário
-            adicionar_elemento(isso, painel)
-        fim_procedimento
+        metodo privado Form_LocationChanged(objeto sender, EventArgs e)
+            ReposicionarTeclado()
 
-    procedimento RemoverTeclado(painel: Painel)
-        início
-            remover_elemento(isso, painel)
-        fim_procedimento
-#### Fim Algoritmo
+        metodo privado ReposicionarTeclado()
+            se this.ParentForm <> nulo entao
+                areaDeTrabalho := Screen.FromControl(this.ParentForm).AreaDeTrabalho
+
+                inteiro x := (areaDeTrabalho.Largura - this.Largura) / 2
+                inteiro y := areaDeTrabalho.Altura - this.Altura - 150 // Ajuste da quantidade de pixels conforme necessário
+
+                this.Localizacao := novo Ponto(x, y)
+
+        metodo RemoverTeclado(painel: Panel)
+            painel.Remover(this)
+
+            se this.ParentForm <> nulo entao
+                this.ParentForm.LocationChanged -= Form_LocationChanged
+    fim classe

@@ -1,43 +1,39 @@
-# Classe Totem
+### Classe `Totem`
+Essa classe representa um totem e herda da classe `Form`.
 
-## Descrição
+#### Atributos:
 
-A classe Totem representa a interface do Totem Apollo, que interage com os usuários para controlar o processo de cadastro de visitantes, exibir informações sobre obras do museu e coletar feedback por meio de um questionário.
+- `private readonly TecladoControle _teclado`: Controla o teclado associado ao totem.
+- `private CadastroControle _cadastro`: Controla o cadastro realizado no totem.
+- `private ObrasControle _obras`: Controla as obras exibidas no totem.
+- `private readonly QuestionarioInteracaoControle _questionarioInteracao`: Controla o questionário de interação exibido no totem.
+- `private readonly QuestionarioSatisfacaoControle _questionarioSatisfacao`: Controla o questionário de satisfação exibido no totem.
+- `private readonly FormularioControle _formulario`: Controla o formulário exibido no totem.
+- `private readonly List<CheckBox> _checkboxes`: Lista de checkboxes associadas ao questionário de satisfação.
+- `private readonly List<Button> _buttons`: Lista de botões associados ao questionário de interação.
 
-### Membros
+#### Métodos:
 
-- **_teclado**: Controle para o teclado virtual.
-- **_cadastro**: Controle para o processo de cadastro de visitantes.
-- **_obras**: Controle para exibição de informações sobre obras do museu.
-- **_questionario**: Controle para coleta de feedback por meio de um questionário.
-- **_formulario**: Controle para limpar os controles após o salvamento bem-sucedido.
-
-#### Construtores
-
-- **Totem()**: Inicializa uma nova instância da classe Totem e configura os controles necessários.
-
-#### Eventos
-
-- **Teclado_TeclaProcessada**: Evento acionado quando uma tecla é processada pelo teclado virtual.
-
-#### Métodos
-
-- **txbNome_Enter(object sender, EventArgs e)**: Evento acionado quando o controle de entrada de nome recebe o foco.
-- **txbNome_Leave(object sender, EventArgs e)**: Evento acionado quando o controle de entrada de nome perde o foco.
-- **DataNascimento_DateSelected(object sender, DateRangeEventArgs e)**: Evento acionado quando uma data é selecionada no calendário.
-- **txbDataNascimento_Enter(object sender, EventArgs e)**: Evento acionado quando o controle de entrada de data de nascimento recebe o foco.
-- **txbDataNascimento_Leave(object sender, EventArgs e)**: Evento acionado quando o controle de entrada de data de nascimento perde o foco.
-- **btnIniciar_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Iniciar" é clicado.
-- **private void btnVoltarInicio_Click(object sender, EventArgs e)**: Evento acionado quando o botão voltar é clicado.
-- **btnObra1_Click(object sender, EventArgs e)**: Evento acionado quando o botão da primeira obra é clicado.
-- **btnObra2_Click(object sender, EventArgs e)**: Evento acionado quando o botão da segunda obra é clicado.
-- **btnObra3_Click(object sender, EventArgs e)**: Evento acionado quando o botão da terceira obra é clicado.
-- **btnObra4_Click(object sender, EventArgs e)**: Evento acionado quando o botão da quarta obra é clicado.
-- **btnVoltar_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Voltar" é clicado.
-- **btnQuestionario_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Questionário" é clicado.
-- **btnVoltarQ_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Voltar" do questionário é clicado.
-- **btnSalvar_Click(object sender, EventArgs e)**: Evento acionado quando o botão "Salvar" do questionário é clicado.
-
-#### Uso
-
-Para utilizar a classe Totem, crie uma nova instância dela e configure os controles necessários. Utilize os eventos e métodos disponíveis para controlar a interação com os usuários e executar as operações desejadas.
+- `public Totem()`: Construtor da classe `Totem`.
+- `private void Teclado_TeclaProcessada(object sender, string teclaProcessada)`: Manipula o evento de tecla processada.
+- `private void TxbNome_Enter(object sender, EventArgs e)`: Manipula o evento de entrada no campo de texto para o nome.
+- `private void TxbNome_Leave(object sender, EventArgs e)`: Manipula o evento de saída do campo de texto para o nome.
+- `private void DataNascimento_DateSelected(object sender, DateRangeEventArgs e)`: Manipula o evento de seleção de data de nascimento.
+- `private void TxbDataNascimento_Enter(object sender, EventArgs e)`: Manipula o evento de entrada no campo de texto para a data de nascimento.
+- `private void TxbDataNascimento_Leave(object sender, EventArgs e)`: Manipula o evento de saída do campo de texto para a data de nascimento.
+- `private void BtnIniciar_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Iniciar".
+- `private void BtnVoltar_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Voltar".
+- `private void BtnAvancarObra_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Avançar Obra".
+- `private void BtnRetrocederObra_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Retroceder Obra".
+- `private void BtnQuestionarioInteracao_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Questionário de Interação".
+- `private void BotaoVoltarObras_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Voltar" no questionário de interação.
+- `private void ChkPessimo_CheckedChanged(object sender, EventArgs e)`: Manipula o evento de mudança de estado da checkbox "Péssimo".
+- `private void ChkRuim_CheckedChanged(object sender, EventArgs e)`: Manipula o evento de mudança de estado da checkbox "Ruim".
+- `private void ChkRegular_CheckedChanged(object sender, EventArgs e)`: Manipula o evento de mudança de estado da checkbox "Regular".
+- `private void ChkBom_CheckedChanged(object sender, EventArgs e)`: Manipula o evento de mudança de estado da checkbox "Bom".
+- `private void ChkOtimo_CheckedChanged(object sender, EventArgs e)`: Manipula o evento de mudança de estado da checkbox "Ótimo".
+- `private void BtnRespostaInteracao_Click(object sender, EventArgs e)`: Manipula o evento de clique nos botões de resposta no questionário de interação.
+- `private void BtnProximaPerguntaInteracao_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Próxima Pergunta" no questionário de interação.
+- `private void BtnAvancarParaQuestionarioSatisfacao_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Avançar para Questionário de Satisfação".
+- `private void BtnProximaPerguntaSatisfacao_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Próxima Pergunta" no questionário de satisfação.
+- `private void BtnFinalizar_Click(object sender, EventArgs e)`: Manipula o evento de clique no botão "Finalizar".

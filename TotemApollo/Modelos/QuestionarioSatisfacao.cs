@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TotemApollo.Modelos
 {
-    internal class QuestionarioSatisfacao : Questionario
+    public class QuestionarioSatisfacao : Questionario
     {
         public QuestionarioSatisfacao()
         {

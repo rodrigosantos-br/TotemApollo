@@ -1,30 +1,27 @@
-# Classe TecladoControle
+### Classe `TecladoControle`
 
-## Descrição
+Esta classe controla o teclado virtual exibido no totem.
 
-A classe TecladoControle representa um controle de teclado virtual utilizado no Totem Apollo para fornecer entrada de texto ao usuário.
+#### Atributos:
 
-### Membros
+- `private bool capsAtivado`: Indica se o Caps Lock está ativado.
+- `private bool shiftAtivado`: Indica se a tecla Shift está pressionada.
+- `private string teclaProcessada`: Armazena a última tecla processada.
 
-- **capsAtivado**: Indica se a tecla Caps Lock está ativada.
-- **shiftAtivado**: Indica se a tecla Shift está pressionada.
-- **teclaProcessada**: A última tecla processada pelo controle.
+#### Eventos:
 
-#### Eventos
+- `public event EventHandler<string> TeclaProcessada`: Evento acionado quando uma tecla é pressionada no teclado.
 
-- TeclaProcessada: Evento acionado quando uma tecla do teclado virtual é pressionada.
+#### Métodos:
 
-#### Construtor
-
-**TecladoControle()**: Inicializa uma nova instância da classe TecladoControle.
-
-#### Métodos
-
-- **AbrirAreaSecreta()**: Abre uma área secreta se as teclas Ctrl e Alt estiverem pressionadas simultaneamente.
-- **BtnEnter_Click(object sender, EventArgs e)**: Manipula o evento de clique do botão Enter.
-- **BtnBackspace_Click(object sender, EventArgs e)**: Manipula o evento de clique do botão Backspace.
-- **Tecla_Click(object sender, EventArgs e)**: Manipula o evento de clique de uma tecla do teclado virtual.
-- **ProcessarTecla(bool shift, bool caps, string teclaPressionada)**: Processa a tecla pressionada no teclado virtual, levando em consideração o estado das teclas Shift e Caps Lock.
-- **RemoveUltimoCaractere(TextBox textBox)**: Remove o último caractere de um controle TextBox.
-- **AdicionarTeclado(Panel painel)**: Adiciona o controle TecladoControle a um painel na tela.
-- **RemoverTeclado(Panel painel)**: Remove o controle TecladoControle de um painel na tela.
+- `public TecladoControle()`: Construtor da classe `TecladoControle`, responsável por inicializar o teclado virtual.
+- `public void AbrirAreaSecreta()`: Abre a área secreta se as teclas Ctrl e Alt estiverem pressionadas.
+- `private void BtnEnter_Click(object sender, EventArgs e)`: Evento acionado quando o botão Enter é pressionado.
+- `private void BtnBackspace_Click(object sender, EventArgs e)`: Evento acionado quando o botão Backspace é pressionado.
+- `public void Tecla_Click(object sender, EventArgs e)`: Evento acionado quando uma tecla do teclado é pressionada.
+- `private string ProcessarTecla(bool shift, bool caps, string teclaPressionada)`: Processa a tecla pressionada considerando o estado do Shift e do Caps Lock.
+- `public void RemoveUltimoCaractere(TextBox textBox)`: Remove o último caractere de um campo de texto.
+- `public void AdicionarTeclado(Panel painel)`: Adiciona o teclado virtual a um painel.
+- `private void Form_LocationChanged(object sender, EventArgs e)`: Evento acionado quando a posição do formulário principal é alterada.
+- `private void ReposicionarTeclado()`: Reposiciona o teclado virtual para centralizá-lo horizontalmente e colocá-lo na parte inferior da tela.
+- `public void RemoverTeclado(Panel painel)`: Remove o teclado virtual de um painel.

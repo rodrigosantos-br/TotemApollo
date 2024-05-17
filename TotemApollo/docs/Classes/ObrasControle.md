@@ -1,25 +1,17 @@
-# Classe ObrasControle
+### Classe `ObrasControle`
 
-## Descrição
+Essa classe controla a exibição e navegação entre obras em um museu.
 
-A classe ObrasControle é responsável por controlar operações relacionadas às obras de arte no Totem Apollo, como exibir o histórico de uma obra.
+#### Atributos:
 
-### Membros
+- `private readonly Museu museu`: Representa o museu onde as obras estão armazenadas.
 
-- museu: Uma instância da classe Museu para manipular as obras de arte.
+#### Métodos:
 
-#### Construtor
-
-**ObrasControle()**: Inicializa uma nova instância da classe ObrasControle, criando uma instância da classe Museu.
-
-#### Métodos
-
-**ExibirHistoricoObra(int id)**: Retorna o histórico de uma obra de arte com base no seu ID.
-
-#### Parâmetros
-
-- **id**: O ID da obra de arte cujo histórico deve ser exibido.
-
-#### Uso
-
-Para exibir o histórico de uma obra de arte, crie uma instância da classe ObrasControle e chame o método ExibirHistoricoObra, passando o ID da obra de arte como parâmetro.
+- `public ObrasControle()`: Construtor da classe `ObrasControle`, responsável por inicializar o controle das obras.
+- `public Obra ObraAtual()`: Retorna a obra atual no museu.
+- `public Image ObterImagemObraAtual()`: Retorna a imagem da obra atual.
+- `public string ObterDescricaoObraAtual()`: Retorna a descrição da obra atual.
+- `public void AvancarParaProximaObra()`: Avança para a próxima obra no museu.
+- `public void RetrocederParaObraAnterior()`: Retrocede para a obra anterior no museu.
+- `public void ExibirObraAtual(PictureBox pbxImagemObra, Label lblDescricao)`: Exibe a obra atual nos controles fornecidos, definindo a imagem no PictureBox e a descrição no Label.

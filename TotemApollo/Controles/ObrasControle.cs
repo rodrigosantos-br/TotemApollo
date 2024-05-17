@@ -43,9 +43,6 @@ namespace TotemApollo.Controles
         // Método para exibir a obra atual nos controles fornecidos
         public void ExibirObraAtual(PictureBox pbxImagemObra, Label lblDescricao)
         {
-            // Obtém a obra atual
-            Obra obraAtual = ObraAtual();
-
             // Define a imagem da obra no PictureBox
             pbxImagemObra.Image = ObterImagemObraAtual();
 
