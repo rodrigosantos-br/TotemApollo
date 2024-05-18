@@ -109,6 +109,14 @@
         }
 
         public List<Obra> Obras { get => obras; }
+
+        public Obra Obra
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
 

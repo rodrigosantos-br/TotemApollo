@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using Xunit;
-using TotemApollo.Modelos;
+﻿using TotemApollo.Modelos;
 
 namespace TotemApollo.Tests
 {

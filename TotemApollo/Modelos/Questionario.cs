@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace TotemApollo.Modelos
+﻿namespace TotemApollo.Modelos
 {
     public class Questionario
     {

@@ -4,10 +4,13 @@ namespace TotemApollo.Modelos
 {
     public class QuestionarioInteracao : Questionario
     {
-        private List<string> respostasCorretas;
-        private List<string> explicaçõesRespostasCorretas;
+        private readonly List<string> respostasCorretas;
+        private readonly List<string> explicaçõesRespostasCorretas;
+        private int acertosVisitanteAtual;
+        private int errosVisitanteAtual;
         private int acertos;
         private int erros;
+
 
         public QuestionarioInteracao()
         {
@@ -68,6 +71,8 @@ namespace TotemApollo.Modelos
             {
                 QuestionarioEstaticos.respostas.Add([]);
             }
+            acertosVisitanteAtual = 0;
+            errosVisitanteAtual = 0;
             acertos = 0;
             erros = 0;
         }
@@ -106,7 +111,7 @@ namespace TotemApollo.Modelos
                 throw new IndexOutOfRangeException("O índice da pergunta está fora dos limites.");
             }
 
-            // Supondo que as respostas sejam representadas por letras de A a E
+            // Respostas representadas por letras de A a E
             char resposta = (char)('A' + indiceResposta);
             return resposta.ToString();
         }
@@ -123,22 +128,32 @@ namespace TotemApollo.Modelos
             if (respostaUsuario.Equals(respostaCorreta, StringComparison.CurrentCultureIgnoreCase))
             {
                 // Resposta correta
+                acertosVisitanteAtual++;
                 acertos++;
                 return true;
             }
             else
             {
                 // Resposta incorreta
+                errosVisitanteAtual++;
                 erros++;
                 return false;
             }
         }
-        // Método para obter o total de interações e respostas acumuladas
-        public string ExibirGabarito()
+
+        public void ResetarContadoresVisitanteAtual()
+        {
+            acertosVisitanteAtual = 0;
+            errosVisitanteAtual = 0;
+        }
+
+        // Método para obter o total de interações, respostas acumuladas e resposttas individuais.
+        public string ExibirRelatorioInteracao()
         {
             StringBuilder sb = new();
             sb.AppendLine($"          Total de Visitantes:     {ContadorInteracoes}\n");
-            sb.AppendLine($"Total de acertos: {acertos}     |     Total de erros: {erros}");
+            sb.AppendLine($"Total de acertos: {acertos}     |     Total de erros: {erros}\n");
+            sb.AppendLine($"Você      Acertou: {acertosVisitanteAtual}    |   Errou: {errosVisitanteAtual}");
             return sb.ToString();
         }
     }

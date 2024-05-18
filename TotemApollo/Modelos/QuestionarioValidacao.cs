@@ -1,5 +1,4 @@
-﻿
-namespace TotemApollo.Modelos
+﻿namespace TotemApollo.Modelos
 {
     public class QuestionarioValidacao
     {

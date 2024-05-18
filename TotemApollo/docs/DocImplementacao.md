@@ -20,7 +20,6 @@ Ambiente de Desenvolvimento Integrado (IDE): Visual Studio 2022 Community
 Sistema de Controle de Versão: Git
 Repositório de Código: GitHub
 Teste de Unidade: xUnit
-Ferramenta de Configuração: Setup Project (Visual Studio Installer Projects)
 
 4. Arquitetura do Sistema
 O TotemApollo segue o padrão arquitetural MVC (Model-View-Controller), proporcionando uma separação clara entre a 

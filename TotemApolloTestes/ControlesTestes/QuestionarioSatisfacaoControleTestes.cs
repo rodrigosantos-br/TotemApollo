@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Moq;
-using Xunit;
 using TotemApollo.Modelos;
 using TotemApollo.Controles;
 

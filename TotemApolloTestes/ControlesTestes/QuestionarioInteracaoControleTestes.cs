@@ -1,5 +1,4 @@
-﻿using Xunit;
-using TotemApollo.Controles;
+﻿using TotemApollo.Controles;
 using System.Windows.Forms;
 using System.Drawing;
 

@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using Xunit;
 using TotemApollo.Modelos;
 
 namespace TotemApollo.Testes

@@ -1,5 +1,4 @@
 ﻿using TotemApollo.Controles;
-using TotemApollo.Modelos;
 
 namespace TotemApollo
 {
@@ -142,6 +141,10 @@ namespace TotemApollo
             pnlObraDescricao.Show();
             _questionarioSatisfacao.DecrementarContadorInteracoes();
             _questionarioInteracao.ExibirPerguntaAnterior(lblPergunta);
+            foreach (Button botao in _buttons)
+            {
+                botao.Enabled = true;
+            }
         }
 
         private void ChkPessimo_CheckedChanged(object sender, EventArgs e)
@@ -203,7 +206,7 @@ namespace TotemApollo
             {
                 pnlOpcoesRespostaInteracoes.Visible = false;
                 btnProximaPerguntaInteracao.Visible = false;
-                lblRelatorioAcumuladoQuestionarioInteracao.Text = _questionarioInteracao.ExibirGabarito();
+                lblRelatorioAcumuladoQuestionarioInteracao.Text = _questionarioInteracao.ExibirRelatorioInteracao();
                 pnlRelatorioAcumuladoInteracao.Visible = true;
                 // Limpar os botões de resposta
                 foreach (Button botao in _buttons)
@@ -231,6 +234,7 @@ namespace TotemApollo
             btnVoltarQ.Visible = false;
             _formulario.IniciarTimer(pcbBalaoInformacao, 3800); // Define um Timer para ocultar a imagem após 3,8 segundos
             _questionarioSatisfacao.MostrarProximaPergunta(lblPergunta, [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo]); // Mostrar a próxima pergunta no questionário de satisfação
+            _questionarioInteracao.ResetarContadorVisitanteAtual();
         }
 
         private void BtnProximaPerguntaSatisfacao_Click(object sender, EventArgs e)
