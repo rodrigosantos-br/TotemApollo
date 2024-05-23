@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TotemApolloTestes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1783d40075bba8a70a4e13b582157ec712f4e71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cdaf079bf50f47ab0e030a05aee8475da264a10")]
 [assembly: System.Reflection.AssemblyProductAttribute("TotemApolloTestes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TotemApolloTestes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

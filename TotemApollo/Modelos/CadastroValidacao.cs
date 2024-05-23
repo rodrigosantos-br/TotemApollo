@@ -33,7 +33,7 @@
             }
 
             // Transformar a primeira letra do nome em maiúscula
-            nome = char.ToUpper(nome[0]) + nome.Substring(1).ToLower();
+            nome = char.ToUpper(nome[0]) + nome[1..].ToLower();
         }
 
         private void ValidarDataNascimento()

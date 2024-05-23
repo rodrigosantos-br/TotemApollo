@@ -5,14 +5,12 @@ namespace TotemApollo.Controles
     public class QuestionarioSatisfacaoControle
     {
         private readonly QuestionarioSatisfacao questionarioSatisfacao;
-        private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
         private List<CheckBox> checkboxes;
-        
+
         public QuestionarioSatisfacaoControle()
         {
             questionarioSatisfacao = new QuestionarioSatisfacao();
-            validacao = new QuestionarioValidacao();
             indicePerguntaAtual = 0;
         }
 
@@ -80,11 +78,10 @@ namespace TotemApollo.Controles
             {
                 if (opcao.Checked)
                 {
-                    // Você pode atribuir um valor específico para cada opção ou usar o índice da opção na matriz
                     return Array.IndexOf(opcoes, opcao) + 1;
                 }
             }
-            // Se nenhuma opção estiver selecionada, retorna -1 ou outro valor de sua escolha para indicar que não há resposta selecionada
+            // Se nenhuma opção estiver selecionada, retorna -1
             return -1;
         }
 
@@ -155,7 +152,7 @@ namespace TotemApollo.Controles
 
             if (checkBox.Checked)
             {
-                // Lógica para manipular a imagem do CheckBox
+                // Manipular a imagem do CheckBox de acordo com o estado
                 switch (checkBox.Name)
                 {
                     case "chkPessimo":

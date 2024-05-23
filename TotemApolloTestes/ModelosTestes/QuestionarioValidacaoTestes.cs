@@ -31,13 +31,13 @@ namespace TotemApollo.Testes
             // Arrange
             var botoesSemSelecao = new List<Button>
             {
-                new Button { BackColor = SystemColors.Control },
-                new Button { BackColor = SystemColors.Control }
+                new() { BackColor = SystemColors.Control },
+                new() { BackColor = SystemColors.Control }
             };
             var botoesComSelecao = new List<Button>
             {
-                new Button { BackColor = Color.Red },
-                new Button { BackColor = SystemColors.Control }
+                new() { BackColor = Color.Red },
+                new() { BackColor = SystemColors.Control }
             };
 
             // Act

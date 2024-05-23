@@ -4,14 +4,14 @@
     {
         private readonly List<Obra> obras;
         private readonly List<Visitante> visitantes;
-        private int obraAtualIndex; // Variável para armazenar o índice da obra atual
+        private int ObraAtualIndice; // Variável para armazenar o índice da obra atual
 
         public Museu()
         {
             visitantes = [];
             obras = [];
 
-            // Adicione suas 4 obras aqui apenas se a lista estiver vazia.
+            // Adiciona 4 obras aqui apenas se a lista estiver vazia.
             if (Obras.Count == 0)
             {
                 Image imagem1 = Image.FromFile("Imagens\\imgObra1.jpeg");
@@ -41,33 +41,33 @@
                                       "destaca o legado inspirador da conquista do espaço.", imagem4));
             }
 
-            obraAtualIndex = 0; // Inicializa o índice da obra atual
+            ObraAtualIndice = 0; // Inicializa o índice da obra atual
         }
 
         // Método para avançar para a próxima obra
         public void AvancarParaProximaObra()
         {
-            obraAtualIndex++;
-            if (obraAtualIndex >= obras.Count)
+            ObraAtualIndice++;
+            if (ObraAtualIndice >= obras.Count)
             {
-                obraAtualIndex = 0; // Volta para a primeira obra quando chegar na última
+                ObraAtualIndice = 0; // Volta para a primeira obra quando chegar na última
             }
         }
 
         // Método para retroceder para a obra anterior
         public void RetrocederParaObraAnterior()
         {
-            obraAtualIndex--;
-            if (obraAtualIndex < 0)
+            ObraAtualIndice--;
+            if (ObraAtualIndice < 0)
             {
-                obraAtualIndex = obras.Count - 1; // Volta para a última obra quando chegar na primeira
+                ObraAtualIndice = obras.Count - 1; // Volta para a última obra quando chegar na primeira
             }
         }
 
         // Método para obter a obra atual
         public Obra ObraAtual()
         {
-            return obras[obraAtualIndex];
+            return obras[ObraAtualIndice];
         }
 
         public void CadastrarVisitante(string nome, string dataNascimento)

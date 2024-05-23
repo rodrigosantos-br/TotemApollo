@@ -147,7 +147,7 @@ namespace TotemApollo.Modelos
             errosVisitanteAtual = 0;
         }
 
-        // Método para obter o total de interações, respostas acumuladas e resposttas individuais.
+        // Método para obter o total de interações, respostas acumuladas e respostas individuais.
         public string ExibirRelatorioInteracao()
         {
             StringBuilder sb = new();

@@ -28,11 +28,13 @@ namespace TotemApollo
 
         private void BtnEnter_Click(object sender, EventArgs e)
         {
+            // Dispara o evento TeclaProcessada
             TeclaProcessada?.Invoke(this, "Enter");
         }
 
         private void BtnBackspace_Click(object sender, EventArgs e)
         {
+            // Dispara o evento TeclaProcessada
             TeclaProcessada?.Invoke(this, "Backspace");
         }
 
@@ -42,7 +44,7 @@ namespace TotemApollo
             teclaProcessada = ProcessarTecla(chkShift.Checked, chkCaps.Checked, tecla.Text);
             chkShift.Checked = false;
 
-            // Dispara o evento TeclaPressionada
+            // Dispara o evento TeclaProcessada
             TeclaProcessada?.Invoke(this, teclaProcessada);
         }
 
@@ -73,7 +75,7 @@ namespace TotemApollo
         {
             if (textBox.Text.Length > 0)
             {
-                textBox.Text = textBox.Text.Substring(0, textBox.Text.Length - 1);
+                textBox.Text = textBox.Text[..^1];
             }
         }
 

@@ -1,4 +1,10 @@
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\CoverletSourceRootsMapping_TotemApolloTestes
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.csproj.AssemblyReference.cache
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.AssemblyInfoInputs.cache
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.AssemblyInfo.cs
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.csproj.CoreCompileInputs.cache
+C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.sourcelink.json
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\testhost.dll
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\TotemApollo.deps.json
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\TotemApollo.runtimeconfig.json
@@ -110,12 +116,6 @@ C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\zh-Hant\Micro
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\TotemApollo.dll
 C:\Projects\TotemApollo\TotemApolloTestes\bin\Debug\net8.0-windows\TotemApollo.pdb
-C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.csproj.AssemblyReference.cache
-C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.GeneratedMSBuildEditorConfig.editorconfig
-C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.AssemblyInfoInputs.cache
-C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.AssemblyInfo.cs
-C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.csproj.CoreCompileInputs.cache
-C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.sourcelink.json
 C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApo.DFBDF70E.Up2Date
 C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\TotemApolloTestes.dll
 C:\Projects\TotemApollo\TotemApolloTestes\obj\Debug\net8.0-windows\refint\TotemApolloTestes.dll

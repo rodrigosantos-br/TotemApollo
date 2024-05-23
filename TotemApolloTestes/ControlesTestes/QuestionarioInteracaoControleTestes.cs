@@ -1,6 +1,6 @@
-﻿using TotemApollo.Controles;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing;
+using TotemApollo.Controles;
 
 namespace TotemApolloTestes.ControlesTestes
 {
@@ -12,10 +12,10 @@ namespace TotemApolloTestes.ControlesTestes
             // Arrange
             var botoesResposta = new List<Button>
             {
-                new Button(),
-                new Button(),
-                new Button(),
-                new Button()
+                new(),
+                new(),
+                new(),
+                new()
             };
             var controle = new QuestionarioInteracaoControle(botoesResposta);
             var lblPergunta = new Label();
@@ -34,10 +34,10 @@ namespace TotemApolloTestes.ControlesTestes
             // Arrange
             var botoesResposta = new List<Button>
             {
-                new Button() { Text = "A" },
-                new Button() { Text = "B" },
-                new Button() { Text = "C" },
-                new Button() { Text = "D" }
+                new() { Text = "A" },
+                new() { Text = "B" },
+                new() { Text = "C" },
+                new() { Text = "D" }
             };
             var controle = new QuestionarioInteracaoControle(botoesResposta);
             var botaoResposta = botoesResposta[2]; // Resposta correta é a terceira (índice 2)
@@ -57,10 +57,10 @@ namespace TotemApolloTestes.ControlesTestes
             // Arrange
             var botoesResposta = new List<Button>
             {
-                new Button() { Text = "A" },
-                new Button() { Text = "B" },
-                new Button() { Text = "C" },
-                new Button() { Text = "D" }
+                new() { Text = "A" },
+                new() { Text = "B" },
+                new() { Text = "C" },
+                new() { Text = "D" }
             };
             var controle = new QuestionarioInteracaoControle(botoesResposta);
             var botaoResposta = botoesResposta[1]; // Resposta incorreta é a segunda (índice 1)
@@ -80,10 +80,10 @@ namespace TotemApolloTestes.ControlesTestes
             // Arrange
             var botoesResposta = new List<Button>
             {
-                new Button() { BackColor = Color.Green }, // Simula uma resposta selecionada
-                new Button() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
-                new Button() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
-                new Button() { BackColor = SystemColors.Control } // Simula uma resposta não selecionada
+                new() { BackColor = Color.Green }, // Simula uma resposta selecionada
+                new() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
+                new() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
+                new() { BackColor = SystemColors.Control } // Simula uma resposta não selecionada
             };
             var controle = new QuestionarioInteracaoControle(botoesResposta);
 
@@ -100,10 +100,10 @@ namespace TotemApolloTestes.ControlesTestes
             // Arrange
             var botoesResposta = new List<Button>
             {
-                new Button() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
-                new Button() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
-                new Button() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
-                new Button() { BackColor = SystemColors.Control } // Simula uma resposta não selecionada
+                new() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
+                new() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
+                new() { BackColor = SystemColors.Control }, // Simula uma resposta não selecionada
+                new() { BackColor = SystemColors.Control } // Simula uma resposta não selecionada
             };
             var controle = new QuestionarioInteracaoControle(botoesResposta);
 

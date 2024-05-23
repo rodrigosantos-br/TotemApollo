@@ -45,12 +45,11 @@
             // 
             // btnFecharPrograma
             // 
-            btnFecharPrograma.Location = new Point(580, 211);
-            btnFecharPrograma.Margin = new Padding(4);
+            btnFecharPrograma.Location = new Point(464, 169);
             btnFecharPrograma.Name = "btnFecharPrograma";
-            btnFecharPrograma.Size = new Size(142, 29);
+            btnFecharPrograma.Size = new Size(114, 23);
             btnFecharPrograma.TabIndex = 0;
-            btnFecharPrograma.Text = "Fechar Programa";
+            btnFecharPrograma.Text = "Finalizar Software";
             btnFecharPrograma.UseVisualStyleBackColor = true;
             btnFecharPrograma.Click += BtnFecharPrograma_Click;
             // 
@@ -66,8 +65,7 @@
             dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRelatorio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { dgvInteracoes, dgvMuitoSatisfeito, dgvSatisfeito, dgvRegular, dgvInsatisfeito, dgvMuitoInsatisfeito });
-            dgvRelatorio.Location = new Point(96, 76);
-            dgvRelatorio.Margin = new Padding(4);
+            dgvRelatorio.Location = new Point(77, 61);
             dgvRelatorio.MultiSelect = false;
             dgvRelatorio.Name = "dgvRelatorio";
             dgvRelatorio.ReadOnly = true;
@@ -85,7 +83,7 @@
             dgvRelatorio.RowTemplate.ReadOnly = true;
             dgvRelatorio.RowTemplate.Resizable = DataGridViewTriState.True;
             dgvRelatorio.ScrollBars = ScrollBars.None;
-            dgvRelatorio.Size = new Size(626, 64);
+            dgvRelatorio.Size = new Size(501, 51);
             dgvRelatorio.TabIndex = 12;
             // 
             // dgvInteracoes
@@ -95,7 +93,7 @@
             dgvInteracoes.MinimumWidth = 6;
             dgvInteracoes.Name = "dgvInteracoes";
             dgvInteracoes.ReadOnly = true;
-            dgvInteracoes.Width = 164;
+            dgvInteracoes.Width = 130;
             // 
             // dgvMuitoSatisfeito
             // 
@@ -104,7 +102,7 @@
             dgvMuitoSatisfeito.MinimumWidth = 6;
             dgvMuitoSatisfeito.Name = "dgvMuitoSatisfeito";
             dgvMuitoSatisfeito.ReadOnly = true;
-            dgvMuitoSatisfeito.Width = 80;
+            dgvMuitoSatisfeito.Width = 66;
             // 
             // dgvSatisfeito
             // 
@@ -113,7 +111,7 @@
             dgvSatisfeito.MinimumWidth = 6;
             dgvSatisfeito.Name = "dgvSatisfeito";
             dgvSatisfeito.ReadOnly = true;
-            dgvSatisfeito.Width = 69;
+            dgvSatisfeito.Width = 57;
             // 
             // dgvRegular
             // 
@@ -122,7 +120,7 @@
             dgvRegular.MinimumWidth = 6;
             dgvRegular.Name = "dgvRegular";
             dgvRegular.ReadOnly = true;
-            dgvRegular.Width = 89;
+            dgvRegular.Width = 72;
             // 
             // dgvInsatisfeito
             // 
@@ -131,7 +129,7 @@
             dgvInsatisfeito.MinimumWidth = 6;
             dgvInsatisfeito.Name = "dgvInsatisfeito";
             dgvInsatisfeito.ReadOnly = true;
-            dgvInsatisfeito.Width = 72;
+            dgvInsatisfeito.Width = 60;
             // 
             // dgvMuitoInsatisfeito
             // 
@@ -140,14 +138,13 @@
             dgvMuitoInsatisfeito.MinimumWidth = 6;
             dgvMuitoInsatisfeito.Name = "dgvMuitoInsatisfeito";
             dgvMuitoInsatisfeito.ReadOnly = true;
-            dgvMuitoInsatisfeito.Width = 91;
+            dgvMuitoInsatisfeito.Width = 76;
             // 
             // btnVoltarCadastro
             // 
-            btnVoltarCadastro.Location = new Point(96, 211);
-            btnVoltarCadastro.Margin = new Padding(4);
+            btnVoltarCadastro.Location = new Point(77, 169);
             btnVoltarCadastro.Name = "btnVoltarCadastro";
-            btnVoltarCadastro.Size = new Size(94, 29);
+            btnVoltarCadastro.Size = new Size(75, 23);
             btnVoltarCadastro.TabIndex = 13;
             btnVoltarCadastro.Text = "Voltar";
             btnVoltarCadastro.UseVisualStyleBackColor = true;
@@ -155,13 +152,12 @@
             // 
             // AreaSecreta
             // 
-            AutoScaleDimensions = new SizeF(120F, 120F);
+            AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(818, 362);
+            ClientSize = new Size(654, 290);
             Controls.Add(btnVoltarCadastro);
             Controls.Add(dgvRelatorio);
             Controls.Add(btnFecharPrograma);
-            Margin = new Padding(4);
             Name = "AreaSecreta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AreaSecreta";

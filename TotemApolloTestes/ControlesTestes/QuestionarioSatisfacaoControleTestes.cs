@@ -1,20 +1,16 @@
 ﻿using System.Windows.Forms;
-using Moq;
-using TotemApollo.Modelos;
 using TotemApollo.Controles;
 
 namespace TotemApollo.Testes
 {
     public class QuestionarioSatisfacaoControleTestes
     {
-        private Mock<QuestionarioSatisfacao> mockQuestionarioSatisfacao;
-        private QuestionarioSatisfacaoControle controle;
+        private readonly QuestionarioSatisfacaoControle controle;
 
         public QuestionarioSatisfacaoControleTestes()
         {
-            mockQuestionarioSatisfacao = new Mock<QuestionarioSatisfacao>();
             controle = new QuestionarioSatisfacaoControle();
-        }        
+        }
 
         [Fact]
         public void TesteObterRespostasDoFormulario()
@@ -28,7 +24,7 @@ namespace TotemApollo.Testes
             var respostas = controle.ObterRespostasDoFormulario(opcoes);
 
             // Assert
-            Assert.Equal(new List<int> { 1, 2 }, respostas);
+            Assert.Equal([1, 2], respostas);
         }
     }
 }

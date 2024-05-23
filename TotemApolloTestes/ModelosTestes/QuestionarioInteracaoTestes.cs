@@ -83,7 +83,7 @@ namespace TotemApollo.Tests
         }
 
         [Fact]
-        public void ExibirGabarito_DeveRetornarStringComTotais()
+        public void ExibirRelatorioInteracao_DeveRetornarStringComTotais()
         {
             // Arrange
             var questionario = new QuestionarioInteracao();
@@ -91,7 +91,7 @@ namespace TotemApollo.Tests
             // Act
             questionario.VerificarResposta(0, "C");
             questionario.VerificarResposta(1, "A");
-            string gabarito = questionario.ExibirGabarito();
+            string gabarito = questionario.ExibirRelatorioInteracao();
 
             // Assert
             Assert.Contains("Total de acertos: 1", gabarito);

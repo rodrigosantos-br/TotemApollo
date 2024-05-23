@@ -17,13 +17,13 @@ namespace TotemApollo
         {
             InitializeComponent();
 
-            // Inicializa a lista de botões antes de passá-la para o controle QuestionarioInteracaoControle
-            _buttons = [btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE];
             _formulario = new FormularioControle();
-            _questionarioInteracao = new QuestionarioInteracaoControle(_buttons); // Passa a lista de botões aqui
-            _questionarioSatisfacao = new QuestionarioSatisfacaoControle();
             _teclado = new TecladoControle();
             _teclado.TeclaProcessada += Teclado_TeclaProcessada;
+            // Inicializa a lista de botões antes de passá-la para o controle QuestionarioInteracaoControle
+            _buttons = [btnRespostaA, btnRespostaB, btnRespostaC, btnRespostaD, btnRespostaE];
+            _questionarioInteracao = new QuestionarioInteracaoControle(_buttons); // Passa a lista de botões aqui
+            _questionarioSatisfacao = new QuestionarioSatisfacaoControle();
             _checkboxes = [chkPessimo, chkRuim, chkRegular, chkBom, chkOtimo];
             _questionarioSatisfacao.AssociarCheckBoxes(_checkboxes);
         }
@@ -61,18 +61,21 @@ namespace TotemApollo
 
         private void DataNascimento_DateSelected(object sender, DateRangeEventArgs e)
         {
+            // Preenche a data de nascimento com a data selecionada no calendário
             txbDataNascimento.Text = mtcCalendario.SelectionStart.ToShortDateString();
             mtcCalendario.Visible = false;
         }
 
         private void TxbDataNascimento_Enter(object sender, EventArgs e)
         {
+            // Calendário visível apenas se o textBox do mesmo estiver selecionado e remove o teclado
             mtcCalendario.Visible = true;
             _teclado.RemoverTeclado(pnlCadastro);
         }
 
         private void TxbDataNascimento_Leave(object sender, EventArgs e)
         {
+            // Mantém o calendário visível caso o foco seja o calendário
             if (ActiveControl != mtcCalendario)
                 mtcCalendario.Visible = false;
         }
@@ -147,6 +150,7 @@ namespace TotemApollo
             }
         }
 
+        // Troca a imagem do checkBox de acordo com o estado
         private void ChkPessimo_CheckedChanged(object sender, EventArgs e)
         {
             _questionarioSatisfacao.CheckBox_CheckedChanged(sender, e);
@@ -229,7 +233,7 @@ namespace TotemApollo
             pnlRelatorioAcumuladoInteracao.Visible = false;
             pnlEstrelasSatisfacao.Visible = true;
             btnProximaPerguntaSatisfacao.Visible = true;
-            pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao; 
+            pcbBalaoInformacao.BackgroundImage = Properties.Resources.imgBalaoSatisfacao;
             pcbBalaoInformacao.Visible = true;
             btnVoltarQ.Visible = false;
             _formulario.IniciarTimer(pcbBalaoInformacao, 3800); // Define um Timer para ocultar a imagem após 3,8 segundos

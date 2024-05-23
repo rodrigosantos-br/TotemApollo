@@ -6,7 +6,7 @@
 
         public Questionario()
         {
-            
+
         }
 
         public void AdicionarResposta(int indicePergunta, int resposta)

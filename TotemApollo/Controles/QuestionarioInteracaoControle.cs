@@ -5,14 +5,12 @@ namespace TotemApollo.Controles
     public class QuestionarioInteracaoControle
     {
         private readonly QuestionarioInteracao questionarioInteracao;
-        private readonly QuestionarioValidacao validacao;
         private int indicePerguntaAtual;
-        private List<Button> botoesResposta;
-        
+        private readonly List<Button> botoesResposta;
+
         public QuestionarioInteracaoControle(List<Button> botoesResposta)
         {
-            questionarioInteracao = new QuestionarioInteracao(); 
-            validacao = new QuestionarioValidacao();
+            questionarioInteracao = new QuestionarioInteracao();
             IndicePerguntaAtual = 0;
             this.botoesResposta = botoesResposta;
         }
@@ -54,7 +52,7 @@ namespace TotemApollo.Controles
             }
             else
             {
-                // Se o índice da pergunta atual for menor que zero, não há pergunta anterior, então mantenha o índice atual como zero
+                // Se o índice da pergunta atual for menor que zero, não há pergunta anterior, então mantém o índice atual como zero
                 IndicePerguntaAtual = 0;
             }
         }
@@ -77,8 +75,8 @@ namespace TotemApollo.Controles
             {
                 // Reinicia o índice da pergunta atual para exibir a primeira pergunta quando não houver mais perguntas disponíveis
                 IndicePerguntaAtual = 0;
-                
-                ExibirProximaPergunta(lblPergunta); // Chame ExibirProximaPergunta recursivamente
+
+                ExibirProximaPergunta(lblPergunta); // Chama ExibirProximaPergunta recursivamente
             }
         }
 
@@ -90,10 +88,7 @@ namespace TotemApollo.Controles
 
         public void VerificarResposta(string respostaUsuario, Button botaoResposta)
         {
-            if (botaoResposta is null)
-            {
-                throw new ArgumentNullException(nameof(botaoResposta));
-            }
+            ArgumentNullException.ThrowIfNull(botaoResposta);
             // Verifica se a resposta do usuário está correta
             bool respostaCorreta = questionarioInteracao.VerificarResposta(IndicePerguntaAtual - 1, respostaUsuario);
 
@@ -123,7 +118,7 @@ namespace TotemApollo.Controles
         }
 
         public string ExibirRelatorioInteracao()
-        { 
+        {
             return questionarioInteracao.ExibirRelatorioInteracao();
         }
 
