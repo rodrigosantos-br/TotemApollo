@@ -143,7 +143,19 @@ namespace TotemApollo
             pnlQuestionario.Visible = false;
             pnlObraDescricao.Show();
             _questionarioSatisfacao.DecrementarContadorInteracoes();
-            _questionarioInteracao.ExibirPerguntaAnterior(lblPergunta);
+            // Verifica se há uma pergunta anterior para voltar
+            if (_questionarioInteracao.IndicePerguntaAtual > 0)
+            {
+                // Decrementa os contadores de acertos e erros pela última resposta
+                if (_questionarioInteracao.IndicePerguntaAtual <= _questionarioInteracao.ObterNumeroPerguntas())
+                {
+                    _questionarioInteracao.DecrementarContadoresPorResposta(_questionarioInteracao.IndicePerguntaAtual - 1);
+                }
+
+                // Exibe a pergunta anterior
+                _questionarioInteracao.ExibirPerguntaAnterior(lblPergunta);
+            }
+
             foreach (Button botao in _buttons)
             {
                 botao.Enabled = true;

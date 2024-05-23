@@ -57,6 +57,12 @@ namespace TotemApollo.Controles
             }
         }
 
+
+        public void DecrementarContadoresPorResposta(int indicePergunta)
+        {
+            questionarioInteracao.DecrementarContadoresPorResposta(indicePergunta);
+        }
+
         public void ExibirProximaPergunta(Label lblPergunta)
         {
             if (IndicePerguntaAtual < questionarioInteracao.ObterNumeroPerguntas())

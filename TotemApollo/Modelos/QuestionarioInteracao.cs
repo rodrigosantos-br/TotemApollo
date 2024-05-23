@@ -141,6 +141,25 @@ namespace TotemApollo.Modelos
             }
         }
 
+        public void DecrementarContadoresPorResposta(int indicePergunta)
+        {
+            if (indicePergunta < 0 || indicePergunta >= perguntas.Count)
+            {
+                throw new IndexOutOfRangeException("O índice da pergunta está fora dos limites.");
+            }
+
+            if (acertosVisitanteAtual > 0)
+            {
+                acertosVisitanteAtual--;
+                acertos--;
+            }
+            else if (errosVisitanteAtual > 0)
+            {
+                errosVisitanteAtual--;
+                erros--;
+            }
+        }
+
         public void ResetarContadoresVisitanteAtual()
         {
             acertosVisitanteAtual = 0;
