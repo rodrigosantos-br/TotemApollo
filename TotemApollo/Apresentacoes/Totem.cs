@@ -140,6 +140,7 @@ namespace TotemApollo
 
         private void BotaoVoltarObras_Click(object sender, EventArgs e)
         {
+            lblExplicacaoResposta.Visible = false;
             pnlQuestionario.Visible = false;
             pnlObraDescricao.Show();
             _questionarioSatisfacao.DecrementarContadorInteracoes();
